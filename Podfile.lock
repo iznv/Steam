@@ -1,0 +1,28 @@
+PODS:
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
+  - StatefulViewController (3.0)
+  - TableKit (2.10.0)
+
+DEPENDENCIES:
+  - R.swift
+  - StatefulViewController
+  - TableKit
+
+SPEC REPOS:
+  trunk:
+    - R.swift
+    - R.swift.Library
+    - StatefulViewController
+    - TableKit
+
+SPEC CHECKSUMS:
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
+  TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
+
+PODFILE CHECKSUM: 9904e83f30df7fa76506a2589d285eda6fcc2a0c
+
+COCOAPODS: 1.8.4
