@@ -8,5 +8,7 @@ target 'Steam' do
   pod 'R.swift'
   pod 'StatefulViewController'
   pod 'TableKit'
+  
+  pod 'Utils', '0.0.10', :source => 'https://github.com/iznv/Podspecs.git'
 
 end

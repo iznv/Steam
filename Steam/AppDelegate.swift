@@ -24,7 +24,7 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let vc = ViewController()
+        let vc = MainViewController(viewModel: .init())
         vc.view.backgroundColor = .red
         
         window?.rootViewController = vc

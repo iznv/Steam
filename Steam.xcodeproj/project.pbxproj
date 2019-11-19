@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2C04E5BF238464D00058CC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04E5BE238464D00058CC18 /* AppDelegate.swift */; };
-		2C04E5C3238464D00058CC18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04E5C2238464D00058CC18 /* ViewController.swift */; };
 		2C04E5C8238464D20058CC18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C04E5C7238464D20058CC18 /* Images.xcassets */; };
 		2C04E5DE238466960058CC18 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C04E5DD238466960058CC18 /* Colors.xcassets */; };
 		2C04E5E3238467DF0058CC18 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04E5E2238467DF0058CC18 /* R.generated.swift */; };
 		2C04E5E72384681B0058CC18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C04E5E62384681B0058CC18 /* LaunchScreen.storyboard */; };
 		2C04E5EB238468770058CC18 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C04E5ED238468770058CC18 /* Localizable.strings */; };
+		B5AB298EAC18C5BDC11E82D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA6A695E75D5608D62A0B7 /* MainViewController.swift */; };
 		DB7BAB3817AB524229887BAB /* Pods_Steam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */; };
+		DC496F443C0AD9D76C153664 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B323C358B179DB307DBD2A2 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B323C358B179DB307DBD2A2 /* MainViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		12DF3066996E27E3E5792621 /* Pods-Steam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.release.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.release.xcconfig"; sourceTree = "<group>"; };
 		2C04E5BB238464D00058CC18 /* Steam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C04E5BE238464D00058CC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C04E5C2238464D00058CC18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C04E5C7238464D20058CC18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C04E5CC238464D20058CC18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C04E5DD238466960058CC18 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -31,6 +32,7 @@
 		2C04E5EE238468790058CC18 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCD7F51A8796E84575DCA8C /* Pods-Steam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.debug.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.debug.xcconfig"; sourceTree = "<group>"; };
+		AFFA6A695E75D5608D62A0B7 /* MainViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040AC7EDD33AD125905A2C5D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AFFA6A695E75D5608D62A0B7 /* MainViewController.swift */,
+				0B323C358B179DB307DBD2A2 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		2C04E5B2238464D00058CC18 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +79,6 @@
 			children = (
 				2C04E5CC238464D20058CC18 /* Info.plist */,
 				2C04E5BE238464D00058CC18 /* AppDelegate.swift */,
-				2C04E5C2238464D00058CC18 /* ViewController.swift */,
 				2C04E5D32384661A0058CC18 /* Business Logic */,
 				2C04E5D9238466630058CC18 /* Extensions */,
 				2C04E5D4238466220058CC18 /* Presentation */,
@@ -109,6 +119,7 @@
 		2C04E5D5238466420058CC18 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				040AC7EDD33AD125905A2C5D /* Main */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -328,9 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C04E5C3238464D00058CC18 /* ViewController.swift in Sources */,
 				2C04E5BF238464D00058CC18 /* AppDelegate.swift in Sources */,
 				2C04E5E3238467DF0058CC18 /* R.generated.swift in Sources */,
+				B5AB298EAC18C5BDC11E82D4 /* MainViewController.swift in Sources */,
+				DC496F443C0AD9D76C153664 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,13 +4,17 @@ PODS:
   - R.swift.Library (5.1.0)
   - StatefulViewController (3.0)
   - TableKit (2.10.0)
+  - Utils (0.0.10)
 
 DEPENDENCIES:
   - R.swift
   - StatefulViewController
   - TableKit
+  - Utils (= 0.0.10)
 
 SPEC REPOS:
+  https://github.com/iznv/Podspecs:
+    - Utils
   trunk:
     - R.swift
     - R.swift.Library
@@ -22,7 +26,8 @@ SPEC CHECKSUMS:
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
   TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
+  Utils: 26785b5241476a3bf7cb653e14fd5ba58bbf76b3
 
-PODFILE CHECKSUM: 9904e83f30df7fa76506a2589d285eda6fcc2a0c
+PODFILE CHECKSUM: aa2849af8d4d38950c9e65d8fcf82c84d72d4e8c
 
 COCOAPODS: 1.8.4

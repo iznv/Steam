@@ -1,0 +1,17 @@
+company: Ivan Zinovev
+project_name: Steam
+
+xcodeproj_path: Steam.xcodeproj
+
+project_target: Steam
+project_file_path: Steam/ViewControllers
+project_group_path: Steam/ViewControllers
+
+catalogs:
+- 'https://github.com/iznv/GenerambaTemplates'
+
+templates:
+- {name: controller}
+- {name: tablecontroller}
+- {name: view}
+- {name: cell}
