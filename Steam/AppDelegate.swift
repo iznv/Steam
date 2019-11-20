@@ -23,11 +23,8 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let vc = ProfileViewController(viewModel: .init())
-        vc.view.backgroundColor = .red
-        
-        window?.rootViewController = vc
+
+        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
         
         return true

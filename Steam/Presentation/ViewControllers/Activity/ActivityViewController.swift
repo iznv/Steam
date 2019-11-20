@@ -1,8 +1,7 @@
-import SteamLogin
 import TableKit
 import Utils
 
-class ProfileViewController: BaseTableViewController<ProfileViewModel> {
+class ActivityViewController: BaseTableViewController<ActivityViewModel> {
     
     // MARK: - Constants
     
@@ -37,9 +36,8 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = R.string.localizable.profileTabTitle()
+        navigationItem.title = R.string.localizable.activityTabTitle()
 
-        viewModel.loadProfileInfo()
     }
 
     // MARK: - Table
@@ -58,7 +56,7 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
 
 // MARK: - Table
 
-private extension ProfileViewController {
+private extension ActivityViewController {
     
     // MARK: - Sections
     
@@ -76,7 +74,7 @@ private extension ProfileViewController {
 
 // MARK: - Actions
 
-private extension ProfileViewController {
+private extension ActivityViewController {
 
     
 
@@ -84,7 +82,7 @@ private extension ProfileViewController {
 
 // MARK: - Constraints
 
-private extension ProfileViewController {
+private extension ActivityViewController {
 
     
 
@@ -92,14 +90,8 @@ private extension ProfileViewController {
 
 // MARK: - Private
 
-private extension ProfileViewController {
+private extension ActivityViewController {
 
-    func login() {
-        SteamLoginVC.login(from: self) { user, error in
-            if let user = user {
-                print(user)
-            }
-        }
-    }
+    
 
 }

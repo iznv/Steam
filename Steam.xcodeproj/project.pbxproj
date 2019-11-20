@@ -25,10 +25,17 @@
 		2C35AD892385B271003161F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD882385B271003161F0 /* Player.swift */; };
 		2C35AD8B2385B5CF003161F0 /* GetPlayerSummariesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD8A2385B5CF003161F0 /* GetPlayerSummariesRequest.swift */; };
 		2C35AD8D2385B6C6003161F0 /* SteamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD8C2385B6C6003161F0 /* SteamResponse.swift */; };
+		2C35AD902385BDFA003161F0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD8F2385BDFA003161F0 /* TabBarController.swift */; };
+		2C35AD942385BE51003161F0 /* UIViewController+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD932385BE51003161F0 /* UIViewController+UINavigationController.swift */; };
+		2C35AD9A2385BEBB003161F0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD992385BEBB003161F0 /* NavigationController.swift */; };
+		2C35ADA02385BF36003161F0 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD9F2385BF36003161F0 /* Tab.swift */; };
+		71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC7A5176461DE60370991F /* ActivityViewController.swift */; };
+		8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077594191B9C555EC0DFF512 /* ActivityViewModel.swift */; };
 		DB7BAB3817AB524229887BAB /* Pods_Steam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		077594191B9C555EC0DFF512 /* ActivityViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		12DF3066996E27E3E5792621 /* Pods-Steam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.release.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.release.xcconfig"; sourceTree = "<group>"; };
 		2C04E5BB238464D00058CC18 /* Steam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C04E5BE238464D00058CC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,10 +56,15 @@
 		2C35AD882385B271003161F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2C35AD8A2385B5CF003161F0 /* GetPlayerSummariesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerSummariesRequest.swift; sourceTree = "<group>"; };
 		2C35AD8C2385B6C6003161F0 /* SteamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamResponse.swift; sourceTree = "<group>"; };
+		2C35AD8F2385BDFA003161F0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2C35AD932385BE51003161F0 /* UIViewController+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UINavigationController.swift"; sourceTree = "<group>"; };
+		2C35AD992385BEBB003161F0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		2C35AD9F2385BF36003161F0 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C57B9639D578059827C0E94 /* ProfileViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8FCD7F51A8796E84575DCA8C /* Pods-Steam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.debug.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.debug.xcconfig"; sourceTree = "<group>"; };
 		99F7CF14D883DC383B49A5CF /* ProfileViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C4CC7A5176461DE60370991F /* ActivityViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CFA047748F357CCE96B8A1E /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC7A5176461DE60370991F /* ActivityViewController.swift */,
+				077594191B9C555EC0DFF512 /* ActivityViewModel.swift */,
+			);
+			name = Activity;
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		2C04E5B2238464D00058CC18 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +143,7 @@
 		2C04E5D4238466220058CC18 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2C35AD9E2385BF2C003161F0 /* Models */,
 				2C04E5D72384664D0058CC18 /* Cells */,
 				2C04E5D5238466420058CC18 /* ViewControllers */,
 				2C04E5D6238466480058CC18 /* Views */,
@@ -131,7 +154,10 @@
 		2C04E5D5238466420058CC18 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2C35AD972385BEA6003161F0 /* Common */,
+				2C35AD8E2385BDE3003161F0 /* TabBar */,
 				84BA9C275CDCF2F4E1534AF4 /* Profile */,
+				1CFA047748F357CCE96B8A1E /* Activity */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +187,7 @@
 		2C04E5D9238466630058CC18 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2C35AD912385BE41003161F0 /* UIKit */,
 				2C04E5F423846D9D0058CC18 /* Swift */,
 				2C35AD7E2385B1A6003161F0 /* TableKit */,
 			);
@@ -263,9 +290,65 @@
 		2C35AD852385B256003161F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2C35AD9B2385BF05003161F0 /* Domain */,
+				2C35AD9D2385BF1F003161F0 /* Responses */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C35AD8E2385BDE3003161F0 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2C35AD8F2385BDFA003161F0 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2C35AD912385BE41003161F0 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				2C35AD922385BE46003161F0 /* UIViewController */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		2C35AD922385BE46003161F0 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2C35AD932385BE51003161F0 /* UIViewController+UINavigationController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		2C35AD972385BEA6003161F0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2C35AD992385BEBB003161F0 /* NavigationController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2C35AD9B2385BF05003161F0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
 				2C35AD882385B271003161F0 /* Player.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2C35AD9D2385BF1F003161F0 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
 				2C35AD862385B260003161F0 /* PlayerSummariesResponse.swift */,
 				2C35AD8C2385B6C6003161F0 /* SteamResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		2C35AD9E2385BF2C003161F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C35AD9F2385BF36003161F0 /* Tab.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,7 +464,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/Steam/Resources/Generated/R.generated.swift,
+				"$SRCROOT/Steam/Resources/Generated/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,7 +518,10 @@
 			files = (
 				2C04E5BF238464D00058CC18 /* AppDelegate.swift in Sources */,
 				2C35AD8D2385B6C6003161F0 /* SteamResponse.swift in Sources */,
+				2C35AD942385BE51003161F0 /* UIViewController+UINavigationController.swift in Sources */,
 				2C04E5F023846D0C0058CC18 /* ApiService.swift in Sources */,
+				2C35AD902385BDFA003161F0 /* TabBarController.swift in Sources */,
+				2C35AD9A2385BEBB003161F0 /* NavigationController.swift in Sources */,
 				2C04E5E3238467DF0058CC18 /* R.generated.swift in Sources */,
 				2C35AD842385B1DF003161F0 /* TableSection+Init.swift in Sources */,
 				2C04E5F223846D670058CC18 /* RequestParameter.swift in Sources */,
@@ -445,8 +531,11 @@
 				2C35AD822385B1CC003161F0 /* TableDirector+Replace.swift in Sources */,
 				2C04E5FC23847D990058CC18 /* Dictionary+Operators.swift in Sources */,
 				2A275F1D74FC4FD55AC7060E /* ProfileViewController.swift in Sources */,
+				2C35ADA02385BF36003161F0 /* Tab.swift in Sources */,
 				2C35AD8B2385B5CF003161F0 /* GetPlayerSummariesRequest.swift in Sources */,
 				029942123EAD319F165FEAC6 /* ProfileViewModel.swift in Sources */,
+				71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */,
+				8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
