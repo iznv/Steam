@@ -19,6 +19,14 @@ private enum Constants {
 }
 
 class ApiService {
+    
+    enum Mocks {
+        
+        static let myId = "76561199004225368"
+        
+        static let somePersonId = "76561197960435530"
+        
+    }
 
     // MARK: - Singleton
 

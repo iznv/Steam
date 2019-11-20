@@ -1,5 +1,5 @@
 //
-//  GetPlayerSummariesRequest.swift
+//  GetRecentlyPlayedGamesRequest.swift
 //  Steam
 //
 //  Created by Ivan Zinovyev on 20/11/2019.
@@ -8,12 +8,12 @@
 
 extension ApiService {
 
-    func getPlayerSummaries(completion: @escaping (PlayerSummariesResponse) -> Void) {
+    func getRecentlyPlayedGames(completion: @escaping (RecentlyPlayedGamesResponse) -> Void) {
         let parameters: [RequestParameter: Any] = [
-            .steamIds: Mocks.myId
+            .steamId: Mocks.myId
         ]
 
-        request(url: "ISteamUser/GetPlayerSummaries/v2",
+        request(url: "IPlayerService/GetRecentlyPlayedGames/v1",
                 with: parameters,
                 needApiKey: true,
                 completion: completion)

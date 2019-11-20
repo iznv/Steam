@@ -8,6 +8,8 @@
 
 enum RequestParameter: String {
 
+    case steamId = "steamid"
+
     case steamIds = "steamids"
 
 }

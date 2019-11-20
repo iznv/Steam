@@ -38,6 +38,7 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         
         navigationItem.title = R.string.localizable.activityTabTitle()
 
+        viewModel.loadActivity()
     }
 
     // MARK: - Table

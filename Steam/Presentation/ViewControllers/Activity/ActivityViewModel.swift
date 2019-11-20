@@ -30,6 +30,18 @@ class ActivityViewModel {
 
 }
 
+// MARK: - Public
+
+extension ActivityViewModel {
+    
+    func loadActivity() {
+        ApiService.shared.getRecentlyPlayedGames { response in
+            print(response)
+        }
+    }
+    
+}
+
 // MARK: - Actions
 
 private extension ActivityViewModel {
