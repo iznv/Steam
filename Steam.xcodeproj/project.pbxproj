@@ -32,6 +32,14 @@
 		2C35ADA22385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADA12385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift */; };
 		2C35ADA42385CA7E003161F0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADA32385CA7E003161F0 /* Game.swift */; };
 		2C35ADA62385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADA52385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift */; };
+		2C35ADA82385CDC8003161F0 /* PersonaState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADA72385CDC8003161F0 /* PersonaState.swift */; };
+		2C35ADAA2385CDE8003161F0 /* CommunityVisibilityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADA92385CDE8003161F0 /* CommunityVisibilityState.swift */; };
+		2C35ADAD2385CE84003161F0 /* SteamUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADAC2385CE84003161F0 /* SteamUserService.swift */; };
+		2C35ADB02385D0CE003161F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADAF2385D0CE003161F0 /* UserProfile.swift */; };
+		2C35ADB22385D418003161F0 /* GetOwnedGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */; };
+		2C35ADB42385D4F5003161F0 /* GetOwnedGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB32385D4F5003161F0 /* GetOwnedGamesResponse.swift */; };
+		2C35ADB62385D58F003161F0 /* OwnedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB52385D58F003161F0 /* OwnedGame.swift */; };
+		2C35ADB92385D766003161F0 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB82385D766003161F0 /* PlayerService.swift */; };
 		71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC7A5176461DE60370991F /* ActivityViewController.swift */; };
 		8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077594191B9C555EC0DFF512 /* ActivityViewModel.swift */; };
 		DB7BAB3817AB524229887BAB /* Pods_Steam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */; };
@@ -66,6 +74,14 @@
 		2C35ADA12385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedGamesResponse.swift; sourceTree = "<group>"; };
 		2C35ADA32385CA7E003161F0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2C35ADA52385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentlyPlayedGamesRequest.swift; sourceTree = "<group>"; };
+		2C35ADA72385CDC8003161F0 /* PersonaState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaState.swift; sourceTree = "<group>"; };
+		2C35ADA92385CDE8003161F0 /* CommunityVisibilityState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVisibilityState.swift; sourceTree = "<group>"; };
+		2C35ADAC2385CE84003161F0 /* SteamUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamUserService.swift; sourceTree = "<group>"; };
+		2C35ADAF2385D0CE003161F0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOwnedGamesRequest.swift; sourceTree = "<group>"; };
+		2C35ADB32385D4F5003161F0 /* GetOwnedGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOwnedGamesResponse.swift; sourceTree = "<group>"; };
+		2C35ADB52385D58F003161F0 /* OwnedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGame.swift; sourceTree = "<group>"; };
+		2C35ADB82385D766003161F0 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C57B9639D578059827C0E94 /* ProfileViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8FCD7F51A8796E84575DCA8C /* Pods-Steam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.debug.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +200,8 @@
 		2C04E5D8238466550058CC18 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2C35ADB72385D75E003161F0 /* PlayerService */,
+				2C35ADAB2385CE75003161F0 /* SteamUserService */,
 				2C04E5F323846D770058CC18 /* ApiService */,
 			);
 			path = Services;
@@ -264,6 +282,7 @@
 			children = (
 				2C35AD8A2385B5CF003161F0 /* GetPlayerSummariesRequest.swift */,
 				2C35ADA52385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift */,
+				2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -296,8 +315,8 @@
 		2C35AD852385B256003161F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2C35ADAE2385D0B1003161F0 /* Api */,
 				2C35AD9B2385BF05003161F0 /* Domain */,
-				2C35AD9D2385BF1F003161F0 /* Responses */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,8 +356,7 @@
 		2C35AD9B2385BF05003161F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				2C35AD882385B271003161F0 /* Player.swift */,
-				2C35ADA32385CA7E003161F0 /* Game.swift */,
+				2C35ADAF2385D0CE003161F0 /* UserProfile.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -349,6 +367,7 @@
 				2C35AD862385B260003161F0 /* PlayerSummariesResponse.swift */,
 				2C35AD8C2385B6C6003161F0 /* SteamResponse.swift */,
 				2C35ADA12385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift */,
+				2C35ADB32385D4F5003161F0 /* GetOwnedGamesResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -359,6 +378,35 @@
 				2C35AD9F2385BF36003161F0 /* Tab.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2C35ADAB2385CE75003161F0 /* SteamUserService */ = {
+			isa = PBXGroup;
+			children = (
+				2C35ADAC2385CE84003161F0 /* SteamUserService.swift */,
+			);
+			path = SteamUserService;
+			sourceTree = "<group>";
+		};
+		2C35ADAE2385D0B1003161F0 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				2C35ADA92385CDE8003161F0 /* CommunityVisibilityState.swift */,
+				2C35ADA32385CA7E003161F0 /* Game.swift */,
+				2C35ADB52385D58F003161F0 /* OwnedGame.swift */,
+				2C35ADA72385CDC8003161F0 /* PersonaState.swift */,
+				2C35AD882385B271003161F0 /* Player.swift */,
+				2C35AD9D2385BF1F003161F0 /* Responses */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		2C35ADB72385D75E003161F0 /* PlayerService */ = {
+			isa = PBXGroup;
+			children = (
+				2C35ADB82385D766003161F0 /* PlayerService.swift */,
+			);
+			path = PlayerService;
 			sourceTree = "<group>";
 		};
 		84BA9C275CDCF2F4E1534AF4 /* Profile */ = {
@@ -528,23 +576,31 @@
 				2C35AD8D2385B6C6003161F0 /* SteamResponse.swift in Sources */,
 				2C35AD942385BE51003161F0 /* UIViewController+UINavigationController.swift in Sources */,
 				2C04E5F023846D0C0058CC18 /* ApiService.swift in Sources */,
+				2C35ADAA2385CDE8003161F0 /* CommunityVisibilityState.swift in Sources */,
+				2C35ADAD2385CE84003161F0 /* SteamUserService.swift in Sources */,
 				2C35AD902385BDFA003161F0 /* TabBarController.swift in Sources */,
 				2C35ADA62385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift in Sources */,
 				2C35AD9A2385BEBB003161F0 /* NavigationController.swift in Sources */,
 				2C04E5E3238467DF0058CC18 /* R.generated.swift in Sources */,
 				2C35AD842385B1DF003161F0 /* TableSection+Init.swift in Sources */,
+				2C35ADB92385D766003161F0 /* PlayerService.swift in Sources */,
 				2C04E5F223846D670058CC18 /* RequestParameter.swift in Sources */,
 				2C35AD892385B271003161F0 /* Player.swift in Sources */,
 				2C04E5F723846DB00058CC18 /* Dictionary+MapPairs.swift in Sources */,
 				2C35AD872385B260003161F0 /* PlayerSummariesResponse.swift in Sources */,
 				2C35AD822385B1CC003161F0 /* TableDirector+Replace.swift in Sources */,
+				2C35ADA82385CDC8003161F0 /* PersonaState.swift in Sources */,
+				2C35ADB02385D0CE003161F0 /* UserProfile.swift in Sources */,
 				2C04E5FC23847D990058CC18 /* Dictionary+Operators.swift in Sources */,
 				2C35ADA22385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift in Sources */,
+				2C35ADB22385D418003161F0 /* GetOwnedGamesRequest.swift in Sources */,
 				2A275F1D74FC4FD55AC7060E /* ProfileViewController.swift in Sources */,
 				2C35ADA02385BF36003161F0 /* Tab.swift in Sources */,
 				2C35ADA42385CA7E003161F0 /* Game.swift in Sources */,
 				2C35AD8B2385B5CF003161F0 /* GetPlayerSummariesRequest.swift in Sources */,
+				2C35ADB62385D58F003161F0 /* OwnedGame.swift in Sources */,
 				029942123EAD319F165FEAC6 /* ProfileViewModel.swift in Sources */,
+				2C35ADB42385D4F5003161F0 /* GetOwnedGamesResponse.swift in Sources */,
 				71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */,
 				8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */,
 			);

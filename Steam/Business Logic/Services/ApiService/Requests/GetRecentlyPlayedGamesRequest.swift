@@ -8,9 +8,11 @@
 
 extension ApiService {
 
-    func getRecentlyPlayedGames(completion: @escaping (RecentlyPlayedGamesResponse) -> Void) {
+    func getRecentlyPlayedGames(steamId: String,
+                                completion: @escaping (RecentlyPlayedGamesResponse) -> Void) {
+        
         let parameters: [RequestParameter: Any] = [
-            .steamId: Mocks.myId
+            .steamId: steamId
         ]
 
         request(url: "IPlayerService/GetRecentlyPlayedGames/v1",

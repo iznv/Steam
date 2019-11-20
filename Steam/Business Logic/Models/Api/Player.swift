@@ -10,7 +10,7 @@ struct Player: Codable {
     
     let steamId: String
     
-    let communityVisibilityState: Int
+    let communityVisibilityState: CommunityVisibilityState
     
     let profileState: Int
     
@@ -26,7 +26,7 @@ struct Player: Codable {
     
     let avatarFull: String
     
-    let personaState: Int
+    let personaState: PersonaState
     
     let realName: String
     

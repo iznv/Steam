@@ -1,14 +1,14 @@
 //
-//  Game.swift
+//  OwnedGame.swift
 //  Steam
 //
 //  Created by Ivan Zinovyev on 20/11/2019.
 //  Copyright © 2019 Ivan Zinovev. All rights reserved.
 //
 
-struct Game: Codable {
+struct OwnedGame: Codable {
     
-    let appid: Int
+    let appId: Int
     
     let name: String
     
@@ -26,13 +26,15 @@ struct Game: Codable {
     
     let playtimeLinuxForever: Int
     
+    let hasCommunityVisibleStats: Bool
+    
 }
 
-private extension Game {
+private extension OwnedGame {
     
     enum CodingKeys: String, CodingKey {
         
-        case appid
+        case appId = "appid"
         
         case name
         
@@ -49,6 +51,8 @@ private extension Game {
         case playtimeMacForever = "playtime_mac_forever"
         
         case playtimeLinuxForever = "playtime_linux_forever"
+        
+        case hasCommunityVisibleStats = "has_community_visible_stats"
         
     }
     

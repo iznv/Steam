@@ -21,6 +21,9 @@ class ProfileViewModel {
     // MARK: - Computed Properties
 
     
+    // MARK: - Services
+    
+    private let steamUserService = SteamUserService()
 
     // MARK: - Init
 
@@ -34,9 +37,9 @@ class ProfileViewModel {
 
 extension ProfileViewModel {
     
-    func loadProfileInfo() {
-        ApiService.shared.getPlayerSummaries { response in
-            print(response)
+    func loadUserProfile() {
+        steamUserService.getUserProfile { profile in
+            print(profile)
         }
     }
     

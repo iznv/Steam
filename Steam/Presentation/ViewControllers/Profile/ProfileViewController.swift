@@ -39,7 +39,7 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         
         navigationItem.title = R.string.localizable.profileTabTitle()
 
-        viewModel.loadProfileInfo()
+        viewModel.loadUserProfile()
     }
 
     // MARK: - Table
