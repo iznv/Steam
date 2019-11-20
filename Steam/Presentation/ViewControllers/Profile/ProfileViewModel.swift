@@ -1,4 +1,4 @@
-class MainViewModel {
+class ProfileViewModel {
     
     // MARK: - Constants
     
@@ -30,9 +30,21 @@ class MainViewModel {
 
 }
 
+// MARK: - Public
+
+extension ProfileViewModel {
+    
+    func loadProfileInfo() {
+        ApiService.shared.getPlayerSummaries { response in
+            print(response)
+        }
+    }
+    
+}
+
 // MARK: - Actions
 
-private extension MainViewModel {
+private extension ProfileViewModel {
 
     
 
@@ -40,7 +52,7 @@ private extension MainViewModel {
 
 // MARK: - Private
 
-private extension MainViewModel {
+private extension ProfileViewModel {
 
     
 
