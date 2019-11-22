@@ -24,7 +24,7 @@ class ApiService {
         
         static let myId = "76561199004225368"
         
-        static let somePersonId = "76561197960435530"
+        static let somePersonId = "76561198204287436"
         
     }
 
@@ -70,9 +70,14 @@ extension ApiService {
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else { return }
-            guard let steamResponse = try? JSONDecoder().decode(SteamResponse<T>.self, from: data) else { return }
-            guard let response = steamResponse.response else { return }
-            completion(response)
+            
+            do {
+                let response = try JSONDecoder().decode(T.self, from: data)
+                completion(response)
+            } catch {
+                print(error as Any)
+                fatalError("Decoding Error")
+            }
         }
 
         task.resume()

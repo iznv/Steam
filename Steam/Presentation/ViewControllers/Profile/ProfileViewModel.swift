@@ -38,7 +38,7 @@ class ProfileViewModel {
 extension ProfileViewModel {
     
     func loadUserProfile() {
-        steamUserService.getUserProfile { profile in
+        steamUserService.getUserProfile(steamId: ApiService.Mocks.somePersonId) { profile in
             print(profile)
         }
     }

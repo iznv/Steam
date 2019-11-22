@@ -38,9 +38,9 @@ struct Player: Codable {
     
     let locCountryCode: String
     
-    let locStateCode: String
+    let locStateCode: String?
     
-    let locCityId: Int
+    let locCityId: Int?
     
 }
 

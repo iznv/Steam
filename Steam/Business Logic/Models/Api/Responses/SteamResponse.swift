@@ -8,6 +8,6 @@
 
 class SteamResponse<T: Codable>: Codable {
 
-    let response: T?
+    let response: T
 
 }

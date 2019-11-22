@@ -1,12 +1,12 @@
 //
-//  GetOwnedGamesResponse.swift
+//  OwnedGamesResponse.swift
 //  Steam
 //
 //  Created by Ivan Zinovyev on 20/11/2019.
 //  Copyright © 2019 Ivan Zinovev. All rights reserved.
 //
 
-struct GetOwnedGamesResponse: Codable {
+struct OwnedGamesResponse: Codable {
     
     let gameCount: Int
     
@@ -14,7 +14,7 @@ struct GetOwnedGamesResponse: Codable {
     
 }
 
-private extension GetOwnedGamesResponse {
+private extension OwnedGamesResponse {
     
     enum CodingKeys: String, CodingKey {
     

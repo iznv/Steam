@@ -21,8 +21,8 @@ class ActivityViewModel {
     // MARK: - Computed Properties
     
     // MARK: - Services
-
-    private let playerService = PlayerService()
+    
+    private let steamPlayerService = SteamPlayerService()
     
     // MARK: - Init
 
@@ -37,12 +37,8 @@ class ActivityViewModel {
 extension ActivityViewModel {
     
     func loadActivity() {
-        playerService.getRecentlyPlayedGames(steamId: ApiService.Mocks.myId) { response in
-            print(response)
-        }
-        
-        playerService.getOwnedGames(steamId: ApiService.Mocks.myId) { response in
-            print(response)
+        steamPlayerService.getRecentlyPlayedGames(steamId: ApiService.Mocks.somePersonId) { games in
+            print(games)
         }
     }
     

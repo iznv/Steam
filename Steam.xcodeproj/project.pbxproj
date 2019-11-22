@@ -37,9 +37,51 @@
 		2C35ADAD2385CE84003161F0 /* SteamUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADAC2385CE84003161F0 /* SteamUserService.swift */; };
 		2C35ADB02385D0CE003161F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADAF2385D0CE003161F0 /* UserProfile.swift */; };
 		2C35ADB22385D418003161F0 /* GetOwnedGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */; };
-		2C35ADB42385D4F5003161F0 /* GetOwnedGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB32385D4F5003161F0 /* GetOwnedGamesResponse.swift */; };
+		2C35ADB42385D4F5003161F0 /* OwnedGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB32385D4F5003161F0 /* OwnedGamesResponse.swift */; };
 		2C35ADB62385D58F003161F0 /* OwnedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB52385D58F003161F0 /* OwnedGame.swift */; };
-		2C35ADB92385D766003161F0 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB82385D766003161F0 /* PlayerService.swift */; };
+		2C35ADB92385D766003161F0 /* SteamPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB82385D766003161F0 /* SteamPlayerService.swift */; };
+		2C5952BA23870D3D00AA1DA6 /* GetSteamLevelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952B923870D3D00AA1DA6 /* GetSteamLevelRequest.swift */; };
+		2C5952BE238710B400AA1DA6 /* GetBadgesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952BD238710B400AA1DA6 /* GetBadgesRequest.swift */; };
+		2C5952C02387112800AA1DA6 /* BadgesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952BF2387112800AA1DA6 /* BadgesResponse.swift */; };
+		2C5952C22387114100AA1DA6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952C12387114100AA1DA6 /* Badge.swift */; };
+		2C5952C42387160300AA1DA6 /* GetCommunityBadgeProgressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952C32387160300AA1DA6 /* GetCommunityBadgeProgressRequest.swift */; };
+		2C5952C62387169C00AA1DA6 /* CommunityBadgeProgressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952C52387169C00AA1DA6 /* CommunityBadgeProgressResponse.swift */; };
+		2C5952C8238716BD00AA1DA6 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952C7238716BD00AA1DA6 /* Quest.swift */; };
+		2C5952CE2387177000AA1DA6 /* SteamLevelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952CD2387177000AA1DA6 /* SteamLevelResponse.swift */; };
+		2C85A556238856DB007DB1BB /* GetNewsForAppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A555238856DB007DB1BB /* GetNewsForAppRequest.swift */; };
+		2C85A5582388586D007DB1BB /* NewsForAppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A5572388586D007DB1BB /* NewsForAppResponse.swift */; };
+		2C85A55A238858A5007DB1BB /* AppNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A559238858A5007DB1BB /* AppNews.swift */; };
+		2C85A55C238858F4007DB1BB /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A55B238858F4007DB1BB /* NewsItem.swift */; };
+		2C85A56023885A47007DB1BB /* SteamNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A55F23885A47007DB1BB /* SteamNewsService.swift */; };
+		2C85A56223885DD8007DB1BB /* GetFriendListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56123885DD8007DB1BB /* GetFriendListRequest.swift */; };
+		2C85A56423885E11007DB1BB /* FriendListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56323885E11007DB1BB /* FriendListResponse.swift */; };
+		2C85A56623885E38007DB1BB /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56523885E38007DB1BB /* FriendsList.swift */; };
+		2C85A56823885E4E007DB1BB /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56723885E4E007DB1BB /* Friend.swift */; };
+		2C85A56A23886047007DB1BB /* UserGroupListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56923886047007DB1BB /* UserGroupListResponse.swift */; };
+		2C85A56C23886067007DB1BB /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56B23886067007DB1BB /* Group.swift */; };
+		2C85A56E238860A0007DB1BB /* GetUserGroupListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56D238860A0007DB1BB /* GetUserGroupListRequest.swift */; };
+		2C85A570238863EC007DB1BB /* GlobalAchievementPercentagesForAppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A56F238863EC007DB1BB /* GlobalAchievementPercentagesForAppResponse.swift */; };
+		2C85A57223886422007DB1BB /* AchievementPercentages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A57123886422007DB1BB /* AchievementPercentages.swift */; };
+		2C85A57423886436007DB1BB /* GlobalAchievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A57323886436007DB1BB /* GlobalAchievement.swift */; };
+		2C85A57623886466007DB1BB /* GetGlobalAchievementPercentagesForAppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A57523886466007DB1BB /* GetGlobalAchievementPercentagesForAppRequest.swift */; };
+		2C85A579238864BE007DB1BB /* SteamUserStatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A578238864BE007DB1BB /* SteamUserStatsService.swift */; };
+		2C85A57B238869F1007DB1BB /* NumberOfCurrentPlayersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A57A238869F1007DB1BB /* NumberOfCurrentPlayersResponse.swift */; };
+		2C85A57D23886A4B007DB1BB /* GetNumberOfCurrentPlayersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A57C23886A4B007DB1BB /* GetNumberOfCurrentPlayersRequest.swift */; };
+		2C85A57F238871FD007DB1BB /* PlayerAchievementsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A57E238871FD007DB1BB /* PlayerAchievementsResponse.swift */; };
+		2C85A58123887230007DB1BB /* PlayerAchievementsPlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A58023887230007DB1BB /* PlayerAchievementsPlayerStats.swift */; };
+		2C85A58323887269007DB1BB /* PlayerAchievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A58223887268007DB1BB /* PlayerAchievement.swift */; };
+		2C85A585238872AA007DB1BB /* GetPlayerAchievementsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A584238872AA007DB1BB /* GetPlayerAchievementsRequest.swift */; };
+		2C85A587238878CC007DB1BB /* SchemaForGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A586238878CC007DB1BB /* SchemaForGameResponse.swift */; };
+		2C85A589238878E6007DB1BB /* GameSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A588238878E6007DB1BB /* GameSchema.swift */; };
+		2C85A58B23887904007DB1BB /* AvailableGameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A58A23887904007DB1BB /* AvailableGameStats.swift */; };
+		2C85A58D2388793C007DB1BB /* SchemaStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A58C2388793C007DB1BB /* SchemaStat.swift */; };
+		2C85A58F2388796D007DB1BB /* SchemaAchievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A58E2388796D007DB1BB /* SchemaAchievement.swift */; };
+		2C85A591238879C3007DB1BB /* GetSchemaForGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A590238879C3007DB1BB /* GetSchemaForGameRequest.swift */; };
+		2C85A59323887ECA007DB1BB /* UserStatsForGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59223887ECA007DB1BB /* UserStatsForGameResponse.swift */; };
+		2C85A59523887EF6007DB1BB /* UserStatsForGamePlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59423887EF6007DB1BB /* UserStatsForGamePlayerStats.swift */; };
+		2C85A59723887F1D007DB1BB /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59623887F1D007DB1BB /* Stat.swift */; };
+		2C85A59923887F2C007DB1BB /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59823887F2C007DB1BB /* Achievement.swift */; };
+		2C85A59B23887F56007DB1BB /* GetUserStatsForGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59A23887F56007DB1BB /* GetUserStatsForGameRequest.swift */; };
 		71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC7A5176461DE60370991F /* ActivityViewController.swift */; };
 		8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077594191B9C555EC0DFF512 /* ActivityViewModel.swift */; };
 		DB7BAB3817AB524229887BAB /* Pods_Steam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */; };
@@ -79,9 +121,51 @@
 		2C35ADAC2385CE84003161F0 /* SteamUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamUserService.swift; sourceTree = "<group>"; };
 		2C35ADAF2385D0CE003161F0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOwnedGamesRequest.swift; sourceTree = "<group>"; };
-		2C35ADB32385D4F5003161F0 /* GetOwnedGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOwnedGamesResponse.swift; sourceTree = "<group>"; };
+		2C35ADB32385D4F5003161F0 /* OwnedGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGamesResponse.swift; sourceTree = "<group>"; };
 		2C35ADB52385D58F003161F0 /* OwnedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGame.swift; sourceTree = "<group>"; };
-		2C35ADB82385D766003161F0 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		2C35ADB82385D766003161F0 /* SteamPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamPlayerService.swift; sourceTree = "<group>"; };
+		2C5952B923870D3D00AA1DA6 /* GetSteamLevelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSteamLevelRequest.swift; sourceTree = "<group>"; };
+		2C5952BD238710B400AA1DA6 /* GetBadgesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBadgesRequest.swift; sourceTree = "<group>"; };
+		2C5952BF2387112800AA1DA6 /* BadgesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesResponse.swift; sourceTree = "<group>"; };
+		2C5952C12387114100AA1DA6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		2C5952C32387160300AA1DA6 /* GetCommunityBadgeProgressRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommunityBadgeProgressRequest.swift; sourceTree = "<group>"; };
+		2C5952C52387169C00AA1DA6 /* CommunityBadgeProgressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityBadgeProgressResponse.swift; sourceTree = "<group>"; };
+		2C5952C7238716BD00AA1DA6 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
+		2C5952CD2387177000AA1DA6 /* SteamLevelResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteamLevelResponse.swift; sourceTree = "<group>"; };
+		2C85A555238856DB007DB1BB /* GetNewsForAppRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNewsForAppRequest.swift; sourceTree = "<group>"; };
+		2C85A5572388586D007DB1BB /* NewsForAppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsForAppResponse.swift; sourceTree = "<group>"; };
+		2C85A559238858A5007DB1BB /* AppNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNews.swift; sourceTree = "<group>"; };
+		2C85A55B238858F4007DB1BB /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		2C85A55F23885A47007DB1BB /* SteamNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamNewsService.swift; sourceTree = "<group>"; };
+		2C85A56123885DD8007DB1BB /* GetFriendListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendListRequest.swift; sourceTree = "<group>"; };
+		2C85A56323885E11007DB1BB /* FriendListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListResponse.swift; sourceTree = "<group>"; };
+		2C85A56523885E38007DB1BB /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
+		2C85A56723885E4E007DB1BB /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		2C85A56923886047007DB1BB /* UserGroupListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupListResponse.swift; sourceTree = "<group>"; };
+		2C85A56B23886067007DB1BB /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		2C85A56D238860A0007DB1BB /* GetUserGroupListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserGroupListRequest.swift; sourceTree = "<group>"; };
+		2C85A56F238863EC007DB1BB /* GlobalAchievementPercentagesForAppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAchievementPercentagesForAppResponse.swift; sourceTree = "<group>"; };
+		2C85A57123886422007DB1BB /* AchievementPercentages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementPercentages.swift; sourceTree = "<group>"; };
+		2C85A57323886436007DB1BB /* GlobalAchievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAchievement.swift; sourceTree = "<group>"; };
+		2C85A57523886466007DB1BB /* GetGlobalAchievementPercentagesForAppRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalAchievementPercentagesForAppRequest.swift; sourceTree = "<group>"; };
+		2C85A578238864BE007DB1BB /* SteamUserStatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamUserStatsService.swift; sourceTree = "<group>"; };
+		2C85A57A238869F1007DB1BB /* NumberOfCurrentPlayersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfCurrentPlayersResponse.swift; sourceTree = "<group>"; };
+		2C85A57C23886A4B007DB1BB /* GetNumberOfCurrentPlayersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNumberOfCurrentPlayersRequest.swift; sourceTree = "<group>"; };
+		2C85A57E238871FD007DB1BB /* PlayerAchievementsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAchievementsResponse.swift; sourceTree = "<group>"; };
+		2C85A58023887230007DB1BB /* PlayerAchievementsPlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAchievementsPlayerStats.swift; sourceTree = "<group>"; };
+		2C85A58223887268007DB1BB /* PlayerAchievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAchievement.swift; sourceTree = "<group>"; };
+		2C85A584238872AA007DB1BB /* GetPlayerAchievementsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerAchievementsRequest.swift; sourceTree = "<group>"; };
+		2C85A586238878CC007DB1BB /* SchemaForGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaForGameResponse.swift; sourceTree = "<group>"; };
+		2C85A588238878E6007DB1BB /* GameSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSchema.swift; sourceTree = "<group>"; };
+		2C85A58A23887904007DB1BB /* AvailableGameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableGameStats.swift; sourceTree = "<group>"; };
+		2C85A58C2388793C007DB1BB /* SchemaStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaStat.swift; sourceTree = "<group>"; };
+		2C85A58E2388796D007DB1BB /* SchemaAchievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaAchievement.swift; sourceTree = "<group>"; };
+		2C85A590238879C3007DB1BB /* GetSchemaForGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSchemaForGameRequest.swift; sourceTree = "<group>"; };
+		2C85A59223887ECA007DB1BB /* UserStatsForGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsForGameResponse.swift; sourceTree = "<group>"; };
+		2C85A59423887EF6007DB1BB /* UserStatsForGamePlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsForGamePlayerStats.swift; sourceTree = "<group>"; };
+		2C85A59623887F1D007DB1BB /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
+		2C85A59823887F2C007DB1BB /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		2C85A59A23887F56007DB1BB /* GetUserStatsForGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserStatsForGameRequest.swift; sourceTree = "<group>"; };
 		670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C57B9639D578059827C0E94 /* ProfileViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8FCD7F51A8796E84575DCA8C /* Pods-Steam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.debug.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,8 +248,8 @@
 		2C04E5D4238466220058CC18 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2C35AD9E2385BF2C003161F0 /* Models */,
 				2C04E5D72384664D0058CC18 /* Cells */,
+				2C35AD9E2385BF2C003161F0 /* Models */,
 				2C04E5D5238466420058CC18 /* ViewControllers */,
 				2C04E5D6238466480058CC18 /* Views */,
 			);
@@ -175,10 +259,10 @@
 		2C04E5D5238466420058CC18 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2C35AD972385BEA6003161F0 /* Common */,
-				2C35AD8E2385BDE3003161F0 /* TabBar */,
-				84BA9C275CDCF2F4E1534AF4 /* Profile */,
 				1CFA047748F357CCE96B8A1E /* Activity */,
+				2C35AD972385BEA6003161F0 /* Common */,
+				84BA9C275CDCF2F4E1534AF4 /* Profile */,
+				2C35AD8E2385BDE3003161F0 /* TabBar */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,8 +284,7 @@
 		2C04E5D8238466550058CC18 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2C35ADB72385D75E003161F0 /* PlayerService */,
-				2C35ADAB2385CE75003161F0 /* SteamUserService */,
+				2C85A55E23885A2B007DB1BB /* Steam */,
 				2C04E5F323846D770058CC18 /* ApiService */,
 			);
 			path = Services;
@@ -210,9 +293,9 @@
 		2C04E5D9238466630058CC18 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2C35AD912385BE41003161F0 /* UIKit */,
 				2C04E5F423846D9D0058CC18 /* Swift */,
 				2C35AD7E2385B1A6003161F0 /* TableKit */,
+				2C35AD912385BE41003161F0 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,9 +336,9 @@
 		2C04E5F323846D770058CC18 /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
-				2C04E5F823846DF30058CC18 /* Requests */,
 				2C04E5EF23846D0C0058CC18 /* ApiService.swift */,
 				2C04E5F123846D670058CC18 /* RequestParameter.swift */,
+				2C04E5F823846DF30058CC18 /* Requests */,
 			);
 			path = ApiService;
 			sourceTree = "<group>";
@@ -280,9 +363,20 @@
 		2C04E5F823846DF30058CC18 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				2C5952BD238710B400AA1DA6 /* GetBadgesRequest.swift */,
+				2C5952C32387160300AA1DA6 /* GetCommunityBadgeProgressRequest.swift */,
+				2C85A56123885DD8007DB1BB /* GetFriendListRequest.swift */,
+				2C85A57523886466007DB1BB /* GetGlobalAchievementPercentagesForAppRequest.swift */,
+				2C85A555238856DB007DB1BB /* GetNewsForAppRequest.swift */,
+				2C85A57C23886A4B007DB1BB /* GetNumberOfCurrentPlayersRequest.swift */,
+				2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */,
+				2C85A584238872AA007DB1BB /* GetPlayerAchievementsRequest.swift */,
 				2C35AD8A2385B5CF003161F0 /* GetPlayerSummariesRequest.swift */,
 				2C35ADA52385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift */,
-				2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */,
+				2C85A590238879C3007DB1BB /* GetSchemaForGameRequest.swift */,
+				2C5952B923870D3D00AA1DA6 /* GetSteamLevelRequest.swift */,
+				2C85A56D238860A0007DB1BB /* GetUserGroupListRequest.swift */,
+				2C85A59A23887F56007DB1BB /* GetUserStatsForGameRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -364,10 +458,21 @@
 		2C35AD9D2385BF1F003161F0 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				2C5952BF2387112800AA1DA6 /* BadgesResponse.swift */,
+				2C5952C52387169C00AA1DA6 /* CommunityBadgeProgressResponse.swift */,
+				2C85A56323885E11007DB1BB /* FriendListResponse.swift */,
+				2C85A56F238863EC007DB1BB /* GlobalAchievementPercentagesForAppResponse.swift */,
+				2C85A5572388586D007DB1BB /* NewsForAppResponse.swift */,
+				2C85A57A238869F1007DB1BB /* NumberOfCurrentPlayersResponse.swift */,
+				2C35ADB32385D4F5003161F0 /* OwnedGamesResponse.swift */,
+				2C85A57E238871FD007DB1BB /* PlayerAchievementsResponse.swift */,
 				2C35AD862385B260003161F0 /* PlayerSummariesResponse.swift */,
-				2C35AD8C2385B6C6003161F0 /* SteamResponse.swift */,
 				2C35ADA12385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift */,
-				2C35ADB32385D4F5003161F0 /* GetOwnedGamesResponse.swift */,
+				2C85A586238878CC007DB1BB /* SchemaForGameResponse.swift */,
+				2C5952CD2387177000AA1DA6 /* SteamLevelResponse.swift */,
+				2C35AD8C2385B6C6003161F0 /* SteamResponse.swift */,
+				2C85A56923886047007DB1BB /* UserGroupListResponse.swift */,
+				2C85A59223887ECA007DB1BB /* UserStatsForGameResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -391,22 +496,67 @@
 		2C35ADAE2385D0B1003161F0 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				2C85A59823887F2C007DB1BB /* Achievement.swift */,
+				2C85A57123886422007DB1BB /* AchievementPercentages.swift */,
+				2C85A559238858A5007DB1BB /* AppNews.swift */,
+				2C85A58A23887904007DB1BB /* AvailableGameStats.swift */,
+				2C5952C12387114100AA1DA6 /* Badge.swift */,
 				2C35ADA92385CDE8003161F0 /* CommunityVisibilityState.swift */,
+				2C85A56723885E4E007DB1BB /* Friend.swift */,
+				2C85A56523885E38007DB1BB /* FriendsList.swift */,
 				2C35ADA32385CA7E003161F0 /* Game.swift */,
+				2C85A588238878E6007DB1BB /* GameSchema.swift */,
+				2C85A57323886436007DB1BB /* GlobalAchievement.swift */,
+				2C85A56B23886067007DB1BB /* Group.swift */,
+				2C85A55B238858F4007DB1BB /* NewsItem.swift */,
 				2C35ADB52385D58F003161F0 /* OwnedGame.swift */,
 				2C35ADA72385CDC8003161F0 /* PersonaState.swift */,
 				2C35AD882385B271003161F0 /* Player.swift */,
+				2C85A58223887268007DB1BB /* PlayerAchievement.swift */,
+				2C85A58023887230007DB1BB /* PlayerAchievementsPlayerStats.swift */,
+				2C5952C7238716BD00AA1DA6 /* Quest.swift */,
+				2C85A58E2388796D007DB1BB /* SchemaAchievement.swift */,
+				2C85A58C2388793C007DB1BB /* SchemaStat.swift */,
+				2C85A59623887F1D007DB1BB /* Stat.swift */,
+				2C85A59423887EF6007DB1BB /* UserStatsForGamePlayerStats.swift */,
 				2C35AD9D2385BF1F003161F0 /* Responses */,
 			);
 			path = Api;
 			sourceTree = "<group>";
 		};
-		2C35ADB72385D75E003161F0 /* PlayerService */ = {
+		2C35ADB72385D75E003161F0 /* SteamPlayerService */ = {
 			isa = PBXGroup;
 			children = (
-				2C35ADB82385D766003161F0 /* PlayerService.swift */,
+				2C35ADB82385D766003161F0 /* SteamPlayerService.swift */,
 			);
-			path = PlayerService;
+			path = SteamPlayerService;
+			sourceTree = "<group>";
+		};
+		2C85A55D23885A23007DB1BB /* SteamNewsService */ = {
+			isa = PBXGroup;
+			children = (
+				2C85A55F23885A47007DB1BB /* SteamNewsService.swift */,
+			);
+			path = SteamNewsService;
+			sourceTree = "<group>";
+		};
+		2C85A55E23885A2B007DB1BB /* Steam */ = {
+			isa = PBXGroup;
+			children = (
+				2C85A55D23885A23007DB1BB /* SteamNewsService */,
+				2C35ADB72385D75E003161F0 /* SteamPlayerService */,
+				2C35ADAB2385CE75003161F0 /* SteamUserService */,
+				2C85A577238864AD007DB1BB /* SteamUserStatsService */,
+			);
+			path = Steam;
+			sourceTree = "<group>";
+		};
+		2C85A577238864AD007DB1BB /* SteamUserStatsService */ = {
+			isa = PBXGroup;
+			children = (
+				2C85A578238864BE007DB1BB /* SteamUserStatsService.swift */,
+			);
+			path = SteamUserStatsService;
 			sourceTree = "<group>";
 		};
 		84BA9C275CDCF2F4E1534AF4 /* Profile */ = {
@@ -572,35 +722,77 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C85A57F238871FD007DB1BB /* PlayerAchievementsResponse.swift in Sources */,
+				2C85A59B23887F56007DB1BB /* GetUserStatsForGameRequest.swift in Sources */,
 				2C04E5BF238464D00058CC18 /* AppDelegate.swift in Sources */,
 				2C35AD8D2385B6C6003161F0 /* SteamResponse.swift in Sources */,
+				2C5952C62387169C00AA1DA6 /* CommunityBadgeProgressResponse.swift in Sources */,
+				2C85A56C23886067007DB1BB /* Group.swift in Sources */,
 				2C35AD942385BE51003161F0 /* UIViewController+UINavigationController.swift in Sources */,
+				2C5952C42387160300AA1DA6 /* GetCommunityBadgeProgressRequest.swift in Sources */,
 				2C04E5F023846D0C0058CC18 /* ApiService.swift in Sources */,
 				2C35ADAA2385CDE8003161F0 /* CommunityVisibilityState.swift in Sources */,
 				2C35ADAD2385CE84003161F0 /* SteamUserService.swift in Sources */,
+				2C85A587238878CC007DB1BB /* SchemaForGameResponse.swift in Sources */,
 				2C35AD902385BDFA003161F0 /* TabBarController.swift in Sources */,
 				2C35ADA62385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift in Sources */,
+				2C85A57D23886A4B007DB1BB /* GetNumberOfCurrentPlayersRequest.swift in Sources */,
 				2C35AD9A2385BEBB003161F0 /* NavigationController.swift in Sources */,
+				2C85A58D2388793C007DB1BB /* SchemaStat.swift in Sources */,
+				2C85A57623886466007DB1BB /* GetGlobalAchievementPercentagesForAppRequest.swift in Sources */,
+				2C85A556238856DB007DB1BB /* GetNewsForAppRequest.swift in Sources */,
 				2C04E5E3238467DF0058CC18 /* R.generated.swift in Sources */,
 				2C35AD842385B1DF003161F0 /* TableSection+Init.swift in Sources */,
-				2C35ADB92385D766003161F0 /* PlayerService.swift in Sources */,
+				2C85A56E238860A0007DB1BB /* GetUserGroupListRequest.swift in Sources */,
+				2C35ADB92385D766003161F0 /* SteamPlayerService.swift in Sources */,
+				2C85A56823885E4E007DB1BB /* Friend.swift in Sources */,
+				2C85A57B238869F1007DB1BB /* NumberOfCurrentPlayersResponse.swift in Sources */,
 				2C04E5F223846D670058CC18 /* RequestParameter.swift in Sources */,
 				2C35AD892385B271003161F0 /* Player.swift in Sources */,
+				2C85A58123887230007DB1BB /* PlayerAchievementsPlayerStats.swift in Sources */,
+				2C85A56023885A47007DB1BB /* SteamNewsService.swift in Sources */,
+				2C5952C02387112800AA1DA6 /* BadgesResponse.swift in Sources */,
+				2C85A55A238858A5007DB1BB /* AppNews.swift in Sources */,
+				2C85A5582388586D007DB1BB /* NewsForAppResponse.swift in Sources */,
 				2C04E5F723846DB00058CC18 /* Dictionary+MapPairs.swift in Sources */,
 				2C35AD872385B260003161F0 /* PlayerSummariesResponse.swift in Sources */,
+				2C5952BA23870D3D00AA1DA6 /* GetSteamLevelRequest.swift in Sources */,
 				2C35AD822385B1CC003161F0 /* TableDirector+Replace.swift in Sources */,
+				2C85A59523887EF6007DB1BB /* UserStatsForGamePlayerStats.swift in Sources */,
+				2C85A591238879C3007DB1BB /* GetSchemaForGameRequest.swift in Sources */,
+				2C85A56223885DD8007DB1BB /* GetFriendListRequest.swift in Sources */,
 				2C35ADA82385CDC8003161F0 /* PersonaState.swift in Sources */,
+				2C85A579238864BE007DB1BB /* SteamUserStatsService.swift in Sources */,
+				2C85A58F2388796D007DB1BB /* SchemaAchievement.swift in Sources */,
+				2C85A57223886422007DB1BB /* AchievementPercentages.swift in Sources */,
 				2C35ADB02385D0CE003161F0 /* UserProfile.swift in Sources */,
+				2C85A56623885E38007DB1BB /* FriendsList.swift in Sources */,
+				2C85A58B23887904007DB1BB /* AvailableGameStats.swift in Sources */,
+				2C85A58323887269007DB1BB /* PlayerAchievement.swift in Sources */,
 				2C04E5FC23847D990058CC18 /* Dictionary+Operators.swift in Sources */,
 				2C35ADA22385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift in Sources */,
+				2C85A57423886436007DB1BB /* GlobalAchievement.swift in Sources */,
+				2C85A56A23886047007DB1BB /* UserGroupListResponse.swift in Sources */,
 				2C35ADB22385D418003161F0 /* GetOwnedGamesRequest.swift in Sources */,
+				2C85A585238872AA007DB1BB /* GetPlayerAchievementsRequest.swift in Sources */,
+				2C5952CE2387177000AA1DA6 /* SteamLevelResponse.swift in Sources */,
+				2C85A59923887F2C007DB1BB /* Achievement.swift in Sources */,
+				2C5952C22387114100AA1DA6 /* Badge.swift in Sources */,
+				2C5952C8238716BD00AA1DA6 /* Quest.swift in Sources */,
+				2C85A56423885E11007DB1BB /* FriendListResponse.swift in Sources */,
 				2A275F1D74FC4FD55AC7060E /* ProfileViewController.swift in Sources */,
+				2C85A55C238858F4007DB1BB /* NewsItem.swift in Sources */,
 				2C35ADA02385BF36003161F0 /* Tab.swift in Sources */,
+				2C85A59723887F1D007DB1BB /* Stat.swift in Sources */,
+				2C85A589238878E6007DB1BB /* GameSchema.swift in Sources */,
 				2C35ADA42385CA7E003161F0 /* Game.swift in Sources */,
 				2C35AD8B2385B5CF003161F0 /* GetPlayerSummariesRequest.swift in Sources */,
 				2C35ADB62385D58F003161F0 /* OwnedGame.swift in Sources */,
+				2C85A570238863EC007DB1BB /* GlobalAchievementPercentagesForAppResponse.swift in Sources */,
 				029942123EAD319F165FEAC6 /* ProfileViewModel.swift in Sources */,
-				2C35ADB42385D4F5003161F0 /* GetOwnedGamesResponse.swift in Sources */,
+				2C85A59323887ECA007DB1BB /* UserStatsForGameResponse.swift in Sources */,
+				2C5952BE238710B400AA1DA6 /* GetBadgesRequest.swift in Sources */,
+				2C35ADB42385D4F5003161F0 /* OwnedGamesResponse.swift in Sources */,
 				71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */,
 				8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */,
 			);

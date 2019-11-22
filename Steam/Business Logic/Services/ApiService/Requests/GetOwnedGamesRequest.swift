@@ -10,7 +10,7 @@ extension ApiService {
 
     func getOwnedGames(steamId: String,
                        includeFree: Bool = true,
-                       completion: @escaping (GetOwnedGamesResponse) -> Void) {
+                       completion: @escaping (SteamResponse<OwnedGamesResponse>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .steamId: steamId,

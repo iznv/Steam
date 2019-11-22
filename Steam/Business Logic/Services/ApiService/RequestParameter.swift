@@ -7,6 +7,12 @@
 //
 
 enum RequestParameter: String {
+    
+    case appId = "appid"
+    
+    case gameId = "gameid"
+    
+    case badgeId = "badgeid"
 
     case steamId = "steamid"
 
@@ -15,5 +21,9 @@ enum RequestParameter: String {
     case includeAppInfo = "include_appinfo"
     
     case includePlayedFreeGames = "include_played_free_games"
+    
+    case endDate = "enddate"
+    
+    case count = "count"
 
 }
