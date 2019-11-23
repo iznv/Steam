@@ -1,7 +1,7 @@
 import TableKit
 import Utils
 
-class UserPicStatusCell: BaseTableViewCell {
+class UserPicCell: BaseTableViewCell {
     
     // MARK: - Constants
     
@@ -33,23 +33,15 @@ class UserPicStatusCell: BaseTableViewCell {
         configureImageViewConstraints()
     }
     
-    // MARK: - Overrides
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        userPicImageView.image = nil
-    }
-    
 }
 
 // MARK: - ConfigureCell
 
-extension UserPicStatusCell: ConfigurableCell {
+extension UserPicCell: ConfigurableCell {
     
     static let estimatedHeight: CGFloat? = 116
     
-    func configure(with viewModel: UserPicStatusCellViewModel) {
+    func configure(with viewModel: UserPicCellViewModel) {
         userPicImageView.loadImage(url: viewModel.userPicUrl)
     }
     
@@ -57,7 +49,7 @@ extension UserPicStatusCell: ConfigurableCell {
 
 // MARK: - Constraints
 
-private extension UserPicStatusCell {
+private extension UserPicCell {
     
     func configureImageViewConstraints() {
         userPicImageView.snp.remakeConstraints { make in

@@ -14,11 +14,11 @@ struct Player: Codable {
     
     let communityVisibilityState: CommunityVisibilityState
     
-    let profileState: Int
+    let profileState: Int?
     
     let personaName: String
     
-    let lastLogOff: Int
+    let lastLogOff: Int?
     
     let profileUrl: String
     
@@ -30,15 +30,15 @@ struct Player: Codable {
     
     let personaState: PersonaState
     
-    let realName: String
+    let realName: String?
     
-    let primaryClanId: String
+    let primaryClanId: String?
     
-    let timeCreated: Date
+    let timeCreated: Date?
     
-    let personaStateFlags: Int
+    let personaStateFlags: Int?
     
-    let locCountryCode: String
+    let locCountryCode: String?
     
     let locStateCode: String?
     

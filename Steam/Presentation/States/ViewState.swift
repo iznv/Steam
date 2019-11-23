@@ -17,6 +17,8 @@ enum ViewState: String, CaseIterable {
     case somethingWrong
     
     case noConnection
+    
+    case empty
 
 }
 
@@ -30,6 +32,8 @@ extension ViewState {
             return makeSomethingWrongView(delegate: delegate)
         case .noConnection:
             return makeNoConnectionView(delegate: delegate)
+        case .empty:
+            return makeEmptyView()
         }
     }
 
@@ -60,6 +64,12 @@ private extension ViewState {
         view.didTapButton = {
             delegate.didTapRetry(view: view)
         }
+        return view
+    }
+    
+    func makeEmptyView() -> UIView {
+        let view = DescriptionStateView()
+        view.stateDescription = R.string.localizable.stateEmptyDescription()
         return view
     }
 

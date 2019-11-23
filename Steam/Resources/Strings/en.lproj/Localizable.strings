@@ -1,5 +1,9 @@
+"Games" = "Games";
+"Friends" = "Friends";
+
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
+"StateEmptyDescription" = "Empty here";
 "StateRetry" = "Retry";
 
 "ProfileTabTitle" = "Profile";
@@ -21,6 +25,3 @@
 
 "ProfileBadges" = "Badges";
 "ProfileGroups" = "Groups";
-
-"ProfileItemGames" = "Games";
-"ProfileItemFriends" = "Friends";

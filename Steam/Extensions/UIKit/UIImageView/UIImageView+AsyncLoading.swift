@@ -28,14 +28,18 @@ extension UIImageView {
         imageURL = url
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            guard let sSelf = self else { return }
+            guard let self = self else { return }
             
             if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
-                guard url == sSelf.imageURL else { return }
+                guard url == self.imageURL else { return }
                 DispatchQueue.main.async {
-                    sSelf.image = cachedImage
+                    self.image = cachedImage
                 }
                 return
+            }
+            
+            DispatchQueue.main.async {
+                self.image = nil
             }
             
             guard let data = try? Data(contentsOf: url) else { return }
@@ -43,12 +47,12 @@ extension UIImageView {
             guard let image = UIImage(data: data) else { return }
             imageCache.setObject(image, forKey: url.absoluteString as NSString)
             
-            guard url == sSelf.imageURL else { return }
+            guard url == self.imageURL else { return }
             DispatchQueue.main.async {
-                UIView.transition(with: sSelf,
+                UIView.transition(with: self,
                                   duration: 0.3,
                                   options: .transitionCrossDissolve,
-                                  animations: { sSelf.image = image },
+                                  animations: { self.image = image },
                                   completion: nil)
             }
         }

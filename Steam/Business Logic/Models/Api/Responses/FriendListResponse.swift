@@ -8,7 +8,7 @@
 
 struct FriendListResponse: Codable {
     
-    let friendsList: FriendsList
+    let friendsList: FriendsList?
 
 }
 

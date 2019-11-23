@@ -10,6 +10,6 @@ struct UserGroupListResponse: Codable {
     
     let success: Bool
     
-    let groups: [Group]
+    let groups: [Group]?
 
 }

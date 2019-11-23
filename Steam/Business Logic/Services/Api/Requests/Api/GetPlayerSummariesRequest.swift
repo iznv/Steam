@@ -8,11 +8,11 @@
 
 extension ApiService {
 
-    func getPlayerSummaries(steamId: String,
+    func getPlayerSummaries(steamIds: String,
                             completion: @escaping (Result<SteamResponse<PlayerSummariesResponse>, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
-            .steamIds: steamId
+            .steamIds: steamIds
         ]
 
         request(url: "ISteamUser/GetPlayerSummaries/v2",

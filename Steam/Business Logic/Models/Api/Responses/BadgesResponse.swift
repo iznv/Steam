@@ -10,13 +10,13 @@ struct BadgesResponse: Codable {
     
     let badges: [Badge]?
     
-    let playerXP: Int
+    let playerXP: Int?
     
-    let playerLevel: Int
+    let playerLevel: Int?
     
-    let playerXPNeededToLevelUp: Int
+    let playerXPNeededToLevelUp: Int?
     
-    let playerXPNeededCurrentLevel: Int
+    let playerXPNeededCurrentLevel: Int?
     
 }
 

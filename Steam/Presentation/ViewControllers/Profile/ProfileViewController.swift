@@ -158,11 +158,16 @@ private extension ProfileViewController {
         return [
             TableRow<TitleDisclosureCell>(item: viewModel.gamesViewModel),
             TableRow<TitleDisclosureCell>(item: viewModel.friendsViewModel)
+                .on(.click) { [weak self] _ in
+                    guard let steamId = self?.viewModel.steamId else { return }
+                    let friendsViewController = FriendsViewController(viewModel: .init(steamId: steamId))
+                    self?.navigationController?.pushViewController(friendsViewController, animated: true)
+                }
         ]
     }
     
     var userPicRow: Row? {
-        return viewModel.userPicViewModel.map { TableRow<UserPicStatusCell>(item: $0) }
+        return viewModel.userPicViewModel.map { TableRow<UserPicCell>(item: $0) }
     }
     
     var levelRow: Row? {

@@ -17,6 +17,8 @@ class ProfileViewModel: BaseControllerViewModel {
     }
     
     // MARK: - Properties
+    
+    let steamId: String?
 
     private var player: Player?
     
@@ -24,7 +26,7 @@ class ProfileViewModel: BaseControllerViewModel {
     
     private var groupsCount: Int?
     
-    // MARK: - Event
+    // MARK: - Events
     
     var didGetProfile: (() -> Void)?
     
@@ -46,8 +48,8 @@ class ProfileViewModel: BaseControllerViewModel {
         return countryCode.map { CountryCellViewModel(countryCode: $0) }
     }
     
-    var userPicViewModel: UserPicStatusCellViewModel? {
-        return player.map { UserPicStatusCellViewModel(userPicUrl: $0.avatarFull) }
+    var userPicViewModel: UserPicCellViewModel? {
+        return player.map { UserPicCellViewModel(userPicUrl: $0.avatarFull) }
     }
     
     var userStatusViewModel: TextCellViewModel? {
@@ -55,12 +57,19 @@ class ProfileViewModel: BaseControllerViewModel {
     }
     
     var levelViewModel: LevelCellViewModel? {
-        return badgesResponse.map {
-            LevelCellViewModel(level: $0.playerLevel,
-                               xpTotal: $0.playerXP,
-                               xpLeft: $0.playerXPNeededToLevelUp,
-                               xpCurrentLevel: $0.playerXPNeededCurrentLevel)
+        guard let response = badgesResponse else { return nil }
+        
+        guard let playerLevel = response.playerLevel,
+              let playerXP = response.playerXP,
+              let playerXPNeededToLevelUp = response.playerXPNeededToLevelUp,
+              let playerXPNeededCurrentLevel = response.playerXPNeededCurrentLevel else {
+            return nil
         }
+            
+        return LevelCellViewModel(level: playerLevel,
+                                  xpTotal: playerXP,
+                                  xpLeft: playerXPNeededToLevelUp,
+                                  xpCurrentLevel: playerXPNeededCurrentLevel)
     }
     
     var valuesViewModel: TitleValueCollectionCellViewModel? {
@@ -77,9 +86,9 @@ class ProfileViewModel: BaseControllerViewModel {
         return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)
     }
     
-    let gamesViewModel = TitleDisclosureCellViewModel(title: R.string.localizable.profileItemGames())
+    let gamesViewModel = TitleDisclosureCellViewModel(title: R.string.localizable.games())
     
-    let friendsViewModel = TitleDisclosureCellViewModel(title: R.string.localizable.profileItemFriends())
+    let friendsViewModel = TitleDisclosureCellViewModel(title: R.string.localizable.friends())
 
     // MARK: - Computed Properties
     
@@ -93,7 +102,9 @@ class ProfileViewModel: BaseControllerViewModel {
     
     private var createdDate: String? {
         guard let player = player else { return nil }
-        let date = DateFormatter.commomDateFormatter.string(from: player.timeCreated)
+        guard let timeCreated = player.timeCreated else { return nil }
+        
+        let date = DateFormatter.commomDateFormatter.string(from: timeCreated)
         return R.string.localizable.profileCreatedDate(date)
     }
     
@@ -109,8 +120,8 @@ class ProfileViewModel: BaseControllerViewModel {
 
     // MARK: - Init
 
-    override init() {
-        
+    init(steamId: String? = nil) {
+        self.steamId = steamId ?? ApiService.Mocks.somePersonId
     }
 
 }
@@ -120,16 +131,16 @@ class ProfileViewModel: BaseControllerViewModel {
 extension ProfileViewModel {
     
     func loadUserProfile() {
+        guard let steamId = steamId else { return }
+        
         player = nil
         badgesResponse = nil
         groupsCount = nil
         
-        let steamId = ApiService.Mocks.somePersonId
-        
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        steamUserService.getUserProfile(steamId: steamId) { [weak self] result in
+        steamUserService.getPlayerSummaries(steamId: steamId) { [weak self] result in
             switch result {
             case let .success(players):
                 self?.player = players.first

@@ -8,13 +8,46 @@
 
 import Foundation
 
+private enum Constants {
+    
+    static let maxIdsToRequestSummaries = 100
+    
+}
+
 class SteamUserService {
     
-    func getUserProfile(steamId: String,
-                        completion: @escaping (Result<[Player], ApiService.Error>) -> Void) {
+    func getPlayerSummaries(steamId: String,
+                            completion: @escaping (Result<[Player], ApiService.Error>) -> Void) {
         
-        ApiService.shared.getPlayerSummaries(steamId: steamId) {
+        ApiService.shared.getPlayerSummaries(steamIds: steamId) {
             completion($0.map { $0.response.players })
+        }
+    }
+    
+    func getPlayerSummaries(steamIds: [String],
+                            completion: @escaping (Result<[Player], ApiService.Error>) -> Void) {
+        
+        let chunks = steamIds.chunked(into: Constants.maxIdsToRequestSummaries)
+        var players = [Player]()
+        
+        let dispatchGroup = DispatchGroup()
+        
+        chunks.forEach { friendsChunk in
+            dispatchGroup.enter()
+            
+            let ids = friendsChunk.joined(separator: String.comma)
+            
+            ApiService.shared.getPlayerSummaries(steamIds: ids) { result in
+                if case let .success(summaries) = result {
+                    players.append(contentsOf: summaries.response.players)
+                }
+
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: DispatchQueue.global(qos: .userInitiated)) {
+            completion(.success(players))
         }
     }
     
@@ -22,7 +55,7 @@ class SteamUserService {
                        completion: @escaping (Result<[Friend], ApiService.Error>) -> Void) {
         
         ApiService.shared.getFriendList(steamId: steamId) {
-            completion($0.map { $0.friendsList.friends })
+            completion($0.map { $0.friendsList?.friends ?? [] })
         }
     }
     
@@ -32,7 +65,7 @@ class SteamUserService {
         ApiService.shared.getUserGroupList(steamId: steamId) {
             if case let .success(data) = $0 {
                 if data.response.success {
-                    completion($0.map { $0.response.groups })
+                    completion($0.map { $0.response.groups ?? [] })
                 } else {
                     completion($0.map { _ in [] })
                 }

@@ -8,7 +8,7 @@
 
 struct Friend: Codable {
     
-    let steamid: String
+    let steamId: String
     
     let relationship: String
     
@@ -20,7 +20,7 @@ private extension Friend {
 
     enum CodingKeys: String, CodingKey {
         
-        case steamid
+        case steamId = "steamid"
         
         case relationship
         

@@ -10,6 +10,8 @@ enum CommunityVisibilityState: Int, Codable {
     
     case `private` = 1
     
+    case unknown = 2
+    
     case `public` = 3
     
 }

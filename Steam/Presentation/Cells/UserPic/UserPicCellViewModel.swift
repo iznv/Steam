@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserPicStatusCellViewModel {
+struct UserPicCellViewModel {
     
     // MARK: - Properties
 
