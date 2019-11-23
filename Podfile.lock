@@ -1,7 +1,9 @@
 PODS:
+  - FlagKit (2.2)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
+  - SnapKit (5.0.1)
   - StatefulViewController (3.0)
   - SteamLogin (0.1.4):
     - SteamLogin/Login (= 0.1.4)
@@ -10,7 +12,9 @@ PODS:
   - Utils (0.0.10)
 
 DEPENDENCIES:
+  - FlagKit
   - R.swift
+  - SnapKit
   - StatefulViewController
   - SteamLogin
   - TableKit
@@ -20,20 +24,24 @@ SPEC REPOS:
   https://github.com/iznv/Podspecs:
     - Utils
   trunk:
+    - FlagKit
     - R.swift
     - R.swift.Library
+    - SnapKit
     - StatefulViewController
     - SteamLogin
     - TableKit
 
 SPEC CHECKSUMS:
+  FlagKit: eca7dc89064b0c986302ba9acefad1bf80a435b1
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
   SteamLogin: 86eee7733cfaa417242671524f39561b0c22700c
   TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
   Utils: 26785b5241476a3bf7cb653e14fd5ba58bbf76b3
 
-PODFILE CHECKSUM: 94df09f761b12a8a6688d5008a03c068bea48587
+PODFILE CHECKSUM: b0eacda5423b63aa0c5fda1950f0806b3af8c6bb
 
 COCOAPODS: 1.8.4

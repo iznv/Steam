@@ -11,10 +11,10 @@ import Foundation
 class SteamUserService {
     
     func getUserProfile(steamId: String,
-                        completion: @escaping (UserProfile) -> Void) {
+                        completion: @escaping ([Player]) -> Void) {
         
-        ApiService.shared.getPlayerSummaries(steamId: steamId) { [weak self] in
-            self?.didGetPlayerSummaries(response: $0.response, completion: completion)
+        ApiService.shared.getPlayerSummaries(steamId: steamId) {
+            completion($0.response.players)
         }
     }
     
@@ -36,26 +36,6 @@ class SteamUserService {
                 completion([])
             }
         }
-    }
-    
-}
-
-// MARK: - Private
-
-private extension SteamUserService {
- 
-    func didGetPlayerSummaries(response: PlayerSummariesResponse,
-                               completion: (UserProfile) -> Void) {
-        
-        guard let player = response.players.first else { return }
-        
-        let userProfile = UserProfile(userName: player.personaName,
-                                      realName: player.realName,
-                                      avatarUrl: URL(string: player.avatarFull),
-                                      isPrivate: player.communityVisibilityState == .private,
-                                      onlineStatus: player.personaState)
-        
-        completion(userProfile)
     }
     
 }

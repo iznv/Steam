@@ -6,6 +6,8 @@
 //  Copyright © 2019 Ivan Zinovev. All rights reserved.
 //
 
+import Foundation
+
 struct Player: Codable {
     
     let steamId: String
@@ -32,7 +34,7 @@ struct Player: Codable {
     
     let primaryClanId: String
     
-    let timeCreated: Int
+    let timeCreated: Date
     
     let personaStateFlags: Int
     

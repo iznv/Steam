@@ -1,2 +1,22 @@
 "ProfileTabTitle" = "Profile";
 "ActivityTabTitle" = "Activity";
+
+"ProfileCreatedDate" = "Created %@";
+
+"ProfileLevelValue" = "Level %@";
+"ProfileLevelXPTotal" = "%@ XP";
+"ProfileLevelXPLeft" = "%@ XP to reach next level";
+
+"ProfileOnlineStatusOffline" = "Offline";
+"ProfileOnlineStatusOnline" = "Online";
+"ProfileOnlineStatusBusy" = "Busy";
+"ProfileOnlineStatusAway" = "Away";
+"ProfileOnlineStatusSnooze" = "Snooze";
+"ProfileOnlineStatusLookingToTrade" = "Looking to trade";
+"ProfileOnlineStatusLookingToPlay" = "Looking to play";
+
+"ProfileBadges" = "Badges";
+"ProfileGroups" = "Groups";
+
+"ProfileItemGames" = "Games";
+"ProfileItemFriends" = "Friends";

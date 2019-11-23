@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023F44A9FF68F2B483914BDF /* TitleValueCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8251237094B37F664D4B9A /* TitleValueCollectionCell.swift */; };
 		029942123EAD319F165FEAC6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7CF14D883DC383B49A5CF /* ProfileViewModel.swift */; };
+		2086C2099341327D8B9C522E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAEF0D528039773DFB7AEF /* TextCell.swift */; };
 		2A275F1D74FC4FD55AC7060E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C57B9639D578059827C0E94 /* ProfileViewController.swift */; };
 		2C04E5BF238464D00058CC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04E5BE238464D00058CC18 /* AppDelegate.swift */; };
 		2C04E5C8238464D20058CC18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C04E5C7238464D20058CC18 /* Images.xcassets */; };
@@ -35,7 +37,6 @@
 		2C35ADA82385CDC8003161F0 /* PersonaState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADA72385CDC8003161F0 /* PersonaState.swift */; };
 		2C35ADAA2385CDE8003161F0 /* CommunityVisibilityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADA92385CDE8003161F0 /* CommunityVisibilityState.swift */; };
 		2C35ADAD2385CE84003161F0 /* SteamUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADAC2385CE84003161F0 /* SteamUserService.swift */; };
-		2C35ADB02385D0CE003161F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADAF2385D0CE003161F0 /* UserProfile.swift */; };
 		2C35ADB22385D418003161F0 /* GetOwnedGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */; };
 		2C35ADB42385D4F5003161F0 /* OwnedGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB32385D4F5003161F0 /* OwnedGamesResponse.swift */; };
 		2C35ADB62385D58F003161F0 /* OwnedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB52385D58F003161F0 /* OwnedGame.swift */; };
@@ -56,6 +57,10 @@
 		2C41F71F23893B0E006EC815 /* AppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F71E23893B0E006EC815 /* AppList.swift */; };
 		2C41F72123893B1C006EC815 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F72023893B1C006EC815 /* App.swift */; };
 		2C41F72423893B41006EC815 /* SteamAppsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F72323893B41006EC815 /* SteamAppsService.swift */; };
+		2C41F7282389572B006EC815 /* CGFloat+GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F7272389572B006EC815 /* CGFloat+GlobalConstants.swift */; };
+		2C41F72A23895ECD006EC815 /* TitleValueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F72923895ECD006EC815 /* TitleValueItem.swift */; };
+		2C41F72D2389656B006EC815 /* UIImageView+AsyncLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F72C2389656B006EC815 /* UIImageView+AsyncLoading.swift */; };
+		2C41F734238972BE006EC815 /* DateFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F733238972BE006EC815 /* DateFormatter+Formatters.swift */; };
 		2C5952BA23870D3D00AA1DA6 /* GetSteamLevelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952B923870D3D00AA1DA6 /* GetSteamLevelRequest.swift */; };
 		2C5952BE238710B400AA1DA6 /* GetBadgesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952BD238710B400AA1DA6 /* GetBadgesRequest.swift */; };
 		2C5952C02387112800AA1DA6 /* BadgesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5952BF2387112800AA1DA6 /* BadgesResponse.swift */; };
@@ -98,12 +103,25 @@
 		2C85A59723887F1D007DB1BB /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59623887F1D007DB1BB /* Stat.swift */; };
 		2C85A59923887F2C007DB1BB /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59823887F2C007DB1BB /* Achievement.swift */; };
 		2C85A59B23887F56007DB1BB /* GetUserStatsForGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59A23887F56007DB1BB /* GetUserStatsForGameRequest.swift */; };
+		3356D28018F0BEDA57B1C9D3 /* TitleValueCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC6AC75056FA614F0B130B /* TitleValueCollectionCellViewModel.swift */; };
+		4364B395FE62928D57D6DAA1 /* TextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CDBAD0287688016429DDC0 /* TextCellViewModel.swift */; };
+		45E037F118EAABEFFA42E028 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74546FCA02C1B6D13BCAC947 /* CountryCell.swift */; };
+		4B4CAF83F23E58ED51CABB9B /* LevelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */; };
+		6B97B3813CDBAB19DC94D76F /* TitleDisclosureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3EB25D1889321778F664F /* TitleDisclosureCellViewModel.swift */; };
 		71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC7A5176461DE60370991F /* ActivityViewController.swift */; };
+		7B52238339E78F96FC8088E0 /* UserPicStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B41DED2C4E2748330CBBD7 /* UserPicStatusCell.swift */; };
+		80C0A69CE1D167B2CAB7411D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FF98A35D244C1D84BD1E0 /* ProgressView.swift */; };
+		83FF4BB72956FA228363A03E /* UserPicStatusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D0FD0419E4C48C7484ED1 /* UserPicStatusCellViewModel.swift */; };
 		8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077594191B9C555EC0DFF512 /* ActivityViewModel.swift */; };
+		B92A7449C4BCD542FB663ED2 /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFE30504AD8844ED9C6916B /* LevelCell.swift */; };
+		C35B081949C0BB0967F7736B /* TitleValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E097107A2380ED6980CD47 /* TitleValueView.swift */; };
+		CE3005E2D81397B29E45324E /* TitleDisclosureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86178C71B7ACC737DD351E /* TitleDisclosureCell.swift */; };
+		D783982B33AE286FC8E6DE8E /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4C6ABB7026379CAC9AFCB /* CountryCellViewModel.swift */; };
 		DB7BAB3817AB524229887BAB /* Pods_Steam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02E4C6ABB7026379CAC9AFCB /* CountryCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
 		077594191B9C555EC0DFF512 /* ActivityViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		12DF3066996E27E3E5792621 /* Pods-Steam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.release.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.release.xcconfig"; sourceTree = "<group>"; };
 		2C04E5BB238464D00058CC18 /* Steam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +132,6 @@
 		2C04E5E2238467DF0058CC18 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2C04E5E62384681B0058CC18 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C04E5EC238468770058CC18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2C04E5EE238468790058CC18 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C04E5EF23846D0C0058CC18 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		2C04E5F123846D670058CC18 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
 		2C04E5F623846DB00058CC18 /* Dictionary+MapPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+MapPairs.swift"; sourceTree = "<group>"; };
@@ -135,7 +152,6 @@
 		2C35ADA72385CDC8003161F0 /* PersonaState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaState.swift; sourceTree = "<group>"; };
 		2C35ADA92385CDE8003161F0 /* CommunityVisibilityState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVisibilityState.swift; sourceTree = "<group>"; };
 		2C35ADAC2385CE84003161F0 /* SteamUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamUserService.swift; sourceTree = "<group>"; };
-		2C35ADAF2385D0CE003161F0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOwnedGamesRequest.swift; sourceTree = "<group>"; };
 		2C35ADB32385D4F5003161F0 /* OwnedGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGamesResponse.swift; sourceTree = "<group>"; };
 		2C35ADB52385D58F003161F0 /* OwnedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGame.swift; sourceTree = "<group>"; };
@@ -156,6 +172,10 @@
 		2C41F71E23893B0E006EC815 /* AppList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppList.swift; sourceTree = "<group>"; };
 		2C41F72023893B1C006EC815 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		2C41F72323893B41006EC815 /* SteamAppsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamAppsService.swift; sourceTree = "<group>"; };
+		2C41F7272389572B006EC815 /* CGFloat+GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+GlobalConstants.swift"; sourceTree = "<group>"; };
+		2C41F72923895ECD006EC815 /* TitleValueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueItem.swift; sourceTree = "<group>"; };
+		2C41F72C2389656B006EC815 /* UIImageView+AsyncLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AsyncLoading.swift"; sourceTree = "<group>"; };
+		2C41F733238972BE006EC815 /* DateFormatter+Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Formatters.swift"; sourceTree = "<group>"; };
 		2C5952B923870D3D00AA1DA6 /* GetSteamLevelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSteamLevelRequest.swift; sourceTree = "<group>"; };
 		2C5952BD238710B400AA1DA6 /* GetBadgesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBadgesRequest.swift; sourceTree = "<group>"; };
 		2C5952BF2387112800AA1DA6 /* BadgesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesResponse.swift; sourceTree = "<group>"; };
@@ -198,11 +218,24 @@
 		2C85A59623887F1D007DB1BB /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		2C85A59823887F2C007DB1BB /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		2C85A59A23887F56007DB1BB /* GetUserStatsForGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserStatsForGameRequest.swift; sourceTree = "<group>"; };
+		40DAEF0D528039773DFB7AEF /* TextCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		479FF98A35D244C1D84BD1E0 /* ProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74546FCA02C1B6D13BCAC947 /* CountryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		79A3EB25D1889321778F664F /* TitleDisclosureCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleDisclosureCellViewModel.swift; sourceTree = "<group>"; };
 		7C57B9639D578059827C0E94 /* ProfileViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7D8251237094B37F664D4B9A /* TitleValueCollectionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleValueCollectionCell.swift; sourceTree = "<group>"; };
 		8FCD7F51A8796E84575DCA8C /* Pods-Steam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.debug.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.debug.xcconfig"; sourceTree = "<group>"; };
 		99F7CF14D883DC383B49A5CF /* ProfileViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		9F86178C71B7ACC737DD351E /* TitleDisclosureCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleDisclosureCell.swift; sourceTree = "<group>"; };
+		B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelCellViewModel.swift; sourceTree = "<group>"; };
 		C4CC7A5176461DE60370991F /* ActivityViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		C9DC6AC75056FA614F0B130B /* TitleValueCollectionCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleValueCollectionCellViewModel.swift; sourceTree = "<group>"; };
+		CDFE30504AD8844ED9C6916B /* LevelCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
+		CF3D0FD0419E4C48C7484ED1 /* UserPicStatusCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserPicStatusCellViewModel.swift; sourceTree = "<group>"; };
+		D5CDBAD0287688016429DDC0 /* TextCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextCellViewModel.swift; sourceTree = "<group>"; };
+		D6B41DED2C4E2748330CBBD7 /* UserPicStatusCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserPicStatusCell.swift; sourceTree = "<group>"; };
+		F4E097107A2380ED6980CD47 /* TitleValueView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleValueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +250,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181D3B6E4C169480373EE8EF /* TitleValue */ = {
+			isa = PBXGroup;
+			children = (
+				F4E097107A2380ED6980CD47 /* TitleValueView.swift */,
+			);
+			path = TitleValue;
+			sourceTree = "<group>";
+		};
 		1CFA047748F357CCE96B8A1E /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +343,8 @@
 		2C04E5D6238466480058CC18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				181D3B6E4C169480373EE8EF /* TitleValue */,
+				FF4D2214B1937B95B3AEC4CC /* Progress */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +352,12 @@
 		2C04E5D72384664D0058CC18 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F35CC655A92410DE8C40C463 /* Text */,
+				A55ABB69F70C5B5EAB530AEB /* Country */,
+				2F12A48F249442A390FB86C5 /* TitleValueCollection */,
+				8B14DD8A9B63A4DF8F891DA2 /* TitleDisclosure */,
+				AA73DA0B7BC6D69504FBB7A5 /* UserPicStatus */,
+				6F03DC408341175B4868F813 /* Level */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -316,6 +365,7 @@
 		2C04E5D8238466550058CC18 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2C41F72E238971F4006EC815 /* Formatting */,
 				2C85A55E23885A2B007DB1BB /* Steam */,
 				2C04E5F323846D770058CC18 /* Api */,
 			);
@@ -325,6 +375,7 @@
 		2C04E5D9238466630058CC18 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2C41F72523895717006EC815 /* CoreGraphics */,
 				2C04E5F423846D9D0058CC18 /* Swift */,
 				2C35AD7E2385B1A6003161F0 /* TableKit */,
 				2C35AD912385BE41003161F0 /* UIKit */,
@@ -430,7 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				2C35ADAE2385D0B1003161F0 /* Api */,
-				2C35AD9B2385BF05003161F0 /* Domain */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -446,6 +496,8 @@
 		2C35AD912385BE41003161F0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				2C41F732238972AE006EC815 /* DateFormatter */,
+				2C41F72B2389655F006EC815 /* UIImageView */,
 				2C35AD922385BE46003161F0 /* UIViewController */,
 			);
 			path = UIKit;
@@ -465,14 +517,6 @@
 				2C35AD992385BEBB003161F0 /* NavigationController.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		2C35AD9B2385BF05003161F0 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				2C35ADAF2385D0CE003161F0 /* UserProfile.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		2C35AD9D2385BF1F003161F0 /* Responses */ = {
@@ -503,6 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				2C35AD9F2385BF36003161F0 /* Tab.swift */,
+				2C41F72923895ECD006EC815 /* TitleValueItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -610,6 +655,45 @@
 			path = SteamAppsService;
 			sourceTree = "<group>";
 		};
+		2C41F72523895717006EC815 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				2C41F7262389571E006EC815 /* CGFloat */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		2C41F7262389571E006EC815 /* CGFloat */ = {
+			isa = PBXGroup;
+			children = (
+				2C41F7272389572B006EC815 /* CGFloat+GlobalConstants.swift */,
+			);
+			path = CGFloat;
+			sourceTree = "<group>";
+		};
+		2C41F72B2389655F006EC815 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				2C41F72C2389656B006EC815 /* UIImageView+AsyncLoading.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		2C41F72E238971F4006EC815 /* Formatting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Formatting;
+			sourceTree = "<group>";
+		};
+		2C41F732238972AE006EC815 /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				2C41F733238972BE006EC815 /* DateFormatter+Formatters.swift */,
+			);
+			path = DateFormatter;
+			sourceTree = "<group>";
+		};
 		2C85A55D23885A23007DB1BB /* SteamNewsService */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +723,24 @@
 			path = SteamUserStatsService;
 			sourceTree = "<group>";
 		};
+		2F12A48F249442A390FB86C5 /* TitleValueCollection */ = {
+			isa = PBXGroup;
+			children = (
+				7D8251237094B37F664D4B9A /* TitleValueCollectionCell.swift */,
+				C9DC6AC75056FA614F0B130B /* TitleValueCollectionCellViewModel.swift */,
+			);
+			path = TitleValueCollection;
+			sourceTree = "<group>";
+		};
+		6F03DC408341175B4868F813 /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				CDFE30504AD8844ED9C6916B /* LevelCell.swift */,
+				B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */,
+			);
+			path = Level;
+			sourceTree = "<group>";
+		};
 		84BA9C275CDCF2F4E1534AF4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,6 +748,15 @@
 				99F7CF14D883DC383B49A5CF /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		8B14DD8A9B63A4DF8F891DA2 /* TitleDisclosure */ = {
+			isa = PBXGroup;
+			children = (
+				9F86178C71B7ACC737DD351E /* TitleDisclosureCell.swift */,
+				79A3EB25D1889321778F664F /* TitleDisclosureCellViewModel.swift */,
+			);
+			path = TitleDisclosure;
 			sourceTree = "<group>";
 		};
 		A0995BFBB94BA03A3198FD9C /* Pods */ = {
@@ -657,12 +768,47 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A55ABB69F70C5B5EAB530AEB /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				74546FCA02C1B6D13BCAC947 /* CountryCell.swift */,
+				02E4C6ABB7026379CAC9AFCB /* CountryCellViewModel.swift */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		AA73DA0B7BC6D69504FBB7A5 /* UserPicStatus */ = {
+			isa = PBXGroup;
+			children = (
+				D6B41DED2C4E2748330CBBD7 /* UserPicStatusCell.swift */,
+				CF3D0FD0419E4C48C7484ED1 /* UserPicStatusCellViewModel.swift */,
+			);
+			path = UserPicStatus;
+			sourceTree = "<group>";
+		};
 		E0D100F69CA409FA07BFFDB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F35CC655A92410DE8C40C463 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				40DAEF0D528039773DFB7AEF /* TextCell.swift */,
+				D5CDBAD0287688016429DDC0 /* TextCellViewModel.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		FF4D2214B1937B95B3AEC4CC /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				479FF98A35D244C1D84BD1E0 /* ProgressView.swift */,
+			);
+			path = Progress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -709,7 +855,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				ru,
 			);
 			mainGroup = 2C04E5B2238464D00058CC18;
 			productRefGroup = 2C04E5BC238464D00058CC18 /* Products */;
@@ -803,6 +948,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C41F71D23893AC6006EC815 /* AppListResponse.swift in Sources */,
+				2C41F7282389572B006EC815 /* CGFloat+GlobalConstants.swift in Sources */,
 				2C85A57F238871FD007DB1BB /* PlayerAchievementsResponse.swift in Sources */,
 				2C85A59B23887F56007DB1BB /* GetUserStatsForGameRequest.swift in Sources */,
 				2C41F71323893734006EC815 /* AppDetailsRequest.swift in Sources */,
@@ -828,6 +974,7 @@
 				2C85A556238856DB007DB1BB /* GetNewsForAppRequest.swift in Sources */,
 				2C04E5E3238467DF0058CC18 /* R.generated.swift in Sources */,
 				2C35AD842385B1DF003161F0 /* TableSection+Init.swift in Sources */,
+				2C41F72D2389656B006EC815 /* UIImageView+AsyncLoading.swift in Sources */,
 				2C85A56E238860A0007DB1BB /* GetUserGroupListRequest.swift in Sources */,
 				2C41F711238936EB006EC815 /* ReleaseDate.swift in Sources */,
 				2C35ADB92385D766003161F0 /* SteamPlayerService.swift in Sources */,
@@ -858,7 +1005,7 @@
 				2C85A579238864BE007DB1BB /* SteamUserStatsService.swift in Sources */,
 				2C85A58F2388796D007DB1BB /* SchemaAchievement.swift in Sources */,
 				2C85A57223886422007DB1BB /* AchievementPercentages.swift in Sources */,
-				2C35ADB02385D0CE003161F0 /* UserProfile.swift in Sources */,
+				2C41F72A23895ECD006EC815 /* TitleValueItem.swift in Sources */,
 				2C85A56623885E38007DB1BB /* FriendsList.swift in Sources */,
 				2C85A58B23887904007DB1BB /* AvailableGameStats.swift in Sources */,
 				2C85A58323887269007DB1BB /* PlayerAchievement.swift in Sources */,
@@ -875,6 +1022,7 @@
 				2C85A56423885E11007DB1BB /* FriendListResponse.swift in Sources */,
 				2A275F1D74FC4FD55AC7060E /* ProfileViewController.swift in Sources */,
 				2C85A55C238858F4007DB1BB /* NewsItem.swift in Sources */,
+				2C41F734238972BE006EC815 /* DateFormatter+Formatters.swift in Sources */,
 				2C35ADA02385BF36003161F0 /* Tab.swift in Sources */,
 				2C85A59723887F1D007DB1BB /* Stat.swift in Sources */,
 				2C85A589238878E6007DB1BB /* GameSchema.swift in Sources */,
@@ -891,6 +1039,20 @@
 				2C35ADB42385D4F5003161F0 /* OwnedGamesResponse.swift in Sources */,
 				71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */,
 				8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */,
+				2086C2099341327D8B9C522E /* TextCell.swift in Sources */,
+				4364B395FE62928D57D6DAA1 /* TextCellViewModel.swift in Sources */,
+				45E037F118EAABEFFA42E028 /* CountryCell.swift in Sources */,
+				D783982B33AE286FC8E6DE8E /* CountryCellViewModel.swift in Sources */,
+				C35B081949C0BB0967F7736B /* TitleValueView.swift in Sources */,
+				023F44A9FF68F2B483914BDF /* TitleValueCollectionCell.swift in Sources */,
+				3356D28018F0BEDA57B1C9D3 /* TitleValueCollectionCellViewModel.swift in Sources */,
+				CE3005E2D81397B29E45324E /* TitleDisclosureCell.swift in Sources */,
+				6B97B3813CDBAB19DC94D76F /* TitleDisclosureCellViewModel.swift in Sources */,
+				7B52238339E78F96FC8088E0 /* UserPicStatusCell.swift in Sources */,
+				83FF4BB72956FA228363A03E /* UserPicStatusCellViewModel.swift in Sources */,
+				B92A7449C4BCD542FB663ED2 /* LevelCell.swift in Sources */,
+				4B4CAF83F23E58ED51CABB9B /* LevelCellViewModel.swift in Sources */,
+				80C0A69CE1D167B2CAB7411D /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,7 +1063,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C04E5EC238468770058CC18 /* en */,
-				2C04E5EE238468790058CC18 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

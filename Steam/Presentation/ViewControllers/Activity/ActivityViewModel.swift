@@ -38,7 +38,7 @@ extension ActivityViewModel {
     
     func loadActivity() {
         steamPlayerService.getRecentlyPlayedGames(steamId: ApiService.Mocks.somePersonId) { games in
-            print(games)
+
         }
     }
     

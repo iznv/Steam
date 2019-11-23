@@ -8,7 +8,7 @@
 
 struct BadgesResponse: Codable {
     
-    let badges: [Badge]
+    let badges: [Badge]?
     
     let playerXP: Int
     

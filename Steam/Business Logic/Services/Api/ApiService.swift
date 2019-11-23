@@ -79,7 +79,9 @@ extension ApiService {
             guard let data = data else { return }
             
             do {
-                let response = try JSONDecoder().decode(T.self, from: data)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
+                let response = try decoder.decode(T.self, from: data)
                 completion(response)
             } catch {
                 print(error as Any)

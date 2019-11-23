@@ -25,8 +25,8 @@ private extension TabBarController {
     
     func configureTabs() {
         viewControllers = [
-            activity,
-            profile
+            profile,
+            activity
         ].map { $0.controller }
     }
     

@@ -5,7 +5,9 @@ inhibit_all_warnings!
 
 target 'Steam' do
 
+  pod 'FlagKit'
   pod 'R.swift'
+  pod 'SnapKit'
   pod 'StatefulViewController'
   pod 'SteamLogin'
   pod 'TableKit'
