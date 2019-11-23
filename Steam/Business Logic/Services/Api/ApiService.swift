@@ -14,8 +14,6 @@ private enum Constants {
     
     static let apiKey = "49BFF741A48A987B4040125D7D79BB87"
 
-    static let baseUrlHost = "api.steampowered.com"
-
 }
 
 class ApiService {
@@ -25,6 +23,14 @@ class ApiService {
         static let myId = "76561199004225368"
         
         static let somePersonId = "76561198204287436"
+        
+    }
+    
+    enum Endpoint: String {
+        
+        case api = "api.steampowered.com"
+        
+        case store = "store.steampowered.com"
         
     }
 
@@ -41,7 +47,8 @@ class ApiService {
 extension ApiService {
 
     @discardableResult
-    func request<T: Codable>(url: String,
+    func request<T: Codable>(endpoint: Endpoint = .api,
+                             url: String,
                              with parameters: [RequestParameter: Any] = [:],
                              needApiKey: Bool = false,
                              completion: @escaping (T) -> Void) -> URLSessionDataTask? {
@@ -60,7 +67,7 @@ extension ApiService {
 
         let urlComponents = NSURLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = Constants.baseUrlHost
+        urlComponents.host = endpoint.rawValue
         urlComponents.path = "/\(url)"
         urlComponents.queryItems = queryItems
 

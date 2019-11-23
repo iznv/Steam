@@ -16,7 +16,7 @@ struct SchemaAchievement: Codable {
     
     let hidden: Int
     
-    let achievementDescription: String
+    let description: String
     
     let icon: String
     
@@ -36,7 +36,7 @@ private extension SchemaAchievement {
         
         case hidden
         
-        case achievementDescription = "description"
+        case description
         
         case icon
         

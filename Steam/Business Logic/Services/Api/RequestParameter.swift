@@ -10,13 +10,15 @@ enum RequestParameter: String {
     
     case appId = "appid"
     
-    case gameId = "gameid"
-    
-    case badgeId = "badgeid"
+    case appIds = "appids"
 
     case steamId = "steamid"
 
     case steamIds = "steamids"
+    
+    case gameId = "gameid"
+    
+    case badgeId = "badgeid"
     
     case includeAppInfo = "include_appinfo"
     
