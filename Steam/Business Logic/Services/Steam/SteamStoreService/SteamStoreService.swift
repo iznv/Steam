@@ -9,14 +9,17 @@
 class SteamStoreService {
     
     func appDetails(appId: Int,
-                    completion: @escaping (AppDetails?) -> Void) {
+                    completion: @escaping (Result<AppDetails?, ApiService.Error>) -> Void) {
         
         ApiService.shared.appDetails(appId: appId) {
-            if let response = $0[String(appId)],
-               response.success {
-                completion(response.data)
+            if case let .success(data) = $0 {
+                if let response = data[String(appId)], response.success {
+                    completion($0.map { _ in response.data })
+                } else {
+                    completion($0.map { _ in nil })
+                }
             } else {
-                completion(nil)
+                completion($0.map { _ in nil })
             }
         }
     }

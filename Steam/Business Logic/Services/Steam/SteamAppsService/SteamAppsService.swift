@@ -8,10 +8,10 @@
 
 class SteamAppsService {
     
-    func getAppList(completion: @escaping ([App]) -> Void) {
+    func getAppList(completion: @escaping (Result<[App], ApiService.Error>) -> Void) {
         
         ApiService.shared.getAppList {
-            completion($0.appList.apps)
+            completion($0.map { $0.appList.apps })
         }
     }
 

@@ -1,3 +1,4 @@
+import StatefulViewController
 import SteamLogin
 import TableKit
 import Utils
@@ -24,9 +25,9 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
 
     // MARK: - Properties
     
-    lazy var tableDirector = TableDirector(tableView: tableView)
+    private lazy var tableDirector = TableDirector(tableView: tableView)
 
-    
+    private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
 
     // MARK: - Computed Properties
 
@@ -40,8 +41,7 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         navigationItem.title = R.string.localizable.profileTabTitle()
         
         bind()
-
-        viewModel.loadUserProfile()
+        loadProfile()
     }
 
     // MARK: - Table
@@ -62,14 +62,28 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
 
 }
 
+// MARK: - DefaultStatesDelegate
+
+extension ProfileViewController: DefaultStatesDelegate {
+    
+    func didTapRetry(view: CustomStateView) {
+        loadProfile()
+    }
+    
+}
+
 // MARK: - Binding
 
 private extension ProfileViewController {
     
     func bind() {
         viewModel.didGetProfile = { [weak self] in
-            self?.configureTableView()
+            self?.stateMachine.transition(to: .none) {
+                self?.reload()
+            }
         }
+        
+        bind(viewModel, to: stateMachine)
     }
     
 }
@@ -165,17 +179,15 @@ private extension ProfileViewController {
 
 }
 
-// MARK: - Constraints
-
-private extension ProfileViewController {
-
-    
-
-}
-
 // MARK: - Private
 
 private extension ProfileViewController {
+    
+    func loadProfile() {
+        stateMachine.transition(to: ViewState.loading) { [weak self] in
+            self?.viewModel.loadUserProfile()
+        }
+    }
 
     func login() {
         SteamLoginVC.login(from: self) { user, error in

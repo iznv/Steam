@@ -10,7 +10,7 @@ extension ApiService {
 
     func getUserStatsForGame(steamId: String,
                              appId: Int,
-                             completion: @escaping (UserStatsForGameResponse) -> Void) {
+                             completion: @escaping (Result<UserStatsForGameResponse, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .appId: appId,

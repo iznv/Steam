@@ -9,7 +9,7 @@
 extension ApiService {
 
     func getGlobalAchievementPercentagesForApp(gameId: Int,
-                                               completion: @escaping (GlobalAchievementPercentagesForAppResponse) -> Void) {
+                                               completion: @escaping (Result<GlobalAchievementPercentagesForAppResponse, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .gameId: gameId

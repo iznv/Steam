@@ -9,7 +9,7 @@
 extension ApiService {
 
     func getFriendList(steamId: String,
-                       completion: @escaping (FriendListResponse) -> Void) {
+                       completion: @escaping (Result<FriendListResponse, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .steamId: steamId

@@ -9,7 +9,7 @@
 extension ApiService {
 
     func appDetails(appId: Int,
-                    completion: @escaping ([String: AppDetailsResponse]) -> Void) {
+                    completion: @escaping (Result<[String: AppDetailsResponse], Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .appIds: appId

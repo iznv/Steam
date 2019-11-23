@@ -13,12 +13,12 @@ class SteamNewsService {
     func getNewsForApp(appId: Int,
                        endDate: Int? = nil,
                        count: Int = 20,
-                       completion: @escaping ([NewsItem]) -> Void) {
+                       completion: @escaping (Result<[NewsItem], ApiService.Error>) -> Void) {
         
         ApiService.shared.getNewsForApp(appId: appId,
                                         endDate: endDate,
                                         count: count) {
-            completion($0.appNews.newsItems)
+            completion($0.map { $0.appNews.newsItems })
         }
     }
     

@@ -11,7 +11,7 @@ extension ApiService {
     func getNewsForApp(appId: Int,
                        endDate: Int?,
                        count: Int,
-                       completion: @escaping (NewsForAppResponse) -> Void) {
+                       completion: @escaping (Result<NewsForAppResponse, Error>) -> Void) {
         
         var parameters: [RequestParameter: Any] = [
             .appId: appId,

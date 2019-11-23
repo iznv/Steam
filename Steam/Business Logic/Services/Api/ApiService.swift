@@ -18,6 +18,16 @@ private enum Constants {
 
 class ApiService {
     
+    enum Error: Swift.Error {
+        
+        case noConnection
+        
+        case decodingError
+        
+        case unknown
+        
+    }
+    
     enum Mocks {
         
         static let myId = "76561199004225368"
@@ -51,7 +61,7 @@ extension ApiService {
                              url: String,
                              with parameters: [RequestParameter: Any] = [:],
                              needApiKey: Bool = false,
-                             completion: @escaping (T) -> Void) -> URLSessionDataTask? {
+                             completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask? {
 
         var fullParameters = parameters.mapPairs { ($0.rawValue, $1) }
         
@@ -76,16 +86,25 @@ extension ApiService {
         let request = URLRequest(url: url)
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error as NSError? {
+                if error.domain == NSURLErrorDomain,
+                   error.code == NSURLErrorNotConnectedToInternet {
+                    completion(.failure(.noConnection))
+                } else {
+                    completion(.failure(.unknown))
+                }
+            }
+            
             guard let data = data else { return }
             
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .secondsSince1970
                 let response = try decoder.decode(T.self, from: data)
-                completion(response)
+                completion(.success(response))
             } catch {
                 print(error as Any)
-                fatalError("Decoding Error")
+                completion(.failure(.decodingError))
             }
         }
 

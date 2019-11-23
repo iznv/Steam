@@ -9,7 +9,7 @@
 extension ApiService {
 
     func getSchemaForGame(appId: Int,
-                          completion: @escaping (SchemaForGameResponse) -> Void) {
+                          completion: @escaping (Result<SchemaForGameResponse, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .appId: appId

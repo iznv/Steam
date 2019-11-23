@@ -9,7 +9,7 @@
 extension ApiService {
 
     func getBadges(steamId: String,
-                   completion: @escaping (SteamResponse<BadgesResponse>) -> Void) {
+                   completion: @escaping (Result<SteamResponse<BadgesResponse>, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .steamId: steamId

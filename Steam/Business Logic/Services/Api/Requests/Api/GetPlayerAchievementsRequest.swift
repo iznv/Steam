@@ -10,7 +10,7 @@ extension ApiService {
 
     func getPlayerAchievements(steamId: String,
                                appId: Int,
-                               completion: @escaping (PlayerAchievementsResponse) -> Void) {
+                               completion: @escaping (Result<PlayerAchievementsResponse, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .steamId: steamId,

@@ -1,6 +1,6 @@
 import Foundation
 
-class ProfileViewModel {
+class ProfileViewModel: BaseControllerViewModel {
     
     // MARK: - Constants
     
@@ -109,7 +109,7 @@ class ProfileViewModel {
 
     // MARK: - Init
 
-    init() {
+    override init() {
         
     }
 
@@ -120,30 +120,56 @@ class ProfileViewModel {
 extension ProfileViewModel {
     
     func loadUserProfile() {
+        player = nil
+        badgesResponse = nil
+        groupsCount = nil
+        
         let steamId = ApiService.Mocks.somePersonId
         
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        steamUserService.getUserProfile(steamId: steamId) { [weak self] players in
-            self?.player = players.first
+        steamUserService.getUserProfile(steamId: steamId) { [weak self] result in
+            switch result {
+            case let .success(players):
+                self?.player = players.first
+            case let .failure(error):
+                self?.handle(error)
+            }
+            
             dispatchGroup.leave()
         }
         
         dispatchGroup.enter()
-        steamPlayerService.getBadges(steamId: steamId) { [weak self] in
-            self?.badgesResponse = $0
+        steamPlayerService.getBadges(steamId: steamId) { [weak self] result in
+            switch result {
+            case let .success(badgesResponse):
+                self?.badgesResponse = badgesResponse
+            case let .failure(error):
+                self?.handle(error)
+            }
+            
             dispatchGroup.leave()
         }
-        
+                
         dispatchGroup.enter()
-        steamUserService.getUserGroupList(steamId: steamId) { [weak self] in
-            self?.groupsCount = $0.count
+        steamUserService.getUserGroupList(steamId: steamId) { [weak self] result in
+            switch result {
+            case let .success(groups):
+                self?.groupsCount = groups.count
+            case let .failure(error):
+                self?.handle(error)
+            }
+            
             dispatchGroup.leave()
         }
         
-        dispatchGroup.notify(queue: .main) {
-            self.didGetProfile?()
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            guard self?.player != nil else { return }
+            guard self?.badgesResponse != nil else { return }
+            guard self?.groupsCount != nil else { return }
+            
+            self?.didGetProfile?()
         }
     }
     

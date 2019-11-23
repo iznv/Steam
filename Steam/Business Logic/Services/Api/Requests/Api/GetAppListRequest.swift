@@ -8,7 +8,7 @@
 
 extension ApiService {
 
-    func getAppList(completion: @escaping (AppListResponse) -> Void) {
+    func getAppList(completion: @escaping (Result<AppListResponse, Error>) -> Void) {
         request(url: "ISteamApps/GetAppList/v2", completion: completion)
     }
 

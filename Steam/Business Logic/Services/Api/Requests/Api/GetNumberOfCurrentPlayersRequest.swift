@@ -9,7 +9,7 @@
 extension ApiService {
 
     func getNumberOfCurrentPlayers(appId: Int,
-                                   completion: @escaping (SteamResponse<NumberOfCurrentPlayersResponse>) -> Void) {
+                                   completion: @escaping (Result<SteamResponse<NumberOfCurrentPlayersResponse>, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .appId: appId

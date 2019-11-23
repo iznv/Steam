@@ -9,7 +9,7 @@
 extension ApiService {
 
     func getUserGroupList(steamId: String,
-                          completion: @escaping (SteamResponse<UserGroupListResponse>) -> Void) {
+                          completion: @escaping (Result<SteamResponse<UserGroupListResponse>, Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
             .steamId: steamId

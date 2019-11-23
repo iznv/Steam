@@ -98,7 +98,17 @@
 		2C85A59723887F1D007DB1BB /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59623887F1D007DB1BB /* Stat.swift */; };
 		2C85A59923887F2C007DB1BB /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59823887F2C007DB1BB /* Achievement.swift */; };
 		2C85A59B23887F56007DB1BB /* GetUserStatsForGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85A59A23887F56007DB1BB /* GetUserStatsForGameRequest.swift */; };
+		2CACCE052389A5E20025FE1B /* ViewStateMachine+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE042389A5E20025FE1B /* ViewStateMachine+Subscript.swift */; };
+		2CACCE072389A60B0025FE1B /* ViewStateMachine+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE062389A60B0025FE1B /* ViewStateMachine+Transition.swift */; };
+		2CACCE0B2389A6410025FE1B /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE0A2389A6410025FE1B /* ViewState.swift */; };
+		2CACCE0D2389A6570025FE1B /* DefaultStatesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE0C2389A6570025FE1B /* DefaultStatesDelegate.swift */; };
+		2CACCE0F2389A6820025FE1B /* ViewStateMachine+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE0E2389A6820025FE1B /* ViewStateMachine+Init.swift */; };
+		2CACCE122389A7CF0025FE1B /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE112389A7CF0025FE1B /* UIView+Animation.swift */; };
+		2CACCE162389A8D60025FE1B /* BaseTableViewController+Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE152389A8D60025FE1B /* BaseTableViewController+Reload.swift */; };
+		2CACCE182389BE690025FE1B /* BaseControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */; };
+		2CACCE1A2389BFC90025FE1B /* UIViewController+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE192389BFC90025FE1B /* UIViewController+States.swift */; };
 		3356D28018F0BEDA57B1C9D3 /* TitleValueCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC6AC75056FA614F0B130B /* TitleValueCollectionCellViewModel.swift */; };
+		377247FE8843AD7BF9893CC0 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EF13B19B3CF21467FE1F9 /* LoadingStateView.swift */; };
 		4364B395FE62928D57D6DAA1 /* TextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CDBAD0287688016429DDC0 /* TextCellViewModel.swift */; };
 		45E037F118EAABEFFA42E028 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74546FCA02C1B6D13BCAC947 /* CountryCell.swift */; };
 		4B4CAF83F23E58ED51CABB9B /* LevelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */; };
@@ -108,6 +118,7 @@
 		80C0A69CE1D167B2CAB7411D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FF98A35D244C1D84BD1E0 /* ProgressView.swift */; };
 		83FF4BB72956FA228363A03E /* UserPicStatusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D0FD0419E4C48C7484ED1 /* UserPicStatusCellViewModel.swift */; };
 		8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077594191B9C555EC0DFF512 /* ActivityViewModel.swift */; };
+		AA4DB551815F1A0F5AC25AA3 /* CustomStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DFEB68CDB72324BB70F87E /* CustomStateView.swift */; };
 		B92A7449C4BCD542FB663ED2 /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFE30504AD8844ED9C6916B /* LevelCell.swift */; };
 		C35B081949C0BB0967F7736B /* TitleValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E097107A2380ED6980CD47 /* TitleValueView.swift */; };
 		CE3005E2D81397B29E45324E /* TitleDisclosureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86178C71B7ACC737DD351E /* TitleDisclosureCell.swift */; };
@@ -208,6 +219,16 @@
 		2C85A59623887F1D007DB1BB /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		2C85A59823887F2C007DB1BB /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		2C85A59A23887F56007DB1BB /* GetUserStatsForGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserStatsForGameRequest.swift; sourceTree = "<group>"; };
+		2CACCE042389A5E20025FE1B /* ViewStateMachine+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStateMachine+Subscript.swift"; sourceTree = "<group>"; };
+		2CACCE062389A60B0025FE1B /* ViewStateMachine+Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStateMachine+Transition.swift"; sourceTree = "<group>"; };
+		2CACCE0A2389A6410025FE1B /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		2CACCE0C2389A6570025FE1B /* DefaultStatesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStatesDelegate.swift; sourceTree = "<group>"; };
+		2CACCE0E2389A6820025FE1B /* ViewStateMachine+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStateMachine+Init.swift"; sourceTree = "<group>"; };
+		2CACCE112389A7CF0025FE1B /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		2CACCE152389A8D60025FE1B /* BaseTableViewController+Reload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableViewController+Reload.swift"; sourceTree = "<group>"; };
+		2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllerViewModel.swift; sourceTree = "<group>"; };
+		2CACCE192389BFC90025FE1B /* UIViewController+States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+States.swift"; sourceTree = "<group>"; };
+		31DFEB68CDB72324BB70F87E /* CustomStateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomStateView.swift; sourceTree = "<group>"; };
 		40DAEF0D528039773DFB7AEF /* TextCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		479FF98A35D244C1D84BD1E0 /* ProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +238,7 @@
 		7D8251237094B37F664D4B9A /* TitleValueCollectionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleValueCollectionCell.swift; sourceTree = "<group>"; };
 		8FCD7F51A8796E84575DCA8C /* Pods-Steam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.debug.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.debug.xcconfig"; sourceTree = "<group>"; };
 		99F7CF14D883DC383B49A5CF /* ProfileViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		9A5EF13B19B3CF21467FE1F9 /* LoadingStateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 		9F86178C71B7ACC737DD351E /* TitleDisclosureCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleDisclosureCell.swift; sourceTree = "<group>"; };
 		B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelCellViewModel.swift; sourceTree = "<group>"; };
 		C4CC7A5176461DE60370991F /* ActivityViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +335,7 @@
 			children = (
 				2C04E5D72384664D0058CC18 /* Cells */,
 				2C35AD9E2385BF2C003161F0 /* Models */,
+				2CACCE092389A6340025FE1B /* States */,
 				2C04E5D5238466420058CC18 /* ViewControllers */,
 				2C04E5D6238466480058CC18 /* Views */,
 			);
@@ -335,6 +358,8 @@
 			children = (
 				181D3B6E4C169480373EE8EF /* TitleValue */,
 				FF4D2214B1937B95B3AEC4CC /* Progress */,
+				32A468837432D5B1404D9106 /* LoadingState */,
+				C7C0A9B0BDBAE94306CB70D0 /* CustomState */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,9 +391,11 @@
 			isa = PBXGroup;
 			children = (
 				2C41F72523895717006EC815 /* CoreGraphics */,
+				2CACCE032389A5C10025FE1B /* StatefulViewController */,
 				2C04E5F423846D9D0058CC18 /* Swift */,
 				2C35AD7E2385B1A6003161F0 /* TableKit */,
 				2C35AD912385BE41003161F0 /* UIKit */,
+				2CACCE132389A8C60025FE1B /* Utils */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -488,6 +515,7 @@
 			children = (
 				2C41F732238972AE006EC815 /* DateFormatter */,
 				2C41F72B2389655F006EC815 /* UIImageView */,
+				2CACCE102389A7C20025FE1B /* UIView */,
 				2C35AD922385BE46003161F0 /* UIViewController */,
 			);
 			path = UIKit;
@@ -505,6 +533,8 @@
 			isa = PBXGroup;
 			children = (
 				2C35AD992385BEBB003161F0 /* NavigationController.swift */,
+				2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */,
+				2CACCE192389BFC90025FE1B /* UIViewController+States.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -708,6 +738,57 @@
 			path = SteamUserStatsService;
 			sourceTree = "<group>";
 		};
+		2CACCE032389A5C10025FE1B /* StatefulViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCE082389A61C0025FE1B /* ViewStateMachine */,
+			);
+			path = StatefulViewController;
+			sourceTree = "<group>";
+		};
+		2CACCE082389A61C0025FE1B /* ViewStateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCE042389A5E20025FE1B /* ViewStateMachine+Subscript.swift */,
+				2CACCE062389A60B0025FE1B /* ViewStateMachine+Transition.swift */,
+				2CACCE0E2389A6820025FE1B /* ViewStateMachine+Init.swift */,
+			);
+			path = ViewStateMachine;
+			sourceTree = "<group>";
+		};
+		2CACCE092389A6340025FE1B /* States */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCE0A2389A6410025FE1B /* ViewState.swift */,
+				2CACCE0C2389A6570025FE1B /* DefaultStatesDelegate.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		2CACCE102389A7C20025FE1B /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCE112389A7CF0025FE1B /* UIView+Animation.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		2CACCE132389A8C60025FE1B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCE142389A8CC0025FE1B /* BaseTableViewController */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2CACCE142389A8CC0025FE1B /* BaseTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCE152389A8D60025FE1B /* BaseTableViewController+Reload.swift */,
+			);
+			path = BaseTableViewController;
+			sourceTree = "<group>";
+		};
 		2F12A48F249442A390FB86C5 /* TitleValueCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +796,14 @@
 				C9DC6AC75056FA614F0B130B /* TitleValueCollectionCellViewModel.swift */,
 			);
 			path = TitleValueCollection;
+			sourceTree = "<group>";
+		};
+		32A468837432D5B1404D9106 /* LoadingState */ = {
+			isa = PBXGroup;
+			children = (
+				9A5EF13B19B3CF21467FE1F9 /* LoadingStateView.swift */,
+			);
+			path = LoadingState;
 			sourceTree = "<group>";
 		};
 		6F03DC408341175B4868F813 /* Level */ = {
@@ -769,6 +858,14 @@
 				CF3D0FD0419E4C48C7484ED1 /* UserPicStatusCellViewModel.swift */,
 			);
 			path = UserPicStatus;
+			sourceTree = "<group>";
+		};
+		C7C0A9B0BDBAE94306CB70D0 /* CustomState */ = {
+			isa = PBXGroup;
+			children = (
+				31DFEB68CDB72324BB70F87E /* CustomStateView.swift */,
+			);
+			path = CustomState;
 			sourceTree = "<group>";
 		};
 		E0D100F69CA409FA07BFFDB4 /* Frameworks */ = {
@@ -944,6 +1041,7 @@
 				2C04E5F023846D0C0058CC18 /* ApiService.swift in Sources */,
 				2C41F70B2389368D006EC815 /* Screenshot.swift in Sources */,
 				2C35ADAA2385CDE8003161F0 /* CommunityVisibilityState.swift in Sources */,
+				2CACCE0D2389A6570025FE1B /* DefaultStatesDelegate.swift in Sources */,
 				2C41F72123893B1C006EC815 /* App.swift in Sources */,
 				2C35ADAD2385CE84003161F0 /* SteamUserService.swift in Sources */,
 				2C85A587238878CC007DB1BB /* SchemaForGameResponse.swift in Sources */,
@@ -951,6 +1049,7 @@
 				2C35AD902385BDFA003161F0 /* TabBarController.swift in Sources */,
 				2C35ADA62385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift in Sources */,
 				2C85A57D23886A4B007DB1BB /* GetNumberOfCurrentPlayersRequest.swift in Sources */,
+				2CACCE1A2389BFC90025FE1B /* UIViewController+States.swift in Sources */,
 				2C35AD9A2385BEBB003161F0 /* NavigationController.swift in Sources */,
 				2C85A58D2388793C007DB1BB /* SchemaStat.swift in Sources */,
 				2C85A57623886466007DB1BB /* GetGlobalAchievementPercentagesForAppRequest.swift in Sources */,
@@ -974,6 +1073,7 @@
 				2C85A55A238858A5007DB1BB /* AppNews.swift in Sources */,
 				2C41F71B23893A84006EC815 /* GetAppListRequest.swift in Sources */,
 				2C85A5582388586D007DB1BB /* NewsForAppResponse.swift in Sources */,
+				2CACCE052389A5E20025FE1B /* ViewStateMachine+Subscript.swift in Sources */,
 				2C41F71F23893B0E006EC815 /* AppList.swift in Sources */,
 				2C04E5F723846DB00058CC18 /* Dictionary+MapPairs.swift in Sources */,
 				2C41F70723893625006EC815 /* Metacritic.swift in Sources */,
@@ -993,9 +1093,11 @@
 				2C85A58323887269007DB1BB /* PlayerAchievement.swift in Sources */,
 				2C04E5FC23847D990058CC18 /* Dictionary+Operators.swift in Sources */,
 				2C35ADA22385CA5E003161F0 /* RecentlyPlayedGamesResponse.swift in Sources */,
+				2CACCE0B2389A6410025FE1B /* ViewState.swift in Sources */,
 				2C85A57423886436007DB1BB /* GlobalAchievement.swift in Sources */,
 				2C85A56A23886047007DB1BB /* UserGroupListResponse.swift in Sources */,
 				2C35ADB22385D418003161F0 /* GetOwnedGamesRequest.swift in Sources */,
+				2CACCE162389A8D60025FE1B /* BaseTableViewController+Reload.swift in Sources */,
 				2C85A585238872AA007DB1BB /* GetPlayerAchievementsRequest.swift in Sources */,
 				2C85A59923887F2C007DB1BB /* Achievement.swift in Sources */,
 				2C5952C22387114100AA1DA6 /* Badge.swift in Sources */,
@@ -1007,6 +1109,7 @@
 				2C85A59723887F1D007DB1BB /* Stat.swift in Sources */,
 				2C85A589238878E6007DB1BB /* GameSchema.swift in Sources */,
 				2C35ADA42385CA7E003161F0 /* Game.swift in Sources */,
+				2CACCE0F2389A6820025FE1B /* ViewStateMachine+Init.swift in Sources */,
 				2C41F70523893602006EC815 /* Platforms.swift in Sources */,
 				2C41F701238932E2006EC815 /* AppDetails.swift in Sources */,
 				2C35AD8B2385B5CF003161F0 /* GetPlayerSummariesRequest.swift in Sources */,
@@ -1017,6 +1120,7 @@
 				2C85A59323887ECA007DB1BB /* UserStatsForGameResponse.swift in Sources */,
 				2C5952BE238710B400AA1DA6 /* GetBadgesRequest.swift in Sources */,
 				2C35ADB42385D4F5003161F0 /* OwnedGamesResponse.swift in Sources */,
+				2CACCE072389A60B0025FE1B /* ViewStateMachine+Transition.swift in Sources */,
 				71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */,
 				8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */,
 				2086C2099341327D8B9C522E /* TextCell.swift in Sources */,
@@ -1027,12 +1131,16 @@
 				023F44A9FF68F2B483914BDF /* TitleValueCollectionCell.swift in Sources */,
 				3356D28018F0BEDA57B1C9D3 /* TitleValueCollectionCellViewModel.swift in Sources */,
 				CE3005E2D81397B29E45324E /* TitleDisclosureCell.swift in Sources */,
+				2CACCE182389BE690025FE1B /* BaseControllerViewModel.swift in Sources */,
 				6B97B3813CDBAB19DC94D76F /* TitleDisclosureCellViewModel.swift in Sources */,
+				2CACCE122389A7CF0025FE1B /* UIView+Animation.swift in Sources */,
 				7B52238339E78F96FC8088E0 /* UserPicStatusCell.swift in Sources */,
 				83FF4BB72956FA228363A03E /* UserPicStatusCellViewModel.swift in Sources */,
 				B92A7449C4BCD542FB663ED2 /* LevelCell.swift in Sources */,
 				4B4CAF83F23E58ED51CABB9B /* LevelCellViewModel.swift in Sources */,
 				80C0A69CE1D167B2CAB7411D /* ProgressView.swift in Sources */,
+				377247FE8843AD7BF9893CC0 /* LoadingStateView.swift in Sources */,
+				AA4DB551815F1A0F5AC25AA3 /* CustomStateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

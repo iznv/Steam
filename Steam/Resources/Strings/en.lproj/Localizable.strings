@@ -1,3 +1,7 @@
+"StateSomethingWrongDescription" = "Something is wrong";
+"StateNoConnectionDescription" = "No connection";
+"StateRetry" = "Retry";
+
 "ProfileTabTitle" = "Profile";
 "ActivityTabTitle" = "Activity";
 
