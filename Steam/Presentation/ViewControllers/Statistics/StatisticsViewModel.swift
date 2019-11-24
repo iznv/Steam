@@ -11,14 +11,14 @@ class StatisticsViewModel: BaseControllerViewModel {
     }
     
     // MARK: - Properties
+    
+    var schema: AvailableGameStats?
+    
+    var stats: UserStatsForGamePlayerStats?
 
     private let appId: Int
     
     private let steamId: String
-    
-    private var schema: AvailableGameStats?
-    
-    private var stats: UserStatsForGamePlayerStats?
     
     // MARK: - Events
     
@@ -30,14 +30,14 @@ class StatisticsViewModel: BaseControllerViewModel {
     
     var progressViewModel: GameProgressCellViewModel? {
         guard let total = schema?.achievements?.count else { return nil }
-        guard let achieved = stats?.achievements?.filter({ $0.achieved == 1 }).count else { return nil }
+        let achieved = stats?.achievements?.filter({ $0.achieved == 1 }).count ?? 0
 
         return GameProgressCellViewModel(achieved: achieved, total: total)
     }
     
     var achievementsViewModel: TitleDisclosureCellViewModel? {
         guard schema?.achievements != nil else { return nil }
-        return TitleDisclosureCellViewModel(title: R.string.localizable.gameStatisticsAchievements())
+        return TitleDisclosureCellViewModel(title: R.string.localizable.achievements())
     }
     
     var statsViewModel: TitleDisclosureCellViewModel? {

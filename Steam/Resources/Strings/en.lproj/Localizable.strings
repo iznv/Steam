@@ -3,6 +3,7 @@
 "Activity" = "Activity";
 "Free" = "Free";
 "Statistics" = "Statistics";
+"Achievements" = "Achievements";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -41,5 +42,7 @@
 "GamePublisher" = "Publisher";
 "GameStatisticsAchievementProgress" = "Achievement Progress";
 "GameStatisticsAchievementProgressFormat" = "%@ of %@";
-"GameStatisticsAchievements" = "Achievements";
 "GameStatisticsStats" = "Stats";
+
+"AchievementsAchieved" = "Achieved";
+"AchievementsNotAchieved" = "Not achieved";
