@@ -4,6 +4,7 @@
 "Free" = "Free";
 "Statistics" = "Statistics";
 "Achievements" = "Achievements";
+"Stats" = "Stats";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";

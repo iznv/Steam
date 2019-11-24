@@ -24,16 +24,6 @@ class SteamUserStatsService {
         }
     }
     
-    func getPlayerAchievements(steamId: String,
-                               appId: Int,
-                               completion: @escaping (Result<PlayerAchievementsPlayerStats, ApiService.Error>) -> Void) {
-        
-        ApiService.shared.getPlayerAchievements(steamId: steamId,
-                                                appId: appId) {
-            completion($0.map { $0.playerStats })
-        }
-    }
-    
     func getSchemaForGame(appId: Int,
                           completion: @escaping (Result<AvailableGameStats?, ApiService.Error>) -> Void) {
         

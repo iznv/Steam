@@ -102,7 +102,12 @@ private extension StatisticsViewController {
                         self?.openAchievements()
                     }
             },
-            viewModel.statsViewModel.map { TableRow<TitleDisclosureCell>(item: $0) }
+            viewModel.statsViewModel.map {
+                TableRow<TitleDisclosureCell>(item: $0)
+                    .on(.click) { [weak self] _ in
+                        self?.openStats()
+                }
+            }
         ].compactMap { $0 }
     }
     
@@ -123,6 +128,14 @@ private extension StatisticsViewController {
         
         let achievementsViewController = AchievementsViewController(viewModel: .init(schemaAchievements: schemaAchievements,
                                                                                      achievements: viewModel.stats?.achievements ?? []))
+        navigationController?.pushViewController(achievementsViewController, animated: true)
+    }
+    
+    func openStats() {
+        guard let schemaStats = viewModel.schema?.stats else { return }
+        
+        let achievementsViewController = StatsViewController(viewModel: .init(schemaStats: schemaStats,
+                                                                              stats: viewModel.stats?.stats ?? []))
         navigationController?.pushViewController(achievementsViewController, animated: true)
     }
 
