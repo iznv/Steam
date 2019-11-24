@@ -35,7 +35,7 @@ class SteamUserStatsService {
     }
     
     func getSchemaForGame(appId: Int,
-                          completion: @escaping (Result<AvailableGameStats, ApiService.Error>) -> Void) {
+                          completion: @escaping (Result<AvailableGameStats?, ApiService.Error>) -> Void) {
         
         ApiService.shared.getSchemaForGame(appId: appId) {
             completion($0.map { $0.game.availableGameStats })

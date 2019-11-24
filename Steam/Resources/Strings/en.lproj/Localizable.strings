@@ -37,3 +37,7 @@
 "GamePlayersOnline" = "Players online";
 "GameReleaseDate" = "Release date";
 "GamePublisher" = "Publisher";
+"GameStatisticsAchievementProgress" = "Achievement Progress";
+"GameStatisticsAchievementProgressFormat" = "%@ of %@";
+"GameStatisticsAchievements" = "Achievements";
+"GameStatisticsStats" = "Stats";

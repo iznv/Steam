@@ -8,10 +8,6 @@
 
 struct GameSchema: Codable {
     
-    let gameName: String
-    
-    let gameVersion: String
-    
-    let availableGameStats: AvailableGameStats
+    let availableGameStats: AvailableGameStats?
     
 }

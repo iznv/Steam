@@ -16,7 +16,7 @@ struct SchemaAchievement: Codable {
     
     let hidden: Int
     
-    let description: String
+    let description: String?
     
     let icon: String
     

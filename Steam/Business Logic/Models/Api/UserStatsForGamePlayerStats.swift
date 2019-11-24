@@ -8,8 +8,8 @@
 
 struct UserStatsForGamePlayerStats: Codable {
     
-    let stats: [Stat]
+    let stats: [Stat]?
     
-    let achievements: [Achievement]
+    let achievements: [Achievement]?
     
 }

@@ -10,7 +10,7 @@ class ActivityViewModel: BaseControllerViewModel {
     
     // MARK: - Properties
     
-    private let steamId: String
+    let steamId: String
 
     private var games: [PlayerGame]?
     

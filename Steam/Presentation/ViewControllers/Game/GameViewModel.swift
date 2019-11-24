@@ -20,7 +20,9 @@ class GameViewModel: BaseControllerViewModel {
 
     // MARK: - Properties
 
-    private let appId: Int
+    let appId: Int
+    
+    let steamId: String
     
     private var details: AppDetails?
     
@@ -50,7 +52,7 @@ class GameViewModel: BaseControllerViewModel {
     }
     
     var genresViewModel: TextCellViewModel? {
-        details.map { TextCellViewModel(text: $0.genres.map { $0.description }.joined(separator: Constants.genresSeparator)) }
+        details?.genres.map { TextCellViewModel(text: $0.map { $0.description }.joined(separator: Constants.genresSeparator)) }
     }
     
     var descriptionViewModel: TextCellViewModel? {
@@ -93,8 +95,11 @@ class GameViewModel: BaseControllerViewModel {
     
     // MARK: - Init
 
-    init(appId: Int) {
+    init(appId: Int,
+         steamId: String) {
+        
         self.appId = appId
+        self.steamId = steamId
     }
 
 }
@@ -115,7 +120,6 @@ extension GameViewModel {
             case let .success(details):
                 if let details = details {
                     self?.details = details
-                    self?.didGetDetails?()
                 } else {
                     self?.handle(Error.noDetails)
                 }

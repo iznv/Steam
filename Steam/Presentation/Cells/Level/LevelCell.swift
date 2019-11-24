@@ -7,7 +7,7 @@ class LevelCell: BaseTableViewCell {
     
     private enum Constants {
         
-        static let progressViewHeight: CGFloat = 5
+        
         
     }
     
@@ -96,7 +96,7 @@ private extension LevelCell {
         progressView.snp.remakeConstraints { make in
             make.top.equalTo(xpTotalLabel.snp.bottom)
             make.leading.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.height.equalTo(Constants.progressViewHeight)
+            make.height.equalTo(CGFloat.progressBarHeight)
         }
     }
     

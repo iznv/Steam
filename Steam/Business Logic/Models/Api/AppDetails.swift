@@ -26,7 +26,7 @@ struct AppDetails: Codable {
     
     let metacritic: Metacritic?
     
-    let genres: [Genre]
+    let genres: [Genre]?
     
     let screenshots: [Screenshot]
         

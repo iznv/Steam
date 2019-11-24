@@ -23,6 +23,11 @@ class GameViewController: BaseTableViewController<GameViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.statisticsBarButton(),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(openStatistics))
+        
         bind()
         loadDetails()
     }
@@ -124,6 +129,11 @@ private extension GameViewController {
         stateMachine.transition(to: ViewState.loading) { [weak self] in
             self?.viewModel.loadDetails()
         }
+    }
+    
+    @objc func openStatistics() {
+        let statisticsViewController = StatisticsViewController(viewModel: .init(appId: viewModel.appId, steamId: viewModel.steamId))
+        navigationController?.pushViewController(statisticsViewController, animated: true)
     }
 
 }

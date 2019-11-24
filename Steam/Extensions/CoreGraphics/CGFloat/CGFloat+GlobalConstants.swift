@@ -14,4 +14,6 @@ extension CGFloat {
     
     static let verticalMargin: CGFloat = 16
     
+    static let progressBarHeight: CGFloat = 5
+    
 }

@@ -2,7 +2,7 @@ import StatefulViewController
 import TableKit
 import Utils
 
-class ActivityViewController: BaseTableViewController<ActivityViewModel> {
+class StatisticsViewController: BaseTableViewController<StatisticsViewModel> {
     
     // MARK: - Constants
     
@@ -23,17 +23,16 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = R.string.localizable.activityTabTitle()
-
         bind()
-        loadGames()
+        loadData()
     }
 
     // MARK: - Table
     
     override func configureTableView() {
         tableDirector.replace(with: [
-            section
+            progressSection,
+            itemsSection
         ])
     }
 
@@ -41,20 +40,20 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
 
 // MARK: - DefaultStatesDelegate
 
-extension ActivityViewController: DefaultStatesDelegate {
+extension StatisticsViewController: DefaultStatesDelegate {
     
     func didTapRetry(view: CustomStateView) {
-        loadGames()
+        loadData()
     }
     
 }
 
 // MARK: - Binding
 
-private extension ActivityViewController {
+private extension StatisticsViewController {
     
     func bind() {
-        viewModel.didGetGames = { [weak self] in
+        viewModel.didGetData = { [weak self] in
             DispatchQueue.main.async {
                 self?.stateMachine.transition(to: .none) {
                     self?.reload()
@@ -62,7 +61,7 @@ private extension ActivityViewController {
             }
         }
         
-        viewModel.didGetNoGames = { [weak self] in
+        viewModel.didGetNoData = { [weak self] in
             self?.stateMachine.transition(to: ViewState.empty)
         }
         
@@ -73,37 +72,42 @@ private extension ActivityViewController {
 
 // MARK: - Table
 
-private extension ActivityViewController {
+private extension StatisticsViewController {
     
     // MARK: - Sections
     
-    var section: TableSection {
-        return TableSection(onlyRows: rows)
+    var progressSection: TableSection {
+        return TableSection(onlyRows: [
+            achievementProgressRow
+        ].compactMap { $0 })
+    }
+    
+    var itemsSection: TableSection {
+        return TableSection(onlyRows: itemsRows)
     }
     
     // MARK: - Rows
     
-    var rows: [Row] {
-        guard let gamesViewModels = viewModel.gamesViewModels else { return [] }
-        return gamesViewModels.map { game in
-            TableRow<PlayerGameCell>(item: game)
-                .on(.click) { [weak self] _ in
-                    guard let self = self else { return }
-                    let gameViewController = GameViewController(viewModel: .init(appId: game.appId, steamId: self.viewModel.steamId))
-                    self.navigationController?.pushViewController(gameViewController, animated: true)
-                }
-        }
+    var achievementProgressRow: Row? {
+        return viewModel.progressViewModel.map { TableRow<GameProgressCell>(item: $0) }
+    }
+    
+    var itemsRows: [Row] {
+        return [
+            viewModel.achievementsViewModel.map { TableRow<TitleDisclosureCell>(item: $0) },
+            viewModel.statsViewModel.map { TableRow<TitleDisclosureCell>(item: $0) }
+        ].compactMap { $0 }
     }
     
 }
 
 // MARK: - Private
 
-private extension ActivityViewController {
+private extension StatisticsViewController {
 
-    func loadGames() {
+    func loadData() {
         stateMachine.transition(to: ViewState.loading) { [weak self] in
-            self?.viewModel.loadGames()
+            self?.viewModel.loadData()
         }
     }
 
