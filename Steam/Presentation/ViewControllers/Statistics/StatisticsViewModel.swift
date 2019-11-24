@@ -16,7 +16,7 @@ class StatisticsViewModel: BaseControllerViewModel {
     
     var stats: UserStatsForGamePlayerStats?
 
-    private let appId: Int
+    let appId: Int
     
     private let steamId: String
     

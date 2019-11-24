@@ -5,6 +5,8 @@
 "Statistics" = "Statistics";
 "Achievements" = "Achievements";
 "Stats" = "Stats";
+"User" = "User";
+"You" = "You";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -47,3 +49,4 @@
 
 "AchievementsAchieved" = "Achieved";
 "AchievementsNotAchieved" = "Not achieved";
+

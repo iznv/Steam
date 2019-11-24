@@ -9,10 +9,12 @@ class StatsViewModel {
     }
     
     // MARK: - Properties
-
-    private let schemaStats: [SchemaStat]
     
-    private let stats: [Stat]
+    let appId: Int
+
+    let schemaStats: [SchemaStat]
+    
+    let stats: [Stat]
 
     // MARK: - Cells View Models
 
@@ -20,15 +22,17 @@ class StatsViewModel {
         return schemaStats.map { schemaStat in
             let value = stats.first { $0.name == schemaStat.name }?.value
             return StatCellViewModel(title: schemaStat.displayName.isEmpty ? schemaStat.name : schemaStat.displayName,
-                                     value: value ?? 0)
+                                     value: Int(value ?? 0))
         }
     }
 
     // MARK: - Init
 
-    init(schemaStats: [SchemaStat],
+    init(appId: Int,
+         schemaStats: [SchemaStat],
          stats: [Stat]) {
         
+        self.appId = appId
         self.schemaStats = schemaStats
         self.stats = stats
     }

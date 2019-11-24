@@ -19,6 +19,11 @@ class StatsViewController: BaseTableViewController<StatsViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(openStatCompare))
 
         navigationItem.title = R.string.localizable.stats()
         
@@ -49,6 +54,19 @@ private extension StatsViewController {
     
     var rows: [Row] {
         return viewModel.statsViewModels.map { TableRow<StatCell>(item: $0) }
+    }
+    
+}
+
+// MARK: - Private
+
+private extension StatsViewController {
+    
+    @objc func openStatCompare() {
+        let statCompareViewController = StatCompareViewController(viewModel: .init(appId: viewModel.appId,
+                                                                                   schemaStats: viewModel.schemaStats,
+                                                                                   stats: viewModel.stats))
+        navigationController?.pushViewController(statCompareViewController, animated: true)
     }
     
 }

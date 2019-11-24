@@ -134,7 +134,8 @@ private extension StatisticsViewController {
     func openStats() {
         guard let schemaStats = viewModel.schema?.stats else { return }
         
-        let achievementsViewController = StatsViewController(viewModel: .init(schemaStats: schemaStats,
+        let achievementsViewController = StatsViewController(viewModel: .init(appId: viewModel.appId,
+                                                                              schemaStats: schemaStats,
                                                                               stats: viewModel.stats?.stats ?? []))
         navigationController?.pushViewController(achievementsViewController, animated: true)
     }

@@ -10,6 +10,6 @@ struct Stat: Codable {
     
     let name: String
     
-    let value: Int
+    let value: Double
     
 }
