@@ -1,4 +1,4 @@
-class ActivityViewModel {
+class ActivityViewModel: BaseControllerViewModel {
     
     // MARK: - Constants
     
@@ -8,17 +8,21 @@ class ActivityViewModel {
         
     }
     
-    private enum Mocks {
-        
-        
-        
-    }
-    
     // MARK: - Properties
-
     
+    private let steamId: String
 
-    // MARK: - Computed Properties
+    private var games: [PlayerGame]?
+    
+    // MARK: - Events
+    
+    var didGetGames: (() -> Void)?
+    
+    var didGetNoGames: (() -> Void)?
+
+    // MARK: - Cells View Models
+    
+    var gamesViewModels: [PlayerGameCellViewModel]?
     
     // MARK: - Services
     
@@ -26,8 +30,8 @@ class ActivityViewModel {
     
     // MARK: - Init
 
-    init() {
-        
+    init(steamId: String? = nil) {
+        self.steamId = steamId ?? ApiService.Mocks.somePersonId
     }
 
 }
@@ -36,26 +40,32 @@ class ActivityViewModel {
 
 extension ActivityViewModel {
     
-    func loadActivity() {
-        steamPlayerService.getRecentlyPlayedGames(steamId: ApiService.Mocks.somePersonId) { games in
-
+    func loadGames() {
+        steamPlayerService.getRecentlyPlayedGames(steamId: steamId) { [weak self] result in
+            switch result {
+            case let .success(games):
+                guard !games.isEmpty else {
+                    self?.didGetNoGames?()
+                    return
+                }
+                
+                self?.games = games
+                self?.makeCellsViewModels()
+                self?.didGetGames?()
+            case let .failure(error):
+                self?.handle(error)
+            }
         }
     }
     
-}
-
-// MARK: - Actions
-
-private extension ActivityViewModel {
-
-    
-
 }
 
 // MARK: - Private
 
 private extension ActivityViewModel {
 
-    
+    func makeCellsViewModels() {
+        gamesViewModels = games?.map { PlayerGameCellViewModel(game: $0) }
+    }
 
 }

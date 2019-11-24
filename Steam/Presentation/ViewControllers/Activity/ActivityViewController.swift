@@ -1,3 +1,4 @@
+import StatefulViewController
 import TableKit
 import Utils
 
@@ -10,26 +11,12 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         
         
     }
-    
-    private enum Mocks {
-        
-        
-        
-    }
-    
-    // MARK: - Views
-
-    
 
     // MARK: - Properties
     
-    lazy var tableDirector = TableDirector(tableView: tableView)
+    private lazy var tableDirector = TableDirector(tableView: tableView)
 
-    
-
-    // MARK: - Computed Properties
-
-
+    private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
 
     // MARK: - Life Cycle
     
@@ -38,7 +25,8 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         
         navigationItem.title = R.string.localizable.activityTabTitle()
 
-        viewModel.loadActivity()
+        bind()
+        loadGames()
     }
 
     // MARK: - Table
@@ -48,11 +36,39 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
             section
         ])
     }
-    
-    // MARK: - Overrides
 
-    
+}
 
+// MARK: - DefaultStatesDelegate
+
+extension ActivityViewController: DefaultStatesDelegate {
+    
+    func didTapRetry(view: CustomStateView) {
+        loadGames()
+    }
+    
+}
+
+// MARK: - Binding
+
+private extension ActivityViewController {
+    
+    func bind() {
+        viewModel.didGetGames = { [weak self] in
+            DispatchQueue.main.async {
+                self?.stateMachine.transition(to: .none) {
+                    self?.reload()
+                }
+            }
+        }
+        
+        viewModel.didGetNoGames = { [weak self] in
+            self?.stateMachine.transition(to: ViewState.empty)
+        }
+        
+        bind(viewModel, to: stateMachine)
+    }
+    
 }
 
 // MARK: - Table
@@ -62,37 +78,32 @@ private extension ActivityViewController {
     // MARK: - Sections
     
     var section: TableSection {
-        return TableSection(onlyRows: [
-            
-        ])
+        return TableSection(onlyRows: rows)
     }
     
     // MARK: - Rows
     
+    var rows: [Row] {
+        guard let gamesViewModels = viewModel.gamesViewModels else { return [] }
+        return gamesViewModels.map { game in
+            TableRow<PlayerGameCell>(item: game)
+                .on(.click) { [weak self] _ in
+//                    let profileViewController = GameViewController(viewModel: .init())
+//                    self?.navigationController?.pushViewController(profileViewController, animated: true)
+                }
+        }
+    }
     
-    
-}
-
-// MARK: - Actions
-
-private extension ActivityViewController {
-
-    
-
-}
-
-// MARK: - Constraints
-
-private extension ActivityViewController {
-
-    
-
 }
 
 // MARK: - Private
 
 private extension ActivityViewController {
 
-    
+    func loadGames() {
+        stateMachine.transition(to: ViewState.loading) { [weak self] in
+            self?.viewModel.loadGames()
+        }
+    }
 
 }

@@ -1,5 +1,6 @@
 "Games" = "Games";
 "Friends" = "Friends";
+"Activity" = "Activity";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -25,3 +26,8 @@
 
 "ProfileBadges" = "Badges";
 "ProfileGroups" = "Groups";
+
+"ActivityHoursPastTwoWeeksFormat" = "%@ hours past 2 weeks";
+"ActivityHoursOnRecordFormat" = "%@ hours on record";
+"ActivityMinutesPastTwoWeeksFormat" = "%@ minutes past 2 weeks";
+"ActivityMinutesOnRecordFormat" = "%@ minutes on record";

@@ -86,6 +86,8 @@ class ProfileViewModel: BaseControllerViewModel {
         return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)
     }
     
+    let activityViewModel = TitleDisclosureCellViewModel(title: R.string.localizable.activity())
+    
     let gamesViewModel = TitleDisclosureCellViewModel(title: R.string.localizable.games())
     
     let friendsViewModel = TitleDisclosureCellViewModel(title: R.string.localizable.friends())
@@ -104,7 +106,7 @@ class ProfileViewModel: BaseControllerViewModel {
         guard let player = player else { return nil }
         guard let timeCreated = player.timeCreated else { return nil }
         
-        let date = DateFormatter.commomDateFormatter.string(from: timeCreated)
+        let date = DateFormatter.common.string(from: timeCreated)
         return R.string.localizable.profileCreatedDate(date)
     }
     

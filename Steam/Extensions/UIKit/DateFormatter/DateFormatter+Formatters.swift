@@ -10,7 +10,7 @@ import Foundation
 
 extension DateFormatter {
     
-    static let commomDateFormatter: DateFormatter = {
+    static let common: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = .enUS
         formatter.dateFormat = "d MMM, yyyy"

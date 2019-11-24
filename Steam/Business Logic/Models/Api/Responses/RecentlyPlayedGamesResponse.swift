@@ -8,9 +8,9 @@
 
 struct RecentlyPlayedGamesResponse: Codable {
     
-    let totalCount: Int
+    let totalCount: Int?
     
-    let games: [Game]
+    let games: [Game]?
     
 }
 

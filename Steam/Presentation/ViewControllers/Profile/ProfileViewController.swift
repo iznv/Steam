@@ -156,6 +156,12 @@ private extension ProfileViewController {
     
     var itemsRows: [Row] {
         return [
+            TableRow<TitleDisclosureCell>(item: viewModel.activityViewModel)
+                .on(.click) { [weak self] _ in
+                    guard let steamId = self?.viewModel.steamId else { return }
+                    let friendsViewController = ActivityViewController(viewModel: .init(steamId: steamId))
+                    self?.navigationController?.pushViewController(friendsViewController, animated: true)
+                },
             TableRow<TitleDisclosureCell>(item: viewModel.gamesViewModel),
             TableRow<TitleDisclosureCell>(item: viewModel.friendsViewModel)
                 .on(.click) { [weak self] _ in
