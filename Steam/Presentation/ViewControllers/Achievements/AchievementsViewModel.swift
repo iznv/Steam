@@ -10,6 +10,12 @@ class AchievementsViewModel {
     
     // MARK: - Properties
     
+    let appId: Int
+    
+    let schemaAchievements: [SchemaAchievement]
+    
+    let achievements: [Achievement]
+    
     private let achivedAchievements: [SchemaAchievement]
     
     private let notAchivedAchievements: [SchemaAchievement]
@@ -30,8 +36,13 @@ class AchievementsViewModel {
 
     // MARK: - Init
 
-    init(schemaAchievements: [SchemaAchievement],
+    init(appId: Int,
+         schemaAchievements: [SchemaAchievement],
          achievements: [Achievement]) {
+        
+        self.appId = appId
+        self.schemaAchievements = schemaAchievements
+        self.achievements = achievements
         
         let achieved = achievements.filter { $0.achieved == 1 }
                 

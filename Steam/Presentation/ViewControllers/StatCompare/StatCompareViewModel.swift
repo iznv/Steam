@@ -29,10 +29,11 @@ class StatCompareViewModel: BaseControllerViewModel {
     var statViewModels: [StatCompareCellViewModel] {
         guard let myStats = myStats else { return [] }
         
-        return zip(stats, myStats).compactMap { stat1, stat2 in
-            guard let schemaStat = schemaStats.first(where: { $0.name == stat1.name }) else { return nil }
+        return schemaStats.compactMap { schemaStat in
+            let value1 = stats.first(where: { $0.name == schemaStat.name })?.value ?? 0
+            let value2 = myStats.first(where: { $0.name == schemaStat.name })?.value ?? 0
             let title = schemaStat.displayName.isEmpty ? schemaStat.name : schemaStat.displayName
-            return StatCompareCellViewModel(title: title, value1: Int(stat1.value), value2: Int(stat2.value))
+            return StatCompareCellViewModel(title: title, value1: Int(value1), value2: Int(value2))
         }
     }
 
@@ -77,13 +78,4 @@ extension StatCompareViewModel {
         }
     }
     
-}
-
-
-// MARK: - Private
-
-private extension StatCompareViewModel {
-
-    
-
 }

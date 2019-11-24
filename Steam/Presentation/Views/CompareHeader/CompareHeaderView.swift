@@ -76,4 +76,5 @@ private extension CompareHeaderView {
             make.bottom.equalToSuperview().inset(CGFloat.verticalMargin)
         }
     }
+
 }

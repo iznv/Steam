@@ -19,6 +19,11 @@ class AchievementsViewController: BaseTableViewController<AchievementsViewModel>
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(openAchievementCompare))
 
         navigationItem.title = R.string.localizable.achievements()
         
@@ -76,6 +81,19 @@ private extension AchievementsViewController {
     
     var notAchievedRows: [Row] {
         return viewModel.notAchievedViewModels.map { TableRow<AchievementCell>(item: $0) }
+    }
+    
+}
+
+// MARK: - Private
+
+private extension AchievementsViewController {
+    
+    @objc func openAchievementCompare() {
+        let statCompareViewController = AchievementCompareViewController(viewModel: .init(appId: viewModel.appId,
+                                                                                          schemaAchievements: viewModel.schemaAchievements,
+                                                                                          achievements: viewModel.achievements))
+        navigationController?.pushViewController(statCompareViewController, animated: true)
     }
     
 }

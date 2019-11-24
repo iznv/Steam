@@ -122,11 +122,13 @@
 		3356D28018F0BEDA57B1C9D3 /* TitleValueCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC6AC75056FA614F0B130B /* TitleValueCollectionCellViewModel.swift */; };
 		36AD263C300FF15A249F2108 /* DescriptionStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0F2C5EE58F47671211BB8 /* DescriptionStateView.swift */; };
 		377247FE8843AD7BF9893CC0 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EF13B19B3CF21467FE1F9 /* LoadingStateView.swift */; };
+		3F233AF55CF402F7EB691F4B /* AchievementCompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F452EE077021D2639A9F /* AchievementCompareViewModel.swift */; };
 		4364B395FE62928D57D6DAA1 /* TextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CDBAD0287688016429DDC0 /* TextCellViewModel.swift */; };
 		450DE2F7E3E4F13C0E6D4FC1 /* AchievementCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDACF5BFB4B1A15C67D64A8 /* AchievementCellViewModel.swift */; };
 		45E037F118EAABEFFA42E028 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74546FCA02C1B6D13BCAC947 /* CountryCell.swift */; };
 		4B4CAF83F23E58ED51CABB9B /* LevelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */; };
 		4CCE0CBBA61B955E4DE1209B /* CompareHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6810F51B0EBDA18EAA96B148 /* CompareHeaderView.swift */; };
+		51ADAEED3F5C2354D2F1DA2B /* AchievementCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6EA1C0C656BC5C460B6B8C /* AchievementCompareViewController.swift */; };
 		5E7F98AB969BA912C7D7B279 /* GameProgressCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D088B9554A39697010ADE /* GameProgressCellViewModel.swift */; };
 		6B97B3813CDBAB19DC94D76F /* TitleDisclosureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3EB25D1889321778F664F /* TitleDisclosureCellViewModel.swift */; };
 		71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC7A5176461DE60370991F /* ActivityViewController.swift */; };
@@ -161,6 +163,7 @@
 
 /* Begin PBXFileReference section */
 		024EB08B0D512219D694CFBF /* AchievementsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
+		0295F452EE077021D2639A9F /* AchievementCompareViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AchievementCompareViewModel.swift; sourceTree = "<group>"; };
 		02E4C6ABB7026379CAC9AFCB /* CountryCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
 		077594191B9C555EC0DFF512 /* ActivityViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		12153A6A31E9D69B3827B8F9 /* FriendCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
@@ -275,6 +278,7 @@
 		383DC995977BE48809B015C5 /* PlayerGameCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerGameCellViewModel.swift; sourceTree = "<group>"; };
 		40DAEF0D528039773DFB7AEF /* TextCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		479FF98A35D244C1D84BD1E0 /* ProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		4C6EA1C0C656BC5C460B6B8C /* AchievementCompareViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AchievementCompareViewController.swift; sourceTree = "<group>"; };
 		530C6EF89C1DBDE1667164BC /* GameViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		59F0F2C5EE58F47671211BB8 /* DescriptionStateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DescriptionStateView.swift; sourceTree = "<group>"; };
 		612D46207EF5EE968F8A8AAA /* StatisticsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 				DB16F0723200C9C9229B34DC /* Achievements */,
 				CCFCA93FE33D5C0FBE8DE0CD /* Stats */,
 				32198E6185E9CDF6376C67F3 /* StatCompare */,
+				9258436E0A4AA5D857D918B7 /* AchievementCompare */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1046,6 +1051,16 @@
 			path = TitleDisclosure;
 			sourceTree = "<group>";
 		};
+		9258436E0A4AA5D857D918B7 /* AchievementCompare */ = {
+			isa = PBXGroup;
+			children = (
+				4C6EA1C0C656BC5C460B6B8C /* AchievementCompareViewController.swift */,
+				0295F452EE077021D2639A9F /* AchievementCompareViewModel.swift */,
+			);
+			name = AchievementCompare;
+			path = AchievementCompare;
+			sourceTree = "<group>";
+		};
 		9D7A049C3D2BA3B6BBAA8DC5 /* CompareHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -1458,6 +1473,8 @@
 				1E6A57D2344949BF378765D3 /* StatCompareCell.swift in Sources */,
 				DBBE73BB5D5E9109E1042509 /* StatCompareCellViewModel.swift in Sources */,
 				4CCE0CBBA61B955E4DE1209B /* CompareHeaderView.swift in Sources */,
+				51ADAEED3F5C2354D2F1DA2B /* AchievementCompareViewController.swift in Sources */,
+				3F233AF55CF402F7EB691F4B /* AchievementCompareViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
