@@ -8,8 +8,16 @@
 
 struct PriceOverview: Codable {
     
-    let currency: String
-    
-    let final: Int
+    let finalFormatted: String
 
+}
+
+private extension PriceOverview {
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case finalFormatted = "final_formatted"
+        
+    }
+    
 }

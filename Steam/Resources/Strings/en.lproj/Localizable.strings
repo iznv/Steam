@@ -1,6 +1,7 @@
 "Games" = "Games";
 "Friends" = "Friends";
 "Activity" = "Activity";
+"Free" = "Free";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -31,3 +32,8 @@
 "ActivityHoursOnRecordFormat" = "%@ hours on record";
 "ActivityMinutesPastTwoWeeksFormat" = "%@ minutes past 2 weeks";
 "ActivityMinutesOnRecordFormat" = "%@ minutes on record";
+
+"GameMetacritic" = "Metacritic";
+"GamePlayersOnline" = "Players online";
+"GameReleaseDate" = "Release date";
+"GamePublisher" = "Publisher";

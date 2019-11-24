@@ -49,7 +49,7 @@ class CountryCell: BaseTableViewCell {
 
 extension CountryCell: ConfigurableCell {
     
-    static let defaultHeight: CGFloat? = 30
+    static let estimatedHeight: CGFloat? = 30
     
     func configure(with viewModel: CountryCellViewModel) {
         flagImageView.image = viewModel.flagImage
@@ -63,9 +63,10 @@ extension CountryCell: ConfigurableCell {
 private extension CountryCell {
     
     func configureFlagImageViewConstraints() {
+        flagImageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         flagImageView.snp.remakeConstraints { make in
             make.leading.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.centerY.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(CGFloat.verticalMargin)
         }
     }
     

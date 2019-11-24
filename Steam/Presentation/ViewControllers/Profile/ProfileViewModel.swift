@@ -76,11 +76,11 @@ class ProfileViewModel: BaseControllerViewModel {
         var items = [TitleValueItem]()
         
         if let badges = badgesResponse?.badges, !badges.isEmpty {
-            items.append(TitleValueItem(title: R.string.localizable.profileBadges(), value: badges.count))
+            items.append(TitleValueItem(title: R.string.localizable.profileBadges(), value: String(badges.count)))
         }
         
         if let groupsCount = groupsCount, groupsCount > 0 {
-            items.append(TitleValueItem(title: R.string.localizable.profileGroups(), value: groupsCount))
+            items.append(TitleValueItem(title: R.string.localizable.profileGroups(), value: String(groupsCount)))
         }
         
         return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)

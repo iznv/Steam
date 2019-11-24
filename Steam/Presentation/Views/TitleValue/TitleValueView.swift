@@ -32,9 +32,9 @@ class TitleValueView: BaseView {
         }
     }
     
-    var value: Int? {
+    var value: String? {
         didSet {
-            valueLabel.text = value.map { String($0) }
+            valueLabel.text = value
         }
     }
     
@@ -70,6 +70,7 @@ private extension TitleValueView {
         valueLabel.snp.remakeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom)
             make.bottom.equalToSuperview().priority(.low)
+            make.leading.trailing.equalToSuperview()
         }
     }
 

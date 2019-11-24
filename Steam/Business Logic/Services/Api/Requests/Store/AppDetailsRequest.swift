@@ -12,7 +12,9 @@ extension ApiService {
                     completion: @escaping (Result<[String: AppDetailsResponse], Error>) -> Void) {
         
         let parameters: [RequestParameter: Any] = [
-            .appIds: appId
+            .appIds: appId,
+            .language: "english",
+            .countryCode: "US"
         ]
 
         request(endpoint: .store,

@@ -7,6 +7,8 @@
 //
 
 struct PlayerGame {
+    
+    let appId: Int
         
     let iconUrl: String
     

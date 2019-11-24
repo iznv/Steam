@@ -10,6 +10,6 @@ struct AppDetailsResponse: Codable {
     
     let success: Bool
     
-    let data: AppDetails
+    let data: AppDetails?
     
 }

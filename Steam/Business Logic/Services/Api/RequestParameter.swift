@@ -27,5 +27,9 @@ enum RequestParameter: String {
     case endDate = "enddate"
     
     case count = "count"
+    
+    case language = "l"
+    
+    case countryCode = "cc"
 
 }

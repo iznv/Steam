@@ -3,6 +3,8 @@ import Foundation
 struct PlayerGameCellViewModel {
     
     // MARK: - Properties
+    
+    let appId: Int
 
     let picUrl: URL?
     
@@ -19,6 +21,7 @@ struct PlayerGameCellViewModel {
     // MARK: - Init
     
     init(game: PlayerGame) {
+        self.appId = game.appId
         self.picUrl = URL(string: game.iconUrl)
         self.title = game.title
         self.lastTwoWeekPlayed = formattingService.timePlayed(timeInMinutes: game.lastTwoWeekMinutesPlayed)

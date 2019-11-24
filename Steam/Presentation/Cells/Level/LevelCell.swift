@@ -104,7 +104,7 @@ private extension LevelCell {
         xpLeftLabel.snp.remakeConstraints { make in
             make.top.equalTo(progressView.snp.bottom)
             make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(CGFloat.verticalMargin)
         }
     }
     

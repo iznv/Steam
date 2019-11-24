@@ -21,7 +21,8 @@ class SteamPlayerService {
             completion($0.map {
                 $0.response.games?.map { game in
                     let iconUrl = String(format: Constants.imageUrlFormat, String(game.appId), game.imgIconURL)
-                    return PlayerGame(iconUrl: iconUrl,
+                    return PlayerGame(appId: game.appId,
+                                      iconUrl: iconUrl,
                                       title: game.name,
                                       lastTwoWeekMinutesPlayed: game.playtime2Weeks,
                                       onRecordMinutesPlayed: game.playtimeForever)

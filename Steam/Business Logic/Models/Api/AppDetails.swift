@@ -12,8 +12,6 @@ struct AppDetails: Codable {
     
     let steamAppid: Int
     
-    let requiredAge: Int
-    
     let isFree: Bool
     
     let shortDescription: String
@@ -26,13 +24,13 @@ struct AppDetails: Codable {
     
     let platforms: Platforms
     
-    let metacritic: Metacritic
+    let metacritic: Metacritic?
     
     let genres: [Genre]
     
     let screenshots: [Screenshot]
         
-    let recommendations: Recommendations
+    let recommendations: Recommendations?
     
     let releaseDate: ReleaseDate
     
@@ -47,8 +45,6 @@ private extension AppDetails {
         case name
         
         case steamAppid = "steam_appid"
-        
-        case requiredAge = "required_age"
         
         case isFree = "is_free"
         

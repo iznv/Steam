@@ -10,8 +10,8 @@ import CoreGraphics
 
 extension CGFloat {
     
-    static let horizontalMargin: CGFloat = 16
+    static let horizontalMargin: CGFloat = 32
     
-    static let verticalMargin: CGFloat = 4
+    static let verticalMargin: CGFloat = 16
     
 }

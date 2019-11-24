@@ -10,6 +10,6 @@ struct TitleValueItem {
     
     let title: String
     
-    let value: Int
+    let value: String
     
 }

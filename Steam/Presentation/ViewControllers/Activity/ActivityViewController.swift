@@ -88,8 +88,8 @@ private extension ActivityViewController {
         return gamesViewModels.map { game in
             TableRow<PlayerGameCell>(item: game)
                 .on(.click) { [weak self] _ in
-//                    let profileViewController = GameViewController(viewModel: .init())
-//                    self?.navigationController?.pushViewController(profileViewController, animated: true)
+                    let gameViewController = GameViewController(viewModel: .init(appId: game.appId))
+                    self?.navigationController?.pushViewController(gameViewController, animated: true)
                 }
         }
     }

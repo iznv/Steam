@@ -17,5 +17,5 @@ extension NumberFormatter {
         formatter.maximumFractionDigits = 1
         return formatter
     }()
-    
+
 }

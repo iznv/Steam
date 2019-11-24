@@ -40,6 +40,7 @@ extension TitleValueCollectionCell: ConfigurableCell {
     static let estimatedHeight: CGFloat? = 70
     
     func configure(with viewModel: TitleValueCollectionCellViewModel) {
+        stackView.clear()
         viewModel.items.forEach { item in
             let titleValueView = TitleValueView()
             titleValueView.title = item.title
@@ -56,7 +57,7 @@ private extension TitleValueCollectionCell {
     
     func configureStackViewConstraints() {
         stackView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(CGFloat.verticalMargin)
             make.leading.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
         }
     }
