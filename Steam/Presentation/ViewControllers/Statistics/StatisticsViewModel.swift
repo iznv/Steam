@@ -2,14 +2,6 @@ import Foundation
 
 class StatisticsViewModel: BaseControllerViewModel {
     
-    // MARK: - Errors
-    
-    enum Error: Swift.Error {
-        
-        case noSchema
-        
-    }
-    
     // MARK: - Constants
     
     private enum Constants {
@@ -83,9 +75,6 @@ extension StatisticsViewModel {
             switch result {
             case let .success(schema):
                 self?.schema = schema
-                if schema?.isEmpty == true {
-                    self?.didGetNoData?()
-                }
             case let .failure(error):
                 self?.handle(error)
             }
@@ -97,11 +86,7 @@ extension StatisticsViewModel {
         steamUserStatsService.getUserStatsForGame(steamId: steamId, appId: appId) { [weak self] result in
             switch result {
             case let .success(stats):
-                if let stats = stats {
-                    self?.stats = stats
-                } else {
-                    self?.handle(Error.noSchema)
-                }
+                self?.stats = stats
             case let .failure(error):
                 self?.handle(error)
             }
@@ -110,10 +95,13 @@ extension StatisticsViewModel {
         }
         
         dispatchGroup.notify(queue: .global(qos: .userInitiated)) { [weak self] in
-            guard self?.schema?.isEmpty == false else { return }
-            guard self?.stats != nil else { return }
+            guard let self = self else { return }
             
-            self?.didGetData?()
+            if self.schema != nil, self.schema?.isEmpty == false {
+                self.didGetData?()
+            } else {
+                self.didGetNoData?()
+            }
         }
     }
     

@@ -2,6 +2,7 @@
 "Friends" = "Friends";
 "Activity" = "Activity";
 "Free" = "Free";
+"Statistics" = "Statistics";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -32,6 +33,7 @@
 "ActivityHoursOnRecordFormat" = "%@ hours on record";
 "ActivityMinutesPastTwoWeeksFormat" = "%@ minutes past 2 weeks";
 "ActivityMinutesOnRecordFormat" = "%@ minutes on record";
+"ActivityNeverPlayed" = "Never played";
 
 "GameMetacritic" = "Metacritic";
 "GamePlayersOnline" = "Players online";

@@ -41,7 +41,6 @@
 		2C35ADAD2385CE84003161F0 /* SteamUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADAC2385CE84003161F0 /* SteamUserService.swift */; };
 		2C35ADB22385D418003161F0 /* GetOwnedGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */; };
 		2C35ADB42385D4F5003161F0 /* OwnedGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB32385D4F5003161F0 /* OwnedGamesResponse.swift */; };
-		2C35ADB62385D58F003161F0 /* OwnedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB52385D58F003161F0 /* OwnedGame.swift */; };
 		2C35ADB92385D766003161F0 /* SteamPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35ADB82385D766003161F0 /* SteamPlayerService.swift */; };
 		2C41F6FF238932BD006EC815 /* AppDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F6FE238932BD006EC815 /* AppDetailsResponse.swift */; };
 		2C41F701238932E2006EC815 /* AppDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F700238932E2006EC815 /* AppDetails.swift */; };
@@ -116,6 +115,8 @@
 		2CACCE182389BE690025FE1B /* BaseControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */; };
 		2CACCE1A2389BFC90025FE1B /* UIViewController+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE192389BFC90025FE1B /* UIViewController+States.swift */; };
 		2CACCE1D2389CA990025FE1B /* String+GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE1C2389CA990025FE1B /* String+GlobalConstants.swift */; };
+		2CDE0CA6238AE150009DC0F0 /* TimePlayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */; };
+		2CDE0CA8238AE35E009DC0F0 /* GamesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */; };
 		2F8EE121604FF4B76EF39804 /* PlayerGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE83F5B1F8AF7CCEADAFD6 /* PlayerGameCell.swift */; };
 		3356D28018F0BEDA57B1C9D3 /* TitleValueCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC6AC75056FA614F0B130B /* TitleValueCollectionCellViewModel.swift */; };
 		36AD263C300FF15A249F2108 /* DescriptionStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0F2C5EE58F47671211BB8 /* DescriptionStateView.swift */; };
@@ -183,7 +184,6 @@
 		2C35ADAC2385CE84003161F0 /* SteamUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamUserService.swift; sourceTree = "<group>"; };
 		2C35ADB12385D418003161F0 /* GetOwnedGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOwnedGamesRequest.swift; sourceTree = "<group>"; };
 		2C35ADB32385D4F5003161F0 /* OwnedGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGamesResponse.swift; sourceTree = "<group>"; };
-		2C35ADB52385D58F003161F0 /* OwnedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGame.swift; sourceTree = "<group>"; };
 		2C35ADB82385D766003161F0 /* SteamPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamPlayerService.swift; sourceTree = "<group>"; };
 		2C41F6FE238932BD006EC815 /* AppDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsResponse.swift; sourceTree = "<group>"; };
 		2C41F700238932E2006EC815 /* AppDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetails.swift; sourceTree = "<group>"; };
@@ -258,6 +258,8 @@
 		2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllerViewModel.swift; sourceTree = "<group>"; };
 		2CACCE192389BFC90025FE1B /* UIViewController+States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+States.swift"; sourceTree = "<group>"; };
 		2CACCE1C2389CA990025FE1B /* String+GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+GlobalConstants.swift"; sourceTree = "<group>"; };
+		2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePlayed.swift; sourceTree = "<group>"; };
+		2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesType.swift; sourceTree = "<group>"; };
 		31DFEB68CDB72324BB70F87E /* CustomStateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomStateView.swift; sourceTree = "<group>"; };
 		35BE83F5B1F8AF7CCEADAFD6 /* PlayerGameCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerGameCell.swift; sourceTree = "<group>"; };
 		383DC995977BE48809B015C5 /* PlayerGameCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerGameCellViewModel.swift; sourceTree = "<group>"; };
@@ -312,7 +314,6 @@
 				612D46207EF5EE968F8A8AAA /* StatisticsViewController.swift */,
 				EF80812CA1B43E974301365C /* StatisticsViewModel.swift */,
 			);
-			name = Statistics;
 			path = Statistics;
 			sourceTree = "<group>";
 		};
@@ -666,7 +667,6 @@
 				2C85A56B23886067007DB1BB /* Group.swift */,
 				2C41F70623893625006EC815 /* Metacritic.swift */,
 				2C85A55B238858F4007DB1BB /* NewsItem.swift */,
-				2C35ADB52385D58F003161F0 /* OwnedGame.swift */,
 				2C35ADA72385CDC8003161F0 /* PersonaState.swift */,
 				2C41F70423893602006EC815 /* Platforms.swift */,
 				2C35AD882385B271003161F0 /* Player.swift */,
@@ -817,7 +817,9 @@
 		2C95D4D9238A877B009ACE0B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */,
 				2C95D4DA238A8785009ACE0B /* PlayerGame.swift */,
+				2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -912,7 +914,6 @@
 				8BAF32BBAD427D209B9A503D /* GameProgressCell.swift */,
 				F17D088B9554A39697010ADE /* GameProgressCellViewModel.swift */,
 			);
-			name = GameProgress;
 			path = GameProgress;
 			sourceTree = "<group>";
 		};
@@ -1157,7 +1158,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/Steam/Resources/Generated/R.generated.swift",
+				$SRCROOT/Steam/Resources/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1247,7 +1248,9 @@
 				2C35ADB92385D766003161F0 /* SteamPlayerService.swift in Sources */,
 				2C85A56823885E4E007DB1BB /* Friend.swift in Sources */,
 				2C41F72423893B41006EC815 /* SteamAppsService.swift in Sources */,
+				2CDE0CA8238AE35E009DC0F0 /* GamesType.swift in Sources */,
 				2C41F7032389358A006EC815 /* PriceOverview.swift in Sources */,
+				2CDE0CA6238AE150009DC0F0 /* TimePlayed.swift in Sources */,
 				2C85A57B238869F1007DB1BB /* NumberOfCurrentPlayersResponse.swift in Sources */,
 				2C04E5F223846D670058CC18 /* RequestParameter.swift in Sources */,
 				2C35AD892385B271003161F0 /* Player.swift in Sources */,
@@ -1300,7 +1303,6 @@
 				2C41F70523893602006EC815 /* Platforms.swift in Sources */,
 				2C41F701238932E2006EC815 /* AppDetails.swift in Sources */,
 				2C35AD8B2385B5CF003161F0 /* GetPlayerSummariesRequest.swift in Sources */,
-				2C35ADB62385D58F003161F0 /* OwnedGame.swift in Sources */,
 				2C85A570238863EC007DB1BB /* GlobalAchievementPercentagesForAppResponse.swift in Sources */,
 				2C41F70923893645006EC815 /* Genre.swift in Sources */,
 				029942123EAD319F165FEAC6 /* ProfileViewModel.swift in Sources */,

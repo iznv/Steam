@@ -18,24 +18,15 @@ class SteamPlayerService {
                                 completion: @escaping (Result<[PlayerGame], ApiService.Error>) -> Void) {
         
         ApiService.shared.getRecentlyPlayedGames(steamId: steamId) {
-            completion($0.map {
-                $0.response.games?.map { game in
-                    let iconUrl = String(format: Constants.imageUrlFormat, String(game.appId), game.imgIconURL)
-                    return PlayerGame(appId: game.appId,
-                                      iconUrl: iconUrl,
-                                      title: game.name,
-                                      lastTwoWeekMinutesPlayed: game.playtime2Weeks,
-                                      onRecordMinutesPlayed: game.playtimeForever)
-                } ?? []
-            })
+            completion($0.map { $0.response.games?.convertingToPlayerGames() ?? [] })
         }
     }
     
     func getOwnedGames(steamId: String,
-                       completion: @escaping (Result<[OwnedGame], ApiService.Error>) -> Void) {
+                       completion: @escaping (Result<[PlayerGame], ApiService.Error>) -> Void) {
         
         ApiService.shared.getOwnedGames(steamId: steamId) {
-            completion($0.map { $0.response.games })
+            completion($0.map { $0.response.games.sorted { $0.name < $1.name }.convertingToPlayerGames() })
         }
     }
     
@@ -44,6 +35,26 @@ class SteamPlayerService {
         
         ApiService.shared.getBadges(steamId: steamId) {
             completion($0.map { $0.response })
+        }
+    }
+    
+}
+
+// MARK: - Private
+
+private extension Array where Element == Game {
+    
+    func convertingToPlayerGames() -> [PlayerGame] {
+        return map { game in
+            let iconUrl = String(format: Constants.imageUrlFormat,
+                                 String(game.appId),
+                                 game.imgIconURL)
+            
+            return PlayerGame(appId: game.appId,
+                              iconUrl: iconUrl,
+                              title: game.name,
+                              lastTwoWeekMinutesPlayed: game.playtime2Weeks,
+                              onRecordMinutesPlayed: game.playtimeForever)
         }
     }
     

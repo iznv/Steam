@@ -23,6 +23,8 @@ class StatisticsViewController: BaseTableViewController<StatisticsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = R.string.localizable.statistics()
+        
         bind()
         loadData()
     }

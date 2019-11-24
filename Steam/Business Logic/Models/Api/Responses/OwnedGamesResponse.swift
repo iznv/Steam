@@ -10,7 +10,7 @@ struct OwnedGamesResponse: Codable {
     
     let gameCount: Int
     
-    let games: [OwnedGame]
+    let games: [Game]
     
 }
 

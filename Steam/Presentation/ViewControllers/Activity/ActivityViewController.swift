@@ -23,7 +23,7 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = R.string.localizable.activityTabTitle()
+        navigationItem.title = viewModel.title
 
         bind()
         loadGames()

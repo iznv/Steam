@@ -12,7 +12,7 @@ struct Game: Codable {
     
     let name: String
     
-    let playtime2Weeks: Int
+    let playtime2Weeks: Int?
     
     let playtimeForever: Int
     

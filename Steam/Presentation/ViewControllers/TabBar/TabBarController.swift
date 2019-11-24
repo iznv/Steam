@@ -33,7 +33,7 @@ private extension TabBarController {
     // MARK: - Tabs
     
     var activity: Tab {
-        return Tab(controller: ActivityViewController(viewModel: .init()).embeddedInNavigation,
+        return Tab(controller: ActivityViewController(viewModel: .init(gamesType: .recent)).embeddedInNavigation,
                    title: R.string.localizable.activityTabTitle(),
                    image: R.image.activityTabIcon())
     }

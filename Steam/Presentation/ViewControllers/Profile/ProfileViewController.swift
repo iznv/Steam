@@ -158,16 +158,15 @@ private extension ProfileViewController {
         return [
             TableRow<TitleDisclosureCell>(item: viewModel.activityViewModel)
                 .on(.click) { [weak self] _ in
-                    guard let steamId = self?.viewModel.steamId else { return }
-                    let friendsViewController = ActivityViewController(viewModel: .init(steamId: steamId))
-                    self?.navigationController?.pushViewController(friendsViewController, animated: true)
+                    self?.openGames(gamesType: .recent)
                 },
-            TableRow<TitleDisclosureCell>(item: viewModel.gamesViewModel),
+            TableRow<TitleDisclosureCell>(item: viewModel.gamesViewModel)
+                .on(.click) { [weak self] _ in
+                    self?.openGames(gamesType: .owned)
+                },
             TableRow<TitleDisclosureCell>(item: viewModel.friendsViewModel)
                 .on(.click) { [weak self] _ in
-                    guard let steamId = self?.viewModel.steamId else { return }
-                    let friendsViewController = FriendsViewController(viewModel: .init(steamId: steamId))
-                    self?.navigationController?.pushViewController(friendsViewController, animated: true)
+                    self?.openFriends()
                 }
         ]
     }
@@ -206,6 +205,18 @@ private extension ProfileViewController {
                 print(user)
             }
         }
+    }
+    
+    func openGames(gamesType: GamesType) {
+        guard let steamId = viewModel.steamId else { return }
+        let friendsViewController = ActivityViewController(viewModel: .init(gamesType: gamesType, steamId: steamId))
+        navigationController?.pushViewController(friendsViewController, animated: true)
+    }
+    
+    func openFriends() {
+        guard let steamId = viewModel.steamId else { return }
+        let friendsViewController = FriendsViewController(viewModel: .init(steamId: steamId))
+        navigationController?.pushViewController(friendsViewController, animated: true)
     }
 
 }

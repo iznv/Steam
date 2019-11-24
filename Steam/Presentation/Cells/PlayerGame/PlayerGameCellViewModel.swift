@@ -24,8 +24,15 @@ struct PlayerGameCellViewModel {
         self.appId = game.appId
         self.picUrl = URL(string: game.iconUrl)
         self.title = game.title
-        self.lastTwoWeekPlayed = formattingService.timePlayed(timeInMinutes: game.lastTwoWeekMinutesPlayed)
-        self.onRecordPlayed = formattingService.timePlayed(timeInMinutes: game.onRecordMinutesPlayed)
+        
+        if let lastTwoWeekMinutesPlayed = game.lastTwoWeekMinutesPlayed {
+            self.lastTwoWeekPlayed = formattingService.timePlayed(timeInMinutes: lastTwoWeekMinutesPlayed, timePlayed: .pastTwoWeeks)
+        } else {
+            self.lastTwoWeekPlayed = nil
+        }
+
+        self.onRecordPlayed = formattingService.timePlayed(timeInMinutes: game.onRecordMinutesPlayed,
+                                                           timePlayed: .onRecord)
     }
     
 }

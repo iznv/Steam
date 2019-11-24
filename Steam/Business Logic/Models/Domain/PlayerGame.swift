@@ -14,7 +14,7 @@ struct PlayerGame {
     
     let title: String
     
-    let lastTwoWeekMinutesPlayed: Int
+    let lastTwoWeekMinutesPlayed: Int?
     
     let onRecordMinutesPlayed: Int
     
