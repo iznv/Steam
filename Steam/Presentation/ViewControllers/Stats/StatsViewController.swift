@@ -53,7 +53,12 @@ private extension StatsViewController {
     // MARK: - Rows
     
     var rows: [Row] {
-        return viewModel.statsViewModels.map { TableRow<StatCell>(item: $0) }
+        return viewModel.statsViewModels.map {
+            TableRow<StatCell>(item: $0)
+                .on(.click) { [weak self] options in
+                    self?.openStatHistory(name: options.item.name)
+                }
+        }
     }
     
 }
@@ -67,6 +72,12 @@ private extension StatsViewController {
                                                                                    schemaStats: viewModel.schemaStats,
                                                                                    stats: viewModel.stats))
         navigationController?.pushViewController(statCompareViewController, animated: true)
+    }
+    
+    func openStatHistory(name: String) {
+        let statHistoryViewController = StatHistoryViewController(viewModel: .init(appId: viewModel.appId,
+                                                                                   statName: name))
+        navigationController?.pushViewController(statHistoryViewController, animated: true)
     }
     
 }

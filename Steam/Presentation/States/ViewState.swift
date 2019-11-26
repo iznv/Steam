@@ -24,7 +24,7 @@ enum ViewState: String, CaseIterable {
 
 extension ViewState {
 
-    func makeDefaultView(delegate: DefaultStatesDelegate) -> UIView? {
+    func makeDefaultView(delegate: DefaultStatesDelegate?) -> UIView? {
         switch self {
         case .loading:
             return makeLoadingView()
@@ -47,22 +47,22 @@ private extension ViewState {
         return LoadingStateView()
     }
     
-    func makeSomethingWrongView(delegate: DefaultStatesDelegate) -> UIView {
+    func makeSomethingWrongView(delegate: DefaultStatesDelegate?) -> UIView {
         let view = CustomStateView()
         view.stateDescription = R.string.localizable.stateSomethingWrongDescription()
         view.buttonTitle = R.string.localizable.stateRetry()
         view.didTapButton = {
-            delegate.didTapRetry(view: view)
+            delegate?.didTapRetry(view: view)
         }
         return view
     }
     
-    func makeNoConnectionView(delegate: DefaultStatesDelegate) -> UIView {
+    func makeNoConnectionView(delegate: DefaultStatesDelegate?) -> UIView {
         let view = CustomStateView()
         view.stateDescription = R.string.localizable.stateNoConnectionDescription()
         view.buttonTitle = R.string.localizable.stateRetry()
         view.didTapButton = {
-            delegate.didTapRetry(view: view)
+            delegate?.didTapRetry(view: view)
         }
         return view
     }

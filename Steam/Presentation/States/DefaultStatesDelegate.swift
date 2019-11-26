@@ -11,3 +11,9 @@ protocol DefaultStatesDelegate: class {
     func didTapRetry(view: CustomStateView)
 
 }
+
+extension DefaultStatesDelegate {
+    
+    func didTapRetry(view: CustomStateView) { }
+    
+}

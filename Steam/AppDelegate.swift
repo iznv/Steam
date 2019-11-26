@@ -14,6 +14,10 @@ class AppDelegate: UIResponder {
     // MARK: - Properties
 
     lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    
+    // MARK: - Services
+
+    private let statHistoryService = StatHistoryService()
 
 }
 
@@ -26,6 +30,8 @@ extension AppDelegate: UIApplicationDelegate {
 
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
+        
+        statHistoryService.updateHistory()
         
         return true
     }

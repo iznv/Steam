@@ -26,6 +26,9 @@
 		2C04E5F223846D670058CC18 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04E5F123846D670058CC18 /* RequestParameter.swift */; };
 		2C04E5F723846DB00058CC18 /* Dictionary+MapPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04E5F623846DB00058CC18 /* Dictionary+MapPairs.swift */; };
 		2C04E5FC23847D990058CC18 /* Dictionary+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04E5FB23847D990058CC18 /* Dictionary+Operators.swift */; };
+		2C25E5BD238D969E00D1DCC9 /* StatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25E5BC238D969E00D1DCC9 /* StatDataModel.swift */; };
+		2C25E5BF238D973000D1DCC9 /* StatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25E5BE238D973000D1DCC9 /* StatItem.swift */; };
+		2C25E5C2238D97AA00D1DCC9 /* StatHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25E5C1238D97AA00D1DCC9 /* StatHistoryService.swift */; };
 		2C2F0995238B356F0085F405 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F0994238B356F0085F405 /* AuthService.swift */; };
 		2C35AD822385B1CC003161F0 /* TableDirector+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD812385B1CC003161F0 /* TableDirector+Replace.swift */; };
 		2C35AD842385B1DF003161F0 /* TableSection+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35AD832385B1DF003161F0 /* TableSection+Init.swift */; };
@@ -115,6 +118,12 @@
 		2CACCE182389BE690025FE1B /* BaseControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */; };
 		2CACCE1A2389BFC90025FE1B /* UIViewController+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE192389BFC90025FE1B /* UIViewController+States.swift */; };
 		2CACCE1D2389CA990025FE1B /* String+GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE1C2389CA990025FE1B /* String+GlobalConstants.swift */; };
+		2CCF1093238C406A009CC7EF /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF1092238C406A009CC7EF /* CoreDataService.swift */; };
+		2CCF1096238C41A9009CC7EF /* AddStatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF1095238C41A9009CC7EF /* AddStatsRequest.swift */; };
+		2CCF1099238C41BC009CC7EF /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF1097238C41BC009CC7EF /* DataModel.xcdatamodeld */; };
+		2CCF109D238C45FA009CC7EF /* NSManagedObjectContext+Safety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF109C238C45FA009CC7EF /* NSManagedObjectContext+Safety.swift */; };
+		2CCF10A0238C4627009CC7EF /* GetStatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF109F238C4627009CC7EF /* GetStatsRequest.swift */; };
+		2CCF10A2238C4CAC009CC7EF /* DeleteTodayStatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF10A1238C4CAC009CC7EF /* DeleteTodayStatsRequest.swift */; };
 		2CDE0CA6238AE150009DC0F0 /* TimePlayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */; };
 		2CDE0CA8238AE35E009DC0F0 /* GamesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */; };
 		2F307474ABF9AF203EA31A3B /* StatCompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64EF5DAC47EF25F787A4C1B /* StatCompareViewModel.swift */; };
@@ -129,8 +138,11 @@
 		4B4CAF83F23E58ED51CABB9B /* LevelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */; };
 		4CCE0CBBA61B955E4DE1209B /* CompareHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6810F51B0EBDA18EAA96B148 /* CompareHeaderView.swift */; };
 		51ADAEED3F5C2354D2F1DA2B /* AchievementCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6EA1C0C656BC5C460B6B8C /* AchievementCompareViewController.swift */; };
+		59B6CAD08846B11A52D51034 /* StatHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31F01A775066A7F480A8A1 /* StatHistoryViewModel.swift */; };
 		5E7F98AB969BA912C7D7B279 /* GameProgressCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D088B9554A39697010ADE /* GameProgressCellViewModel.swift */; };
+		6898F0B351B6013C5EADD60C /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF70EE67E158FD23BD7C05 /* GraphCell.swift */; };
 		6B97B3813CDBAB19DC94D76F /* TitleDisclosureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3EB25D1889321778F664F /* TitleDisclosureCellViewModel.swift */; };
+		6D8BA264C2FDA137E93CE091 /* GraphCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E00407D5E362C3C0E4046 /* GraphCellViewModel.swift */; };
 		71A6963C7EF78A4905037A6B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC7A5176461DE60370991F /* ActivityViewController.swift */; };
 		7B52238339E78F96FC8088E0 /* UserPicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B41DED2C4E2748330CBBD7 /* UserPicCell.swift */; };
 		80C0A69CE1D167B2CAB7411D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FF98A35D244C1D84BD1E0 /* ProgressView.swift */; };
@@ -156,6 +168,7 @@
 		D783982B33AE286FC8E6DE8E /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4C6ABB7026379CAC9AFCB /* CountryCellViewModel.swift */; };
 		DB7BAB3817AB524229887BAB /* Pods_Steam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670A348B30FB8DAE4558E2B2 /* Pods_Steam.framework */; };
 		DBBE73BB5D5E9109E1042509 /* StatCompareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF0754AE073C8BE50922E2 /* StatCompareCellViewModel.swift */; };
+		DE03FC10FC16CB5D5EC8E7B0 /* StatHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB86B5AE7B2903A335BFD6 /* StatHistoryViewController.swift */; };
 		E0C668586902C24D91835AF8 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF80812CA1B43E974301365C /* StatisticsViewModel.swift */; };
 		E1631AA19BDE6EE59B707122 /* GameHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6648D282A9DFC39F7E57 /* GameHeaderCellViewModel.swift */; };
 		E48476F54E9E0676E531389F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C967F56D4CF48331E9A10 /* FriendsViewController.swift */; };
@@ -169,6 +182,7 @@
 		12153A6A31E9D69B3827B8F9 /* FriendCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		12DF3066996E27E3E5792621 /* Pods-Steam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.release.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.release.xcconfig"; sourceTree = "<group>"; };
 		14A3D1D73D8377547BDF8633 /* StatCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatCellViewModel.swift; sourceTree = "<group>"; };
+		279E00407D5E362C3C0E4046 /* GraphCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GraphCellViewModel.swift; sourceTree = "<group>"; };
 		2C04E5BB238464D00058CC18 /* Steam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C04E5BE238464D00058CC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C04E5C7238464D20058CC18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -181,6 +195,9 @@
 		2C04E5F123846D670058CC18 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
 		2C04E5F623846DB00058CC18 /* Dictionary+MapPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+MapPairs.swift"; sourceTree = "<group>"; };
 		2C04E5FB23847D990058CC18 /* Dictionary+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operators.swift"; sourceTree = "<group>"; };
+		2C25E5BC238D969E00D1DCC9 /* StatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDataModel.swift; sourceTree = "<group>"; };
+		2C25E5BE238D973000D1DCC9 /* StatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatItem.swift; sourceTree = "<group>"; };
+		2C25E5C1238D97AA00D1DCC9 /* StatHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatHistoryService.swift; sourceTree = "<group>"; };
 		2C2F0994238B356F0085F405 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2C35AD812385B1CC003161F0 /* TableDirector+Replace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableDirector+Replace.swift"; sourceTree = "<group>"; };
 		2C35AD832385B1DF003161F0 /* TableSection+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableSection+Init.swift"; sourceTree = "<group>"; };
@@ -270,8 +287,15 @@
 		2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllerViewModel.swift; sourceTree = "<group>"; };
 		2CACCE192389BFC90025FE1B /* UIViewController+States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+States.swift"; sourceTree = "<group>"; };
 		2CACCE1C2389CA990025FE1B /* String+GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+GlobalConstants.swift"; sourceTree = "<group>"; };
+		2CCF1092238C406A009CC7EF /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		2CCF1095238C41A9009CC7EF /* AddStatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatsRequest.swift; sourceTree = "<group>"; };
+		2CCF1098238C41BC009CC7EF /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		2CCF109C238C45FA009CC7EF /* NSManagedObjectContext+Safety.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Safety.swift"; sourceTree = "<group>"; };
+		2CCF109F238C4627009CC7EF /* GetStatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatsRequest.swift; sourceTree = "<group>"; };
+		2CCF10A1238C4CAC009CC7EF /* DeleteTodayStatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodayStatsRequest.swift; sourceTree = "<group>"; };
 		2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePlayed.swift; sourceTree = "<group>"; };
 		2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesType.swift; sourceTree = "<group>"; };
+		2DCF70EE67E158FD23BD7C05 /* GraphCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		31DFEB68CDB72324BB70F87E /* CustomStateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomStateView.swift; sourceTree = "<group>"; };
 		35BE83F5B1F8AF7CCEADAFD6 /* PlayerGameCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerGameCell.swift; sourceTree = "<group>"; };
 		37C99D32CD592BECCCA5705D /* StatsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +325,7 @@
 		9C0C967F56D4CF48331E9A10 /* FriendsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		9DDACF5BFB4B1A15C67D64A8 /* AchievementCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AchievementCellViewModel.swift; sourceTree = "<group>"; };
 		9F86178C71B7ACC737DD351E /* TitleDisclosureCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleDisclosureCell.swift; sourceTree = "<group>"; };
+		A2EB86B5AE7B2903A335BFD6 /* StatHistoryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatHistoryViewController.swift; sourceTree = "<group>"; };
 		A30F6648D282A9DFC39F7E57 /* GameHeaderCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameHeaderCellViewModel.swift; sourceTree = "<group>"; };
 		B356A2769A6212B78C5641C5 /* GameViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelCellViewModel.swift; sourceTree = "<group>"; };
@@ -314,6 +339,7 @@
 		D5CDBAD0287688016429DDC0 /* TextCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextCellViewModel.swift; sourceTree = "<group>"; };
 		D6B41DED2C4E2748330CBBD7 /* UserPicCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserPicCell.swift; sourceTree = "<group>"; };
 		DD7AF4F1A18A28DAEE97121C /* FriendCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendCellViewModel.swift; sourceTree = "<group>"; };
+		EC31F01A775066A7F480A8A1 /* StatHistoryViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatHistoryViewModel.swift; sourceTree = "<group>"; };
 		EF80812CA1B43E974301365C /* StatisticsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		F17D088B9554A39697010ADE /* GameProgressCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameProgressCellViewModel.swift; sourceTree = "<group>"; };
 		F4E097107A2380ED6980CD47 /* TitleValueView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleValueView.swift; sourceTree = "<group>"; };
@@ -433,17 +459,18 @@
 		2C04E5D5238466420058CC18 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9258436E0A4AA5D857D918B7 /* AchievementCompare */,
+				DB16F0723200C9C9229B34DC /* Achievements */,
 				1CFA047748F357CCE96B8A1E /* Activity */,
 				2C35AD972385BEA6003161F0 /* Common */,
 				DFA44DA7FE5FF18594810E51 /* Friends */,
-				84BA9C275CDCF2F4E1534AF4 /* Profile */,
-				2C35AD8E2385BDE3003161F0 /* TabBar */,
 				315FF04C47494F5F3DA56C4F /* Game */,
-				115956B718CA1BF7DD405A83 /* Statistics */,
-				DB16F0723200C9C9229B34DC /* Achievements */,
-				CCFCA93FE33D5C0FBE8DE0CD /* Stats */,
+				84BA9C275CDCF2F4E1534AF4 /* Profile */,
 				32198E6185E9CDF6376C67F3 /* StatCompare */,
-				9258436E0A4AA5D857D918B7 /* AchievementCompare */,
+				90735E4A04E6BFDE78B928DB /* StatHistory */,
+				115956B718CA1BF7DD405A83 /* Statistics */,
+				CCFCA93FE33D5C0FBE8DE0CD /* Stats */,
+				2C35AD8E2385BDE3003161F0 /* TabBar */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -464,19 +491,20 @@
 		2C04E5D72384664D0058CC18 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F35CC655A92410DE8C40C463 /* Text */,
+				3ADB8787F04EDCA7AFC56789 /* Achievement */,
 				A55ABB69F70C5B5EAB530AEB /* Country */,
-				2F12A48F249442A390FB86C5 /* TitleValueCollection */,
-				8B14DD8A9B63A4DF8F891DA2 /* TitleDisclosure */,
-				AA73DA0B7BC6D69504FBB7A5 /* UserPic */,
-				6F03DC408341175B4868F813 /* Level */,
 				F1121BC362FCA2363DF2202C /* Friend */,
-				A16580AEEF1137C1C71666FF /* PlayerGame */,
 				85A39997553395F9E61A9D38 /* GameHeader */,
 				2E81111E8928F8FFAD9721EA /* GameProgress */,
-				3ADB8787F04EDCA7AFC56789 /* Achievement */,
+				DBE51CECE5E6F445A6744404 /* Graph */,
+				6F03DC408341175B4868F813 /* Level */,
+				A16580AEEF1137C1C71666FF /* PlayerGame */,
 				05E6A8F679D0D9D5440E8D70 /* Stat */,
 				9F2D2C23588CF2439AA94985 /* StatCompare */,
+				F35CC655A92410DE8C40C463 /* Text */,
+				8B14DD8A9B63A4DF8F891DA2 /* TitleDisclosure */,
+				2F12A48F249442A390FB86C5 /* TitleValueCollection */,
+				AA73DA0B7BC6D69504FBB7A5 /* UserPic */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -488,6 +516,7 @@
 				2C41F72E238971F4006EC815 /* Formatting */,
 				2C2F0992238B35560085F405 /* Other */,
 				2C85A55E23885A2B007DB1BB /* Steam */,
+				2CCF1090238C4033009CC7EF /* CoreData */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -495,6 +524,7 @@
 		2C04E5D9238466630058CC18 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2CCF109A238C45D8009CC7EF /* CoreData */,
 				2C41F72523895717006EC815 /* CoreGraphics */,
 				2CACCE032389A5C10025FE1B /* StatefulViewController */,
 				2C04E5F423846D9D0058CC18 /* Swift */,
@@ -576,9 +606,26 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		2C25E5BB238D968E00D1DCC9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2C25E5BC238D969E00D1DCC9 /* StatDataModel.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2C25E5C0238D979C00D1DCC9 /* StatHistoryService */ = {
+			isa = PBXGroup;
+			children = (
+				2C25E5C1238D97AA00D1DCC9 /* StatHistoryService.swift */,
+			);
+			path = StatHistoryService;
+			sourceTree = "<group>";
+		};
 		2C2F0992238B35560085F405 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				2C25E5C0238D979C00D1DCC9 /* StatHistoryService */,
 				2C2F0993238B35610085F405 /* AuthService */,
 			);
 			path = Other;
@@ -621,6 +668,7 @@
 			isa = PBXGroup;
 			children = (
 				2C35ADAE2385D0B1003161F0 /* Api */,
+				2C25E5BB238D968E00D1DCC9 /* Data */,
 				2C95D4D9238A877B009ACE0B /* Domain */,
 			);
 			path = Models;
@@ -873,6 +921,7 @@
 			children = (
 				2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */,
 				2C95D4DA238A8785009ACE0B /* PlayerGame.swift */,
+				2C25E5BE238D973000D1DCC9 /* StatItem.swift */,
 				2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */,
 			);
 			path = Domain;
@@ -960,6 +1009,50 @@
 				2C95D4DF238AAD0A009ACE0B /* String+HtmlDecoded.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		2CCF1090238C4033009CC7EF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF1091238C4047009CC7EF /* CoreDataService */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2CCF1091238C4047009CC7EF /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF1094238C4199009CC7EF /* Requests */,
+				2CCF1092238C406A009CC7EF /* CoreDataService.swift */,
+				2CCF1097238C41BC009CC7EF /* DataModel.xcdatamodeld */,
+			);
+			path = CoreDataService;
+			sourceTree = "<group>";
+		};
+		2CCF1094238C4199009CC7EF /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF1095238C41A9009CC7EF /* AddStatsRequest.swift */,
+				2CCF109F238C4627009CC7EF /* GetStatsRequest.swift */,
+				2CCF10A1238C4CAC009CC7EF /* DeleteTodayStatsRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		2CCF109A238C45D8009CC7EF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF109B238C45E5009CC7EF /* NSManagedObjectContext */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2CCF109B238C45E5009CC7EF /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF109C238C45FA009CC7EF /* NSManagedObjectContext+Safety.swift */,
+			);
+			path = NSManagedObjectContext;
 			sourceTree = "<group>";
 		};
 		2E81111E8928F8FFAD9721EA /* GameProgress */ = {
@@ -1051,13 +1144,21 @@
 			path = TitleDisclosure;
 			sourceTree = "<group>";
 		};
+		90735E4A04E6BFDE78B928DB /* StatHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A2EB86B5AE7B2903A335BFD6 /* StatHistoryViewController.swift */,
+				EC31F01A775066A7F480A8A1 /* StatHistoryViewModel.swift */,
+			);
+			path = StatHistory;
+			sourceTree = "<group>";
+		};
 		9258436E0A4AA5D857D918B7 /* AchievementCompare */ = {
 			isa = PBXGroup;
 			children = (
 				4C6EA1C0C656BC5C460B6B8C /* AchievementCompareViewController.swift */,
 				0295F452EE077021D2639A9F /* AchievementCompareViewModel.swift */,
 			);
-			name = AchievementCompare;
 			path = AchievementCompare;
 			sourceTree = "<group>";
 		};
@@ -1066,7 +1167,6 @@
 			children = (
 				6810F51B0EBDA18EAA96B148 /* CompareHeaderView.swift */,
 			);
-			name = CompareHeader;
 			path = CompareHeader;
 			sourceTree = "<group>";
 		};
@@ -1147,6 +1247,15 @@
 				024EB08B0D512219D694CFBF /* AchievementsViewModel.swift */,
 			);
 			path = Achievements;
+			sourceTree = "<group>";
+		};
+		DBE51CECE5E6F445A6744404 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				2DCF70EE67E158FD23BD7C05 /* GraphCell.swift */,
+				279E00407D5E362C3C0E4046 /* GraphCellViewModel.swift */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		DFA44DA7FE5FF18594810E51 /* Friends */ = {
@@ -1276,7 +1385,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/Steam/Resources/Generated/R.generated.swift",
+				$SRCROOT/Steam/Resources/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1338,6 +1447,7 @@
 				2C35AD942385BE51003161F0 /* UIViewController+UINavigationController.swift in Sources */,
 				2C04E5F023846D0C0058CC18 /* ApiService.swift in Sources */,
 				2C41F70B2389368D006EC815 /* Screenshot.swift in Sources */,
+				2CCF109D238C45FA009CC7EF /* NSManagedObjectContext+Safety.swift in Sources */,
 				2C35ADAA2385CDE8003161F0 /* CommunityVisibilityState.swift in Sources */,
 				2CACCE0D2389A6570025FE1B /* DefaultStatesDelegate.swift in Sources */,
 				2C41F72123893B1C006EC815 /* App.swift in Sources */,
@@ -1348,10 +1458,13 @@
 				2C35ADA62385CAF3003161F0 /* GetRecentlyPlayedGamesRequest.swift in Sources */,
 				2C85A57D23886A4B007DB1BB /* GetNumberOfCurrentPlayersRequest.swift in Sources */,
 				2C6016ED238A8545007D94F9 /* FormattingService.swift in Sources */,
+				2C25E5BD238D969E00D1DCC9 /* StatDataModel.swift in Sources */,
 				2CA0D12D2389EF7A00ADBBA6 /* Array+Chunked.swift in Sources */,
+				2CCF1099238C41BC009CC7EF /* DataModel.xcdatamodeld in Sources */,
 				2CACCE1A2389BFC90025FE1B /* UIViewController+States.swift in Sources */,
 				2C35AD9A2385BEBB003161F0 /* NavigationController.swift in Sources */,
 				2C85A58D2388793C007DB1BB /* SchemaStat.swift in Sources */,
+				2C25E5BF238D973000D1DCC9 /* StatItem.swift in Sources */,
 				2C85A57623886466007DB1BB /* GetGlobalAchievementPercentagesForAppRequest.swift in Sources */,
 				2C95D4DE238AAC97009ACE0B /* UIStackView+Clear.swift in Sources */,
 				2C85A556238856DB007DB1BB /* GetNewsForAppRequest.swift in Sources */,
@@ -1367,6 +1480,7 @@
 				2C41F72423893B41006EC815 /* SteamAppsService.swift in Sources */,
 				2CDE0CA8238AE35E009DC0F0 /* GamesType.swift in Sources */,
 				2C41F7032389358A006EC815 /* PriceOverview.swift in Sources */,
+				2CCF1096238C41A9009CC7EF /* AddStatsRequest.swift in Sources */,
 				2CDE0CA6238AE150009DC0F0 /* TimePlayed.swift in Sources */,
 				2C85A57B238869F1007DB1BB /* NumberOfCurrentPlayersResponse.swift in Sources */,
 				2C04E5F223846D670058CC18 /* RequestParameter.swift in Sources */,
@@ -1405,6 +1519,7 @@
 				2CACCE162389A8D60025FE1B /* BaseTableViewController+Reload.swift in Sources */,
 				2C85A59923887F2C007DB1BB /* Achievement.swift in Sources */,
 				2C5952C22387114100AA1DA6 /* Badge.swift in Sources */,
+				2CCF1093238C406A009CC7EF /* CoreDataService.swift in Sources */,
 				2C85A56423885E11007DB1BB /* FriendListResponse.swift in Sources */,
 				2A275F1D74FC4FD55AC7060E /* ProfileViewController.swift in Sources */,
 				2C85A55C238858F4007DB1BB /* NewsItem.swift in Sources */,
@@ -1420,6 +1535,7 @@
 				2C85A570238863EC007DB1BB /* GlobalAchievementPercentagesForAppResponse.swift in Sources */,
 				2C41F70923893645006EC815 /* Genre.swift in Sources */,
 				029942123EAD319F165FEAC6 /* ProfileViewModel.swift in Sources */,
+				2CCF10A0238C4627009CC7EF /* GetStatsRequest.swift in Sources */,
 				2C85A59323887ECA007DB1BB /* UserStatsForGameResponse.swift in Sources */,
 				2C5952BE238710B400AA1DA6 /* GetBadgesRequest.swift in Sources */,
 				2C35ADB42385D4F5003161F0 /* OwnedGamesResponse.swift in Sources */,
@@ -1458,6 +1574,7 @@
 				28246C2759FA69F9DD5AD76D /* GameViewModel.swift in Sources */,
 				CC7D17766C3EE4F239B7F291 /* StatisticsViewController.swift in Sources */,
 				E0C668586902C24D91835AF8 /* StatisticsViewModel.swift in Sources */,
+				2CCF10A2238C4CAC009CC7EF /* DeleteTodayStatsRequest.swift in Sources */,
 				A5E59743EC71C8310B50D6EE /* GameProgressCell.swift in Sources */,
 				5E7F98AB969BA912C7D7B279 /* GameProgressCellViewModel.swift in Sources */,
 				8497184A421EC52D2E33529C /* AchievementsViewController.swift in Sources */,
@@ -1468,6 +1585,7 @@
 				A5B3F1239DCB1D744F88ABCA /* StatsViewModel.swift in Sources */,
 				A2A7B9AF54B33A2E3A7071A7 /* StatCell.swift in Sources */,
 				D6503B3030D4B37FEF28706E /* StatCellViewModel.swift in Sources */,
+				2C25E5C2238D97AA00D1DCC9 /* StatHistoryService.swift in Sources */,
 				A293257DCCC3B580FA9AD68B /* StatCompareViewController.swift in Sources */,
 				2F307474ABF9AF203EA31A3B /* StatCompareViewModel.swift in Sources */,
 				1E6A57D2344949BF378765D3 /* StatCompareCell.swift in Sources */,
@@ -1475,6 +1593,10 @@
 				4CCE0CBBA61B955E4DE1209B /* CompareHeaderView.swift in Sources */,
 				51ADAEED3F5C2354D2F1DA2B /* AchievementCompareViewController.swift in Sources */,
 				3F233AF55CF402F7EB691F4B /* AchievementCompareViewModel.swift in Sources */,
+				DE03FC10FC16CB5D5EC8E7B0 /* StatHistoryViewController.swift in Sources */,
+				59B6CAD08846B11A52D51034 /* StatHistoryViewModel.swift in Sources */,
+				6898F0B351B6013C5EADD60C /* GraphCell.swift in Sources */,
+				6D8BA264C2FDA137E93CE091 /* GraphCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1670,6 +1792,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2CCF1097238C41BC009CC7EF /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2CCF1098238C41BC009CC7EF /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 2CCF1098238C41BC009CC7EF /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2C04E5B3238464D00058CC18 /* Project object */;
 }

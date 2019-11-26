@@ -7,6 +7,7 @@ target 'Steam' do
 
   pod 'FlagKit'
   pod 'R.swift'
+  pod 'ScrollableGraphView'
   pod 'SnapKit'
   pod 'StatefulViewController'
   pod 'SteamLogin'

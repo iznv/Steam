@@ -17,4 +17,11 @@ extension DateFormatter {
         return formatter
     }()
     
+    static let statItemDate: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = .enUS
+        formatter.dateFormat = "d MMM"
+        return formatter
+    }()
+    
 }

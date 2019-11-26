@@ -21,7 +21,8 @@ class StatsViewModel {
     var statsViewModels: [StatCellViewModel] {
         return schemaStats.map { schemaStat in
             let value = stats.first { $0.name == schemaStat.name }?.value
-            return StatCellViewModel(title: schemaStat.displayName.isEmpty ? schemaStat.name : schemaStat.displayName,
+            return StatCellViewModel(name: schemaStat.name,
+                                     title: schemaStat.displayName.isEmpty ? schemaStat.name : schemaStat.displayName,
                                      value: Int(value ?? 0))
         }
     }

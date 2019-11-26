@@ -11,7 +11,7 @@ import StatefulViewController
 extension ViewStateMachine {
 
     convenience init(view: UIView,
-                     defaultStatesDelegate: DefaultStatesDelegate) {
+                     defaultStatesDelegate: DefaultStatesDelegate?) {
 
         var states = [String: UIView]()
 

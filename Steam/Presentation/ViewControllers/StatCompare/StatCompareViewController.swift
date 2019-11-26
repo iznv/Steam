@@ -70,7 +70,9 @@ private extension StatCompareViewController {
         }
         
         viewModel.didGetNoStats = { [weak self] in
-            self?.stateMachine.transition(to: ViewState.empty)
+            DispatchQueue.main.async {
+                self?.stateMachine.transition(to: ViewState.empty)
+            }
         }
         
         bind(viewModel, to: stateMachine)
