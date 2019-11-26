@@ -61,9 +61,11 @@ class AchievementCompareViewModel: BaseControllerViewModel {
 extension AchievementCompareViewModel {
     
     func loadMyAchievements() {
+        guard let steamId = authService.steamId else { return }
+        
         myAchievements = nil
 
-        steamUserStatsService.getUserStatsForGame(steamId: authService.steamId, appId: appId) { [weak self] result in
+        steamUserStatsService.getUserStatsForGame(steamId: steamId, appId: appId) { [weak self] result in
             switch result {
             case let .success(stats):
                 if let stats = stats, let myAchievements = stats.achievements {

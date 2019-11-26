@@ -1,3 +1,5 @@
+import Foundation
+
 class ActivityViewModel: BaseControllerViewModel {
     
     // MARK: - Constants
@@ -10,11 +12,17 @@ class ActivityViewModel: BaseControllerViewModel {
     
     // MARK: - Properties
     
-    let steamId: String
+    var steamId: String?
     
     private let gamesType: GamesType
 
     private var games: [PlayerGame]?
+    
+    // MARK: - Events
+    
+    var didLogin: (() -> Void)?
+    
+    var didLogout: (() -> Void)?
     
     // MARK: - Computed Properties
     
@@ -25,6 +33,10 @@ class ActivityViewModel: BaseControllerViewModel {
         case .owned:
             return R.string.localizable.games()
         }
+    }
+    
+    var isLoggenIn: Bool {
+        return authService.isLoggenIn
     }
     
     // MARK: - Events
@@ -41,13 +53,26 @@ class ActivityViewModel: BaseControllerViewModel {
     
     private let steamPlayerService = SteamPlayerService()
     
+    private let authService = AuthService()
+    
+    private let notificationCenter = NotificationCenter.default
+    
     // MARK: - Init
 
     init(gamesType: GamesType,
          steamId: String? = nil) {
-
+        
         self.gamesType = gamesType
-        self.steamId = steamId ?? ApiService.Mocks.somePersonId
+        
+        super.init()
+        
+        let isUserProfile = steamId == nil
+
+        self.steamId = isUserProfile ? authService.steamId : steamId
+        
+        if isUserProfile {
+            observeAuthState()
+        }
     }
 
 }
@@ -76,12 +101,16 @@ private extension ActivityViewModel {
     }
     
     func getRecentGames() {
+        guard let steamId = steamId else { return }
+        
         steamPlayerService.getRecentlyPlayedGames(steamId: steamId) { [weak self] in
             self?.handleGamesResult($0)
         }
     }
     
     func getOwnedGames() {
+        guard let steamId = steamId else { return }
+        
         steamPlayerService.getOwnedGames(steamId: steamId) { [weak self] in
             self?.handleGamesResult($0)
         }
@@ -100,6 +129,21 @@ private extension ActivityViewModel {
             didGetGames?()
         case let .failure(error):
             handle(error)
+        }
+    }
+    
+    func observeAuthState() {
+        notificationCenter.addObserver(forName: .didChangeAuthState,
+                                       object: nil,
+                                       queue: .main) { [weak self] _ in
+            guard let self = self else { return }
+            if self.authService.isLoggenIn {
+                self.didLogin?()
+                self.steamId = self.authService.steamId
+                self.loadGames()
+            } else {
+                self.didLogout?()
+            }
         }
     }
 

@@ -18,7 +18,7 @@ class ProfileViewModel: BaseControllerViewModel {
     
     // MARK: - Properties
     
-    let steamId: String?
+    var steamId: String?
 
     private var player: Player?
     
@@ -26,9 +26,19 @@ class ProfileViewModel: BaseControllerViewModel {
     
     private var groupsCount: Int?
     
+    // MARK: - Computed Properties
+    
+    var isLoggenIn: Bool {
+        return authService.isLoggenIn
+    }
+    
     // MARK: - Events
     
     var didGetProfile: (() -> Void)?
+    
+    var didLogin: (() -> Void)?
+    
+    var didLogout: (() -> Void)?
     
     // MARK: - Cells View Models
     
@@ -119,11 +129,23 @@ class ProfileViewModel: BaseControllerViewModel {
     private let steamUserService = SteamUserService()
     
     private let steamPlayerService = SteamPlayerService()
+    
+    private let authService = AuthService()
+    
+    private let notificationCenter = NotificationCenter.default
 
     // MARK: - Init
 
     init(steamId: String? = nil) {
-        self.steamId = steamId ?? ApiService.Mocks.somePersonId
+        super.init()
+        
+        let isUserProfile = steamId == nil
+        
+        self.steamId = isUserProfile ? authService.steamId : steamId
+        
+        if isUserProfile {
+            observeAuthState()
+        }
     }
 
 }
@@ -190,9 +212,11 @@ extension ProfileViewModel {
 
 // MARK: - Actions
 
-private extension ProfileViewModel {
+extension ProfileViewModel {
 
-    
+    func logout() {
+        authService.logout()
+    }
 
 }
 
@@ -200,6 +224,19 @@ private extension ProfileViewModel {
 
 private extension ProfileViewModel {
 
-    
+    func observeAuthState() {
+        notificationCenter.addObserver(forName: .didChangeAuthState,
+                                       object: nil,
+                                       queue: .main) { [weak self] _ in
+            guard let self = self else { return }
+            if self.authService.isLoggenIn {
+                self.didLogin?()
+                self.steamId = self.authService.steamId
+                self.loadUserProfile()
+            } else {
+                self.didLogout?()
+            }
+        }
+    }
 
 }

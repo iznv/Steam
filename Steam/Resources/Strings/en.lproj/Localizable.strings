@@ -8,6 +8,7 @@
 "User" = "User";
 "You" = "You";
 "History" = "History";
+"Login" = "Log in";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -17,6 +18,7 @@
 "ProfileTabTitle" = "Profile";
 "ActivityTabTitle" = "Activity";
 
+"ProfileNotAuthorized" = "Log in to see your profile";
 "ProfileCreatedDate" = "Created %@";
 
 "ProfileLevelValue" = "Level %@";
@@ -34,6 +36,7 @@
 "ProfileBadges" = "Badges";
 "ProfileGroups" = "Groups";
 
+"ActivityNotAuthorized" = "Log in to see your activity";
 "ActivityHoursPastTwoWeeksFormat" = "%@ hours past 2 weeks";
 "ActivityHoursOnRecordFormat" = "%@ hours on record";
 "ActivityMinutesPastTwoWeeksFormat" = "%@ minutes past 2 weeks";

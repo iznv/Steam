@@ -2,6 +2,12 @@ import StatefulViewController
 import TableKit
 import Utils
 
+private enum ActivityViewState: String {
+    
+    case notAuthorized
+    
+}
+
 class ActivityViewController: BaseTableViewController<ActivityViewModel> {
     
     // MARK: - Constants
@@ -11,12 +17,31 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         
         
     }
+    
+    // MARK: - Views
+
+    private lazy var notAuthorizedView: UIView = {
+        let view = CustomStateView()
+        
+        view.stateDescription = R.string.localizable.activityNotAuthorized()
+        view.buttonTitle = R.string.localizable.login()
+        
+        view.didTapButton = { [weak self] in
+            self?.login()
+        }
+        
+        return view
+    }()
 
     // MARK: - Properties
     
     private lazy var tableDirector = TableDirector(tableView: tableView)
-
-    private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
+    
+    private lazy var stateMachine: ViewStateMachine = {
+        let stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
+        stateMachine[ActivityViewState.notAuthorized] = notAuthorizedView
+        return stateMachine
+    }()
 
     // MARK: - Life Cycle
     
@@ -26,7 +51,12 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         navigationItem.title = viewModel.title
 
         bind()
-        loadGames()
+        
+        if viewModel.isLoggenIn {
+            loadGames()
+        } else {
+            stateMachine.transition(to: ActivityViewState.notAuthorized, animated: false)
+        }
     }
 
     // MARK: - Table
@@ -68,6 +98,18 @@ private extension ActivityViewController {
             }
         }
         
+        viewModel.didLogin = { [weak self] in
+            DispatchQueue.main.async {
+                self?.stateMachine.transition(to: ViewState.loading, animated: false)
+            }
+        }
+        
+        viewModel.didLogout = { [weak self] in
+            DispatchQueue.main.async {
+                self?.stateMachine.transition(to: ActivityViewState.notAuthorized)
+            }
+        }
+        
         bind(viewModel, to: stateMachine)
     }
     
@@ -91,13 +133,28 @@ private extension ActivityViewController {
             TableRow<PlayerGameCell>(item: game)
                 .on(.click) { [weak self] _ in
                     guard let self = self else { return }
-                    let gameViewController = GameViewController(viewModel: .init(appId: game.appId, steamId: self.viewModel.steamId))
+                    guard let steamId = self.viewModel.steamId else { return }
+                    let gameViewController = GameViewController(viewModel: .init(appId: game.appId,
+                                                                                 steamId: steamId))
                     self.navigationController?.pushViewController(gameViewController, animated: true)
                 }
         }
     }
     
 }
+
+// MARK: - Actions
+
+private extension ActivityViewController {
+
+    func login() {
+        let loginViewController = LoginViewController(viewModel: .init()).embeddedInNavigation
+        loginViewController.modalPresentationStyle = .fullScreen
+        present(loginViewController, animated: true, completion: nil)
+    }
+
+}
+
 
 // MARK: - Private
 

@@ -6,10 +6,38 @@
 //  Copyright © 2019 Ivan Zinovev. All rights reserved.
 //
 
+import Foundation
+
 class AuthService {
     
-    var steamId: String {
-        return ApiService.Mocks.somePersonId
+    // MARK: - Services
+    
+    private let userDefaults = UserDefaults.standard
+    
+    // MARK: Properties
+    
+    var isLoggenIn: Bool {
+        return steamId != nil
+    }
+    
+    var steamId: String? {
+        return userDefaults.steamId
+    }
+    
+}
+
+// MARK: - Public
+
+extension AuthService {
+    
+    func login(steamId: String) {
+        userDefaults.steamId = steamId
+        NotificationCenter.default.post(name: .didChangeAuthState, object: nil)
+    }
+    
+    func logout() {
+        userDefaults.steamId = nil
+        NotificationCenter.default.post(name: .didChangeAuthState, object: nil)
     }
     
 }

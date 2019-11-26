@@ -31,7 +31,9 @@ class StatHistoryService {
 extension StatHistoryService {
     
     func updateHistory() {
-        steamPlayerService.getRecentlyPlayedGames(steamId: authService.steamId) { [weak self] result in
+        guard let steamId = authService.steamId else { return }
+        
+        steamPlayerService.getRecentlyPlayedGames(steamId: steamId) { [weak self] result in
             if case let .success(games) = result {
                 self?.loadStats(for: games)
             }
@@ -78,7 +80,9 @@ private extension StatHistoryService {
     }
     
     func loadStats(for game: PlayerGame) {
-        steamUserStatsService.getUserStatsForGame(steamId: authService.steamId,
+        guard let steamId = authService.steamId else { return }
+        
+        steamUserStatsService.getUserStatsForGame(steamId: steamId,
                                                   appId: game.appId) { [weak self] in
             if case let .success(playerStats) = $0,
                let stats = playerStats?.stats {

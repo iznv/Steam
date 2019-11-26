@@ -61,9 +61,11 @@ class StatCompareViewModel: BaseControllerViewModel {
 extension StatCompareViewModel {
     
     func loadMyStats() {
+        guard let steamId = authService.steamId else { return }
+        
         myStats = nil
 
-        steamUserStatsService.getUserStatsForGame(steamId: authService.steamId, appId: appId) { [weak self] result in
+        steamUserStatsService.getUserStatsForGame(steamId: steamId, appId: appId) { [weak self] result in
             switch result {
             case let .success(stats):
                 if let stats = stats, let myStats = stats.stats {

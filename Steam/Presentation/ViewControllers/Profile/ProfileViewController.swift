@@ -1,7 +1,12 @@
 import StatefulViewController
-import SteamLogin
 import TableKit
 import Utils
+
+private enum ProfileViewState: String {
+    
+    case notAuthorized
+    
+}
 
 class ProfileViewController: BaseTableViewController<ProfileViewModel> {
     
@@ -13,21 +18,30 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         
     }
     
-    private enum Mocks {
-        
-        
-        
-    }
-    
     // MARK: - Views
 
-    
+    private lazy var notAuthorizedView: UIView = {
+        let view = CustomStateView()
+        
+        view.stateDescription = R.string.localizable.profileNotAuthorized()
+        view.buttonTitle = R.string.localizable.login()
+        
+        view.didTapButton = { [weak self] in
+            self?.login()
+        }
+        
+        return view
+    }()
 
     // MARK: - Properties
     
     private lazy var tableDirector = TableDirector(tableView: tableView)
 
-    private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
+    private lazy var stateMachine: ViewStateMachine = {
+        let stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
+        stateMachine[ProfileViewState.notAuthorized] = notAuthorizedView
+        return stateMachine
+    }()
 
     // MARK: - Computed Properties
 
@@ -41,7 +55,13 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         navigationItem.title = R.string.localizable.profileTabTitle()
         
         bind()
-        loadProfile()
+        
+        if viewModel.isLoggenIn {
+            showLogoutButton()
+            loadProfile()
+        } else {
+            stateMachine.transition(to: ProfileViewState.notAuthorized, animated: false)
+        }
     }
 
     // MARK: - Table
@@ -55,10 +75,6 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
             itemsSection
         ])
     }
-    
-    // MARK: - Overrides
-
-    
 
 }
 
@@ -78,9 +94,19 @@ private extension ProfileViewController {
     
     func bind() {
         viewModel.didGetProfile = { [weak self] in
-            self?.stateMachine.transition(to: .none) {
-                self?.reload()
+            DispatchQueue.main.async {
+                self?.stateMachine.transition(to: .none) {
+                    self?.reload()
+                }
             }
+        }
+        
+        viewModel.didLogin = { [weak self] in
+            self?.onLogin()
+        }
+        
+        viewModel.didLogout = { [weak self] in
+            self?.onLogout()
         }
         
         bind(viewModel, to: stateMachine)
@@ -185,7 +211,11 @@ private extension ProfileViewController {
 
 private extension ProfileViewController {
 
-    
+    func login() {
+        let loginViewController = LoginViewController(viewModel: .init()).embeddedInNavigation
+        loginViewController.modalPresentationStyle = .fullScreen
+        present(loginViewController, animated: true, completion: nil)
+    }
 
 }
 
@@ -196,14 +226,6 @@ private extension ProfileViewController {
     func loadProfile() {
         stateMachine.transition(to: ViewState.loading) { [weak self] in
             self?.viewModel.loadUserProfile()
-        }
-    }
-
-    func login() {
-        SteamLoginVC.login(from: self) { user, error in
-            if let user = user {
-                print(user)
-            }
         }
     }
     
@@ -217,6 +239,24 @@ private extension ProfileViewController {
         guard let steamId = viewModel.steamId else { return }
         let friendsViewController = FriendsViewController(viewModel: .init(steamId: steamId))
         navigationController?.pushViewController(friendsViewController, animated: true)
+    }
+    
+    @objc func logout() {
+        viewModel.logout()
+    }
+    
+    func onLogin() {
+        stateMachine.transition(to: ViewState.loading, animated: false)
+        showLogoutButton()
+    }
+    
+    func onLogout() {
+        stateMachine.transition(to: ProfileViewState.notAuthorized)
+        navigationItem.rightBarButtonItem = nil
+    }
+    
+    func showLogoutButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.logoutBarButton(), style: .plain, target: self, action: #selector(self.logout))
     }
 
 }

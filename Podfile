@@ -10,7 +10,6 @@ target 'Steam' do
   pod 'ScrollableGraphView'
   pod 'SnapKit'
   pod 'StatefulViewController'
-  pod 'SteamLogin'
   pod 'TableKit'
   
   pod 'Utils', '0.0.10', :source => 'https://github.com/iznv/Podspecs.git'
