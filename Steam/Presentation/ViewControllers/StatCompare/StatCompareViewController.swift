@@ -31,6 +31,8 @@ class StatCompareViewController: BaseTableViewController<StatCompareViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        enableTheme(for: view)
 
         bind()
         loadMyStats()
@@ -42,6 +44,16 @@ class StatCompareViewController: BaseTableViewController<StatCompareViewModel> {
         tableDirector.replace(with: [
             section
         ])
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension StatCompareViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
     }
     
 }

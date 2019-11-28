@@ -29,11 +29,26 @@ class AchievementCompareViewModel: BaseControllerViewModel {
     var achievementViewModels: [StatCompareCellViewModel] {
         guard let myAchievements = myAchievements else { return [] }
         
+        let titleForAchievedStatus: (Int) -> String = {
+            $0 == 1
+                ? R.string.localizable.yes().lowercased()
+                : R.string.localizable.no().lowercased()
+        }
+        
         return schemaAchievements.compactMap { schemaAchievement in
             let value1 = achievements.first(where: { $0.name == schemaAchievement.name })?.achieved ?? 0
             let value2 = myAchievements.first(where: { $0.name == schemaAchievement.name })?.achieved ?? 0
+            
             let title = schemaAchievement.displayName.isEmpty ? schemaAchievement.name : schemaAchievement.displayName
-            return StatCompareCellViewModel(title: title, value1: value1, value2: value2)
+            
+            let whoWin = Win.compare(value1: value1,
+                                     value2: value2,
+                                     isDrawEqualsWinForBoth: true)
+            
+            return StatCompareCellViewModel(title: title,
+                                            value1: titleForAchievedStatus(value1),
+                                            value2: titleForAchievedStatus(value2),
+                                            whoWin: whoWin)
         }
     }
 

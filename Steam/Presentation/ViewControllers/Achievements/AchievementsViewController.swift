@@ -20,6 +20,8 @@ class AchievementsViewController: BaseTableViewController<AchievementsViewModel>
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
                                                             style: .plain,
                                                             target: self,
@@ -41,6 +43,16 @@ class AchievementsViewController: BaseTableViewController<AchievementsViewModel>
 
 }
 
+// MARK: - Themeable
+
+extension AchievementsViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+    }
+    
+}
+
 // MARK: - Table
 
 private extension AchievementsViewController {
@@ -51,6 +63,7 @@ private extension AchievementsViewController {
         guard !achievedRows.isEmpty else { return nil }
         
         return TableSection(onlyRows:
+            [EmptyRow(height: CGFloat.sectionsSpacing)] +
             [achievedHeaderRow] +
             achievedRows
         )
@@ -60,8 +73,10 @@ private extension AchievementsViewController {
         guard !notAchievedRows.isEmpty else { return nil }
         
         return TableSection(onlyRows:
+            [EmptyRow(height: CGFloat.sectionsSpacing)] +
             [notAchievedHeaderRow] +
-            notAchievedRows
+            notAchievedRows +
+            [EmptyRow(height: CGFloat.sectionsSpacing)]
         )
     }
     

@@ -18,6 +18,14 @@ class LoadingStateView: BaseView {
         return view
     }()
     
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: self)
+    }
+    
     // MARK: - Subviews
     
     override func addViews() {
@@ -34,6 +42,17 @@ class LoadingStateView: BaseView {
     
     override func configureAppearance() {
         backgroundColor = .white
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension LoadingStateView: Themeable {
+    
+    func apply(theme: Theme) {
+        backgroundColor = theme.primaryBackgroundColor
+        activityIndicatorView.style = theme.activityIndicatorStyle
     }
     
 }

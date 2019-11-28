@@ -11,5 +11,7 @@ import Foundation
 extension NSNotification.Name {
     
     static let didChangeAuthState = NSNotification.Name(rawValue: "didChangeAuthState")
+    
+    static let didChangeTheme = NSNotification.Name(rawValue: "didChangeTheme")
 
 }

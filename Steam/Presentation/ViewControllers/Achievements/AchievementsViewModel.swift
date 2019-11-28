@@ -22,9 +22,13 @@ class AchievementsViewModel {
 
     // MARK: - Cells View Models
     
-    let achievedHeaderViewModel = TextCellViewModel(text: R.string.localizable.achievementsAchieved())
+    let achievedHeaderViewModel = TextCellViewModel(text: R.string.localizable.achievementsAchieved().uppercased(),
+                                                    font: .bold17(),
+                                                    color: { $0.primaryTextColor.withAlphaComponent(0.3) })
     
-    let notAchievedHeaderViewModel = TextCellViewModel(text: R.string.localizable.achievementsNotAchieved())
+    let notAchievedHeaderViewModel = TextCellViewModel(text: R.string.localizable.achievementsNotAchieved().uppercased(),
+                                                       font: .bold17(),
+                                                       color: { $0.primaryTextColor.withAlphaComponent(0.3) })
     
     var achievedViewModels: [AchievementCellViewModel] {
         return achivedAchievements.compactMap { makeCellViewModel(achievement: $0) }

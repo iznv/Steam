@@ -27,13 +27,27 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        
+        configureAppearance()
+        
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
         
         statHistoryService.updateHistory()
         
         return true
+    }
+    
+}
+
+// MARK: - Appearance
+
+private extension AppDelegate {
+    
+    func configureAppearance() {
+        UINavigationBar.appearance().decorator.apply(UINavigationBar.Decorations.default)
+        UITabBar.appearance().decorator.apply(UITabBar.Decorations.default)
+        UITabBarItem.appearance().decorator.apply(UITabBarItem.Decorations.default)
     }
     
 }

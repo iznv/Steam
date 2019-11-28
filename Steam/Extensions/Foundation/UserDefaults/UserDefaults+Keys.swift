@@ -16,6 +16,8 @@ extension UserDefaults {
         
         static let steamId = "steamId"
         
+        static let theme = "theme"
+        
     }
 
 }
@@ -30,6 +32,15 @@ extension UserDefaults {
         }
         set {
             set(newValue, forKey: Keys.steamId)
+        }
+    }
+    
+    var theme: String? {
+        get {
+            return string(forKey: Keys.theme)
+        }
+        set {
+            set(newValue, forKey: Keys.theme)
         }
     }
     

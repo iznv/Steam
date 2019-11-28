@@ -26,7 +26,13 @@ class SteamPlayerService {
                        completion: @escaping (Result<[PlayerGame], ApiService.Error>) -> Void) {
         
         ApiService.shared.getOwnedGames(steamId: steamId) {
-            completion($0.map { $0.response.games.sorted { $0.name < $1.name }.convertingToPlayerGames() })
+            completion(
+                $0.map {
+                    $0.response.games?
+                        .sorted { $0.name ?? .empty < $1.name ?? .empty }
+                        .convertingToPlayerGames() ?? []
+                }
+            )
         }
     }
     
@@ -45,14 +51,17 @@ class SteamPlayerService {
 private extension Array where Element == Game {
     
     func convertingToPlayerGames() -> [PlayerGame] {
-        return map { game in
+        return compactMap { game in
+            guard let name = game.name else { return nil }
+            guard let imgLogoURL = game.imgLogoURL else { return nil }
+            
             let iconUrl = String(format: Constants.imageUrlFormat,
                                  String(game.appId),
-                                 game.imgIconURL)
+                                 imgLogoURL)
             
             return PlayerGame(appId: game.appId,
                               iconUrl: iconUrl,
-                              title: game.name,
+                              title: name,
                               lastTwoWeekMinutesPlayed: game.playtime2Weeks,
                               onRecordMinutesPlayed: game.playtimeForever)
         }

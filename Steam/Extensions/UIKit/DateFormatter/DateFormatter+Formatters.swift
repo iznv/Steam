@@ -17,6 +17,13 @@ extension DateFormatter {
         return formatter
     }()
     
+    static let year: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = .enUS
+        formatter.dateFormat = "yyyy"
+        return formatter
+    }()
+    
     static let statItemDate: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = .enUS

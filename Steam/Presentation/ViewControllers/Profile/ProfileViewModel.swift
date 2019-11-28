@@ -43,15 +43,7 @@ class ProfileViewModel: BaseControllerViewModel {
     // MARK: - Cells View Models
     
     var realNameViewModel: TextCellViewModel? {
-        return realName.map { TextCellViewModel(text: $0) }
-    }
-    
-    var userNameViewModel: TextCellViewModel? {
-        return userName.map { TextCellViewModel(text: $0) }
-    }
-    
-    var createdDateViewModel: TextCellViewModel? {
-        return createdDate.map { TextCellViewModel(text: $0) }
+        return realName.map { TextCellViewModel(text: $0, font: .medium26()) }
     }
     
     var countryViewModel: CountryCellViewModel? {
@@ -60,10 +52,6 @@ class ProfileViewModel: BaseControllerViewModel {
     
     var userPicViewModel: UserPicCellViewModel? {
         return player.map { UserPicCellViewModel(userPicUrl: $0.avatarFull) }
-    }
-    
-    var userStatusViewModel: TextCellViewModel? {
-        return player.map { TextCellViewModel(text: $0.personaState.title) }
     }
     
     var levelViewModel: LevelCellViewModel? {
@@ -80,6 +68,20 @@ class ProfileViewModel: BaseControllerViewModel {
                                   xpTotal: playerXP,
                                   xpLeft: playerXPNeededToLevelUp,
                                   xpCurrentLevel: playerXPNeededCurrentLevel)
+    }
+    
+    var statusAndCreatedViewModel: TitleValueCollectionCellViewModel? {
+        var items = [TitleValueItem]()
+        
+        if let state = player?.personaState.title {
+            items.append(TitleValueItem(title: R.string.localizable.profileStatus(), value: state))
+        }
+        
+        if let createdDate = createdDate {
+            items.append(TitleValueItem(title: R.string.localizable.profileCreated(), value: createdDate))
+        }
+        
+        return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)
     }
     
     var valuesViewModel: TitleValueCollectionCellViewModel? {
@@ -108,7 +110,7 @@ class ProfileViewModel: BaseControllerViewModel {
         return player?.realName
     }
     
-    private var userName: String? {
+    var userName: String? {
         return player?.personaName
     }
     
@@ -116,8 +118,7 @@ class ProfileViewModel: BaseControllerViewModel {
         guard let player = player else { return nil }
         guard let timeCreated = player.timeCreated else { return nil }
         
-        let date = DateFormatter.common.string(from: timeCreated)
-        return R.string.localizable.profileCreatedDate(date)
+        return DateFormatter.year.string(from: timeCreated)
     }
     
     private var countryCode: String? {

@@ -27,6 +27,37 @@ class NavigationController: UINavigationController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        enableTheme(for: navigationBar, shouldUpdateLayout: true)
+    }
+    
+    // MARK: - Overrides
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return ThemeManager.theme.statusBarStyle
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension NavigationController: Themeable {
+    
+    func apply(theme: Theme) {
+        setNeedsStatusBarAppearanceUpdate()
+        
+        navigationBar.barTintColor = theme.primaryBackgroundColor
+        navigationBar.tintColor = theme.primaryTextColor
+        
+        navigationBar.titleTextAttributes = [
+            .foregroundColor: theme.primaryTextColor,
+            .font: UIFont.bold17() as Any
+        ]
+    }
+    
 }
 
 // MARK: - UIGestureRecognizerDelegate

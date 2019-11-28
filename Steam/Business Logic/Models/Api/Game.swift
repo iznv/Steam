@@ -10,15 +10,15 @@ struct Game: Codable {
     
     let appId: Int
     
-    let name: String
+    let name: String?
     
     let playtime2Weeks: Int?
     
     let playtimeForever: Int
     
-    let imgIconURL: String
+    let imgIconURL: String?
     
-    let imgLogoURL: String
+    let imgLogoURL: String?
     
     let playtimeWindowsForever: Int
     

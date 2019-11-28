@@ -15,6 +15,8 @@ class FriendsViewController: BaseTableViewController<FriendsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.title = R.string.localizable.friends()
 
         bind()
@@ -29,6 +31,16 @@ class FriendsViewController: BaseTableViewController<FriendsViewModel> {
         ])
     }
 
+}
+
+// MARK: - Themeable
+
+extension FriendsViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+    }
+    
 }
 
 // MARK: - DefaultStatesDelegate

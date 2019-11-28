@@ -8,17 +8,13 @@
 
 struct OwnedGamesResponse: Codable {
     
-    let gameCount: Int
-    
-    let games: [Game]
+    let games: [Game]?
     
 }
 
 private extension OwnedGamesResponse {
     
     enum CodingKeys: String, CodingKey {
-    
-        case gameCount = "game_count"
         
         case games
     

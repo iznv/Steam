@@ -28,6 +28,18 @@ class GameViewModel: BaseControllerViewModel {
     
     private var playersOnline: Int?
     
+    // MARK: - Computed Properties
+    
+    private var price: String? {
+        guard let details = details else { return nil }
+        
+        if let priceOverview = details.priceOverview {
+            return priceOverview.finalFormatted
+        } else {
+            return R.string.localizable.free()
+        }
+    }
+    
     // MARK: - Events
     
     var didGetDetails: (() -> Void)?
@@ -36,49 +48,62 @@ class GameViewModel: BaseControllerViewModel {
     
     var headerViewModel: GameHeaderCellViewModel? {
         guard let details = details else { return nil }
-        
-        let price: String?
-        if let priceOverview = details.priceOverview {
-            price = priceOverview.finalFormatted
-        } else {
-            price = R.string.localizable.free()
-        }
-        
-        return GameHeaderCellViewModel(picUrl: details.background, price: price, platforms: details.platforms)
+        return GameHeaderCellViewModel(picUrl: details.background, platforms: details.platforms)
     }
     
     var titleViewModel: TextCellViewModel? {
-        details.map { TextCellViewModel(text: $0.name) }
+        details.map { TextCellViewModel(text: $0.name, font: .medium26()) }
     }
     
     var genresViewModel: TextCellViewModel? {
-        details?.genres.map { TextCellViewModel(text: $0.map { $0.description }.joined(separator: Constants.genresSeparator)) }
+        details?.genres.map {
+            TextCellViewModel(text: $0.map { $0.description }.joined(separator: Constants.genresSeparator),
+                              font: .medium12(),
+                              color: { $0.primaryTextColor.withAlphaComponent(0.5) })
+        }
     }
     
     var descriptionViewModel: TextCellViewModel? {
-        details.map { TextCellViewModel(text: $0.shortDescription.htmlDecoded) }
+        details.map { TextCellViewModel(text: $0.shortDescription.htmlDecoded, font: .medium14()) }
     }
     
-    var metacriticAndPlayersViewModel: TitleValueCollectionCellViewModel? {
+    var priceMetacriticViewModel: TitleValueCollectionCellViewModel? {
         var items = [TitleValueItem]()
+        
+        if let price = price {
+            items.append(TitleValueItem(title: R.string.localizable.gamePrice(), value: price))
+        }
         
         if let score = details?.metacritic?.score {
             items.append(TitleValueItem(title: R.string.localizable.gameMetacritic(), value: String(score)))
         }
         
-        if let playersOnline = playersOnline, playersOnline > 0 {
-            items.append(TitleValueItem(title: R.string.localizable.gamePlayersOnline(), value: String(playersOnline)))
+        return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)
+    }
+    
+    var playersViewModel: TitleValueCollectionCellViewModel? {
+        var items = [TitleValueItem]()
+        
+        if let playersOnline = playersOnline {
+            items.append(TitleValueItem(title: R.string.localizable.gamePlayersOnline(),
+                                        value: NumberFormatter.common.string(from: NSNumber(value: playersOnline)) ?? .empty))
         }
         
         return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)
     }
     
-    var releaseAndPublisherViewModel: TitleValueCollectionCellViewModel? {
+    var releaseViewModel: TitleValueCollectionCellViewModel? {
         var items = [TitleValueItem]()
         
         if let date = details?.releaseDate.date {
             items.append(TitleValueItem(title: R.string.localizable.gameReleaseDate(), value: date))
         }
+        
+        return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)
+    }
+    
+    var publisherViewModel: TitleValueCollectionCellViewModel? {
+        var items = [TitleValueItem]()
         
         if let publisher = details?.publishers.first {
             items.append(TitleValueItem(title: R.string.localizable.gamePublisher(), value: publisher))

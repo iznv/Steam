@@ -7,7 +7,9 @@ class GameProgressCell: BaseTableViewCell {
     
     private enum Constants {
         
-        static let progressBarTop: CGFloat = -10
+        static let progressViewTop: CGFloat = -10
+        
+        static let progressViewTrailing: CGFloat = -10
         
     }
     
@@ -21,15 +23,24 @@ class GameProgressCell: BaseTableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.gameStatisticsAchievementProgress()
+        label.font = .medium16()
+        label.text = R.string.localizable.achievements()
         return label
     }()
     
     private let progressLabel: UILabel = {
         let label = UILabel()
-
+        label.font = .medium12()
         return label
     }()
+
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: contentView)
+    }
     
     // MARK: - Views
     
@@ -47,6 +58,17 @@ class GameProgressCell: BaseTableViewCell {
         configureProgressViewConstraints()
         configureTitleLabelConstraints()
         configureProgressLabelConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension GameProgressCell: Themeable {
+    
+    func apply(theme: Theme) {
+        titleLabel.textColor = theme.primaryTextColor
+        progressLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
     }
     
 }
@@ -70,7 +92,7 @@ private extension GameProgressCell {
     
     func configureProgressViewConstraints() {
         progressView.snp.remakeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(Constants.progressBarTop)
+            make.top.equalTo(titleLabel.snp.bottom).inset(Constants.progressViewTop)
             make.height.equalTo(CGFloat.progressBarHeight)
             make.leading.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
             make.bottom.equalToSuperview().inset(CGFloat.verticalMargin).priority(.low)
@@ -87,7 +109,7 @@ private extension GameProgressCell {
     func configureProgressLabelConstraints() {
         progressLabel.snp.remakeConstraints { make in
             make.firstBaseline.equalTo(titleLabel.snp.firstBaseline)
-            make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
+            make.trailing.equalTo(progressView.snp.trailing)
         }
     }
     

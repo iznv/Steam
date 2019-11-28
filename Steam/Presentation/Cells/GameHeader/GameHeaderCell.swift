@@ -7,19 +7,15 @@ class GameHeaderCell: BaseTableViewCell {
     
     private enum Constants {
         
-        static let priceContainerHorizontalPaddding: CGFloat = 30
-        
-        static let priceContainerVerticalPaddding: CGFloat = 20
-        
         static let picImageViewTrailing: CGFloat = 60
         
-        static let cornerRadius: CGFloat = 50
+        static let cornerRadius: CGFloat = 12
         
         static let platformsStackViewTrailing: CGFloat = 20
         
         static let platformsStackViewSize: CGFloat = 16
         
-        static let platformsStackViewSpacing: CGFloat = 12
+        static let platformsStackViewSpacing: CGFloat = 18
         
     }
     
@@ -34,46 +30,44 @@ class GameHeaderCell: BaseTableViewCell {
         return imageView
     }()
     
-    private let priceContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(hex: 0xF6C121)
-        view.clipsToBounds = true
-        view.layer.cornerRadius = Constants.cornerRadius
-        return view
-    }()
-    
-    private let priceLabel: UILabel = {
-        let label = UILabel()
-        
-        return label
-    }()
-    
     private let platformsStackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
+        view.tintColor = .white
         view.spacing = Constants.platformsStackViewSpacing
         return view
     }()
     
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: contentView)
+    }
+    
     // MARK: - Views
     
     override func addViews() {
-        priceContainerView.addSubview(priceLabel)
-        picImageView.addSubview(priceContainerView)
-        
+        picImageView.addSubview(platformsStackView)
         contentView.addSubviews(
-            picImageView,
-            platformsStackView
+            picImageView
         )
     }
     
     // MARK: - Constraints
     
     override func configureConstraints() {
-        configurePriceLabelConstraints()
-        configurePriceContainerViewConstraints()
         configurePicImageViewConstraints()
         configurePlatformsStackViewConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension GameHeaderCell: Themeable {
+    
+    func apply(theme: Theme) {
+        picImageView.backgroundColor = theme.accentColor
     }
     
 }
@@ -82,11 +76,10 @@ class GameHeaderCell: BaseTableViewCell {
 
 extension GameHeaderCell: ConfigurableCell {
     
-    static let defaultHeight: CGFloat? = 220
+    static let defaultHeight: CGFloat? = 180
     
     func configure(with viewModel: GameHeaderCellViewModel) {
         picImageView.loadImage(url: viewModel.picUrl)
-        priceLabel.text = viewModel.price
         
         platformsStackView.clear()
         viewModel.platforms.forEach { platform in
@@ -103,27 +96,12 @@ extension GameHeaderCell: ConfigurableCell {
 // MARK: - Constraints
 
 private extension GameHeaderCell {
-    
-    func configurePriceLabelConstraints() {
-        priceLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().inset(Constants.priceContainerVerticalPaddding)
-            make.leading.equalToSuperview().inset(Constants.priceContainerHorizontalPaddding)
-            make.bottom.equalToSuperview().inset(Constants.cornerRadius + Constants.priceContainerVerticalPaddding)
-            make.trailing.equalToSuperview().inset(Constants.cornerRadius + Constants.priceContainerHorizontalPaddding)
-        }
-    }
-    
-    func configurePriceContainerViewConstraints() {
-        priceContainerView.snp.remakeConstraints { make in
-            make.bottom.trailing.equalToSuperview().inset(-Constants.cornerRadius)
-        }
-    }
-    
+
     func configurePicImageViewConstraints() {
         picImageView.snp.remakeConstraints { make in
-            make.leading.equalToSuperview().inset(-Constants.cornerRadius)
+            make.leading.equalToSuperview().inset(CGFloat.horizontalMargin)
             make.top.bottom.equalToSuperview()
-            make.trailing.equalToSuperview().inset(Constants.picImageViewTrailing)
+            make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
         }
     }
     

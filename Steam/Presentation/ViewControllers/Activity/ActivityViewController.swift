@@ -48,6 +48,8 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.title = viewModel.title
 
         bind()
@@ -67,6 +69,16 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         ])
     }
 
+}
+
+// MARK: - Themeable
+
+extension ActivityViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+    }
+    
 }
 
 // MARK: - DefaultStatesDelegate

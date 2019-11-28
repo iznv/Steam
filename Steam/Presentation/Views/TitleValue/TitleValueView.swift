@@ -14,13 +14,13 @@ class TitleValueView: BaseView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .medium12()
         return label
     }()
     
     private let valueLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .medium26()
         return label
     }()
     
@@ -38,6 +38,14 @@ class TitleValueView: BaseView {
         }
     }
     
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: self)
+    }
+    
     // MARK: - Subviews
     
     override func addViews() {
@@ -52,6 +60,17 @@ class TitleValueView: BaseView {
     override func configureConstraints() {
         configureTitleLabelConstraints()
         configureValueLabelConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension TitleValueView: Themeable {
+    
+    func apply(theme: Theme) {
+        titleLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+        valueLabel.textColor = theme.primaryTextColor
     }
     
 }

@@ -10,10 +10,16 @@ import CoreGraphics
 
 extension CGFloat {
     
-    static let horizontalMargin: CGFloat = 32
+    static let horizontalMargin: CGFloat = 24
     
-    static let verticalMargin: CGFloat = 16
+    static let verticalMargin: CGFloat = 2
     
-    static let progressBarHeight: CGFloat = 5
+    static let progressBarHeight: CGFloat = 8
+    
+    static let sectionsSpacing: CGFloat = 26
+    
+    static let picCornerRadius: CGFloat = 26
+    
+    static let disclosureSize: CGFloat = 12
     
 }

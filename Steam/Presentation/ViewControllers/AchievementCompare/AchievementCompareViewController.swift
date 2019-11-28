@@ -31,6 +31,8 @@ class AchievementCompareViewController: BaseTableViewController<AchievementCompa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        enableTheme(for: view)
 
         bind()
         loadMyAchievements()
@@ -42,6 +44,16 @@ class AchievementCompareViewController: BaseTableViewController<AchievementCompa
         tableDirector.replace(with: [
             section
         ])
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension AchievementCompareViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
     }
     
 }

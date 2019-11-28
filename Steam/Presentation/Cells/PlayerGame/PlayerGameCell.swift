@@ -7,11 +7,15 @@ class PlayerGameCell: BaseTableViewCell {
     
     private enum Constants {
         
+        static let titleLabelTop: CGFloat = -3
+        
         static let picCornerRadius: CGFloat = 4
         
-        static let gamePicImageViewSize: CGFloat = 32
+        static let gamePicImageViewSize: CGFloat = 16
         
-        static let titleLabelLeading: CGFloat = -10
+        static let titleLabelLeading: CGFloat = -16
+        
+        static let verticalMargin: CGFloat = 20
         
     }
     
@@ -19,7 +23,7 @@ class PlayerGameCell: BaseTableViewCell {
     
     private let gamePicImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .gray
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = Constants.picCornerRadius
         return imageView
@@ -28,20 +32,29 @@ class PlayerGameCell: BaseTableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = .bold16()
         return label
     }()
     
     private let lastTwoWeeksNameLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .medium14()
         return label
     }()
     
     private let onRecordLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .medium14()
         return label
     }()
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: self)
+    }
     
     // MARK: - Views
     
@@ -61,6 +74,19 @@ class PlayerGameCell: BaseTableViewCell {
         configureTitleLabelConstraints()
         configureLastTwoWeeksNameLabelConstraints()
         configureOnRecordLabelConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension PlayerGameCell: Themeable {
+    
+    func apply(theme: Theme) {
+        titleLabel.textColor = theme.primaryTextColor
+        lastTwoWeeksNameLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+        onRecordLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+        gamePicImageView.backgroundColor = theme.accentColor
     }
     
 }
@@ -86,15 +112,16 @@ private extension PlayerGameCell {
     
     func configureGamePicImageViewConstraints() {
         gamePicImageView.snp.remakeConstraints { make in
-            make.top.equalToSuperview().inset(CGFloat.verticalMargin)
+            make.height.equalTo(23)
+            make.width.equalTo(61)
+            make.top.equalToSuperview().inset(Constants.verticalMargin)
             make.leading.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.size.equalTo(Constants.gamePicImageViewSize)
         }
     }
     
     func configureTitleLabelConstraints() {
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalTo(gamePicImageView.snp.top)
+            make.top.equalTo(gamePicImageView.snp.top).inset(Constants.titleLabelTop)
             make.leading.equalTo(gamePicImageView.snp.trailing).inset(Constants.titleLabelLeading)
             make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
         }
@@ -113,7 +140,7 @@ private extension PlayerGameCell {
             make.leading.equalTo(titleLabel.snp.leading)
             make.top.equalTo(lastTwoWeeksNameLabel.snp.bottom)
             make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.bottom.equalToSuperview().inset(CGFloat.verticalMargin)
+            make.bottom.equalToSuperview().inset(Constants.verticalMargin)
         }
     }
     

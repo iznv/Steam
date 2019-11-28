@@ -11,6 +11,8 @@ class StatCell: BaseTableViewCell {
         
         static let titleLabelTrailing: CGFloat = 120
         
+        static let verticalMargin: CGFloat = 20
+        
     }
     
     // MARK: - Views
@@ -18,14 +20,23 @@ class StatCell: BaseTableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = .bold16()
         return label
     }()
     
     private let valueLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .bold16()
         return label
     }()
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: contentView)
+    }
     
     // MARK: - Views
     
@@ -45,6 +56,15 @@ class StatCell: BaseTableViewCell {
     
 }
 
+extension StatCell: Themeable {
+    
+    func apply(theme: Theme) {
+        titleLabel.textColor = theme.primaryTextColor
+        valueLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+    }
+    
+}
+
 // MARK: - ConfigureCell
 
 extension StatCell: ConfigurableCell {
@@ -53,7 +73,7 @@ extension StatCell: ConfigurableCell {
     
     func configure(with viewModel: StatCellViewModel) {
         titleLabel.text = viewModel.title
-        valueLabel.text = String(viewModel.value)
+        valueLabel.text = viewModel.value
     }
     
 }
@@ -64,10 +84,10 @@ private extension StatCell {
     
     func configureTitleLabelConstraints() {
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().inset(CGFloat.verticalMargin)
+            make.top.equalToSuperview().inset(Constants.verticalMargin)
             make.leading.equalToSuperview().inset(CGFloat.horizontalMargin)
             make.trailing.equalToSuperview().inset(Constants.titleLabelTrailing)
-            make.bottom.equalToSuperview().inset(CGFloat.verticalMargin)
+            make.bottom.equalToSuperview().inset(Constants.verticalMargin)
         }
     }
     

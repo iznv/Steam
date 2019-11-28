@@ -1,3 +1,5 @@
+import Foundation
+
 class StatCompareViewModel: BaseControllerViewModel {
     
     // MARK: - Constants
@@ -30,10 +32,13 @@ class StatCompareViewModel: BaseControllerViewModel {
         guard let myStats = myStats else { return [] }
         
         return schemaStats.compactMap { schemaStat in
-            let value1 = stats.first(where: { $0.name == schemaStat.name })?.value ?? 0
-            let value2 = myStats.first(where: { $0.name == schemaStat.name })?.value ?? 0
+            let value1 = Int(stats.first(where: { $0.name == schemaStat.name })?.value ?? 0)
+            let value2 = Int(myStats.first(where: { $0.name == schemaStat.name })?.value ?? 0)
             let title = schemaStat.displayName.isEmpty ? schemaStat.name : schemaStat.displayName
-            return StatCompareCellViewModel(title: title, value1: Int(value1), value2: Int(value2))
+            return StatCompareCellViewModel(title: title,
+                                            value1: NumberFormatter.common.string(from: NSNumber(value: value1)),
+                                            value2: NumberFormatter.common.string(from: NSNumber(value: value2)),
+                                            whoWin: Win.compare(value1: value1, value2: value2))
         }
     }
 

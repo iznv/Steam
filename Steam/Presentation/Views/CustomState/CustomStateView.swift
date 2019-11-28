@@ -7,6 +7,10 @@ class CustomStateView: BaseView {
     private struct Constants {
     
         static let descriptionLabelTop: CGFloat = -20
+        
+        static let buttonInsets = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+        
+        static let buttonHeight: CGFloat = 38
     
     }
     
@@ -22,12 +26,15 @@ class CustomStateView: BaseView {
         let label = UILabel()
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.font = .medium16()
         return label
     }()
     
     private let button: UIButton = {
-        let button = UIButton(type: .system)
-        
+        let button = UIButton(type: .custom)
+        button.layer.cornerRadius = Constants.buttonHeight / 2
+        button.contentEdgeInsets = Constants.buttonInsets
+        button.titleLabel?.font = .bold17()
         return button
     }()
     
@@ -51,6 +58,8 @@ class CustomStateView: BaseView {
     
     override func commonInit() {
         super.commonInit()
+        
+        enableTheme(for: self)
         
         button.addTarget(self, action: #selector(tap), for: .touchUpInside)
     }
@@ -82,6 +91,19 @@ class CustomStateView: BaseView {
     
 }
 
+// MARK: - Themeable
+
+extension CustomStateView: Themeable {
+    
+    func apply(theme: Theme) {
+        backgroundColor = theme.primaryBackgroundColor
+        descriptionLabel.textColor = theme.primaryTextColor
+        button.backgroundColor = theme.accentColor
+        button.setTitleColor(theme.primaryTextColor, for: .normal)
+    }
+    
+}
+
 // MARK: - Constraints
 
 private extension CustomStateView {
@@ -98,6 +120,7 @@ private extension CustomStateView {
             make.top.equalTo(descriptionLabel.snp.bottom).inset(Constants.descriptionLabelTop)
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview()
+            make.height.equalTo(Constants.buttonHeight)
         }
     }
     

@@ -15,11 +15,18 @@ class UserPicCell: BaseTableViewCell {
     
     private let userPicImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .gray
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = Constants.userPicImageSize / 2
         return imageView
     }()
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: contentView)
+    }
 
     // MARK: - Views
     
@@ -31,6 +38,16 @@ class UserPicCell: BaseTableViewCell {
     
     override func configureConstraints() {
         configureImageViewConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension UserPicCell: Themeable {
+    
+    func apply(theme: Theme) {
+        userPicImageView.backgroundColor = theme.accentColor
     }
     
 }

@@ -6,11 +6,9 @@ struct LevelCellViewModel {
 
     let level: String
     
-    let xpTotal: String
-    
-    let xpLeft: String
-    
     let progress: CGFloat
+    
+    let progressString: String
 
     // MARK: - Init
     
@@ -20,12 +18,13 @@ struct LevelCellViewModel {
          xpCurrentLevel: Int) {
         
         self.level = R.string.localizable.profileLevelValue(String(level))
-        self.xpTotal = R.string.localizable.profileLevelXPTotal(String(xpTotal))
-        self.xpLeft = R.string.localizable.profileLevelXPLeft(String(xpLeft))
         
         let xpNextLevel = CGFloat(xpTotal + xpLeft)
         let xpFromCurrentLevelToNext = xpNextLevel - CGFloat(xpCurrentLevel)
+        
         self.progress = 1 - CGFloat(xpLeft) / xpFromCurrentLevelToNext
+        self.progressString = R.string.localizable.profileLevelXPProgress(String(xpTotal),
+                                                                          String(Int(xpNextLevel)))
     }
     
 }

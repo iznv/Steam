@@ -7,9 +7,13 @@ class FriendCell: BaseTableViewCell {
     
     private enum Constants {
         
+        static let titleLabelTop: CGFloat = -3
+        
         static let userPicImageViewSize: CGFloat = 60
         
-        static let realNameLabelTrailing: CGFloat = -10
+        static let userNameLabelLeading: CGFloat = -16
+        
+        static let picCornerRadius: CGFloat = 4
         
     }
     
@@ -19,21 +23,29 @@ class FriendCell: BaseTableViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .gray
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = Constants.userPicImageViewSize / 2
+        imageView.layer.cornerRadius = Constants.picCornerRadius
         return imageView
-    }()
-    
-    private let realNameLabel: UILabel = {
-        let label = UILabel()
-        
-        return label
     }()
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .bold16()
         return label
     }()
+    
+    private let realNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = .medium14()
+        return label
+    }()
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: contentView)
+    }
     
     // MARK: - Views
     
@@ -51,6 +63,18 @@ class FriendCell: BaseTableViewCell {
         configureUserPicImageViewConstraints()
         configureRealNameLabelConstraints()
         configureUserNameLabelConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension FriendCell: Themeable {
+    
+    func apply(theme: Theme) {
+        userPicImageView.backgroundColor = theme.accentColor
+        userNameLabel.textColor = theme.primaryTextColor
+        realNameLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
     }
     
 }
@@ -83,17 +107,17 @@ private extension FriendCell {
     
     func configureRealNameLabelConstraints() {
         realNameLabel.snp.remakeConstraints { make in
-            make.leading.equalTo(userPicImageView.snp.trailing).inset(Constants.realNameLabelTrailing)
+            make.leading.equalTo(userNameLabel.snp.leading)
             make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.top.equalTo(userPicImageView.snp.top)
+            make.top.equalTo(userNameLabel.snp.bottom)
         }
     }
     
     func configureUserNameLabelConstraints() {
         userNameLabel.snp.remakeConstraints { make in
-            make.leading.equalTo(realNameLabel.snp.leading)
+            make.leading.equalTo(userPicImageView.snp.trailing).inset(Constants.userNameLabelLeading)
             make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.top.equalTo(realNameLabel.snp.bottom)
+            make.top.equalTo(userPicImageView.snp.top).inset(Constants.titleLabelTop)
         }
     }
     

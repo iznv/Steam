@@ -23,6 +23,8 @@ class StatisticsViewController: BaseTableViewController<StatisticsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.title = R.string.localizable.statistics()
         
         bind()
@@ -38,6 +40,16 @@ class StatisticsViewController: BaseTableViewController<StatisticsViewModel> {
         ])
     }
 
+}
+
+// MARK: - Themeable
+
+extension StatisticsViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+    }
+    
 }
 
 // MARK: - DefaultStatesDelegate
@@ -82,7 +94,9 @@ private extension StatisticsViewController {
     
     var progressSection: TableSection {
         return TableSection(onlyRows: [
-            achievementProgressRow
+            EmptyRow(height: CGFloat.sectionsSpacing),
+            achievementProgressRow,
+            EmptyRow(height: CGFloat.sectionsSpacing)
         ].compactMap { $0 })
     }
     
@@ -93,17 +107,16 @@ private extension StatisticsViewController {
     // MARK: - Rows
     
     var achievementProgressRow: Row? {
-        return viewModel.progressViewModel.map { TableRow<GameProgressCell>(item: $0) }
+        return viewModel.progressViewModel.map {
+            TableRow<GameProgressCell>(item: $0)
+                .on(.click) { [weak self] _ in
+                    self?.openAchievements()
+                }
+            }
     }
     
     var itemsRows: [Row] {
         return [
-            viewModel.achievementsViewModel.map {
-                TableRow<TitleDisclosureCell>(item: $0)
-                    .on(.click) { [weak self] _ in
-                        self?.openAchievements()
-                    }
-            },
             viewModel.statsViewModel.map {
                 TableRow<TitleDisclosureCell>(item: $0)
                     .on(.click) { [weak self] _ in

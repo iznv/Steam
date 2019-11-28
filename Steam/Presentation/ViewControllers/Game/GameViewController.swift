@@ -23,6 +23,8 @@ class GameViewController: BaseTableViewController<GameViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.statisticsBarButton(),
                                                             style: .plain,
                                                             target: self,
@@ -39,6 +41,16 @@ class GameViewController: BaseTableViewController<GameViewModel> {
             headerSection,
             infoSection
         ])
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension GameViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
     }
     
 }
@@ -79,18 +91,29 @@ private extension GameViewController {
     
     var headerSection: TableSection {
         return TableSection(onlyRows: [
-            headerRow
+            EmptyRow(height: 22),
+            headerRow,
+            EmptyRow(height: CGFloat.sectionsSpacing)
         ].compactMap { $0 })
     }
     
     var infoSection: TableSection {
-        return TableSection(onlyRows: [
+        let rows: [Row?] = [
             titleRow,
             genresRow,
-            metacriticAndPlayersRow,
-            releaseAndPublisherRow,
-            descriptionRow
-        ].compactMap { $0 })
+            EmptyRow(height: CGFloat.sectionsSpacing),
+            priceMetacriticRow,
+            EmptyRow(height: CGFloat.sectionsSpacing)
+        ] + (playersRows ?? []) + [
+            releaseRow,
+            EmptyRow(height: CGFloat.sectionsSpacing),
+            publisherRow,
+            EmptyRow(height: CGFloat.sectionsSpacing),
+            descriptionRow,
+            EmptyRow(height: CGFloat.sectionsSpacing)
+        ]
+        
+        return TableSection(onlyRows: rows.compactMap { $0 })
     }
     
     // MARK: - Rows
@@ -103,12 +126,25 @@ private extension GameViewController {
         return viewModel.titleViewModel.map { TableRow<TextCell>(item: $0) }
     }
 
-    var metacriticAndPlayersRow: Row? {
-        return viewModel.metacriticAndPlayersViewModel.map { TableRow<TitleValueCollectionCell>(item: $0) }
+    var priceMetacriticRow: Row? {
+        return viewModel.priceMetacriticViewModel.map { TableRow<TitleValueCollectionCell>(item: $0) }
     }
     
-    var releaseAndPublisherRow: Row? {
-        return viewModel.releaseAndPublisherViewModel.map { TableRow<TitleValueCollectionCell>(item: $0) }
+    var playersRows: [Row]? {
+        return viewModel.playersViewModel.map {
+            [
+                TableRow<TitleValueCollectionCell>(item: $0),
+                EmptyRow(height: CGFloat.sectionsSpacing)
+            ]
+        }
+    }
+    
+    var releaseRow: Row? {
+        return viewModel.releaseViewModel.map { TableRow<TitleValueCollectionCell>(item: $0) }
+    }
+    
+    var publisherRow: Row? {
+        return viewModel.publisherViewModel.map { TableRow<TitleValueCollectionCell>(item: $0) }
     }
     
     var genresRow: Row? {

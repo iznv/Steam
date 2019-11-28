@@ -22,6 +22,10 @@ class StatHistoryViewController: BaseTableViewController<StatHistoryViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        enableTheme(for: view)
+    
+        navigationItem.title = R.string.localizable.history()
 
         bind()
         viewModel.loadHistory()
@@ -41,6 +45,16 @@ class StatHistoryViewController: BaseTableViewController<StatHistoryViewModel> {
         tableDirector.replace(with: sections)
     }
 
+}
+
+// MARK: - Themeable
+
+extension StatHistoryViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+    }
+    
 }
 
 // MARK: - Binding
@@ -70,12 +84,15 @@ private extension StatHistoryViewController {
     // MARK: - Sections
     
     var graphSection: TableSection {
-        return TableSection(onlyRows: [graphRow])
+        return TableSection(onlyRows:
+            [EmptyRow(height: CGFloat.sectionsSpacing)] +
+            [graphRow] +
+            [EmptyRow(height: CGFloat.sectionsSpacing)]
+        )
     }
     
     var historySection: TableSection {
         return TableSection(onlyRows:
-            [historyHeaderRow] +
             historyRows
         )
     }
@@ -84,10 +101,6 @@ private extension StatHistoryViewController {
     
     var graphRow: Row {
         return TableRow<GraphCell>(item: viewModel.graphViewModel)
-    }
-    
-    var historyHeaderRow: Row {
-        return TableRow<TextCell>(item: viewModel.historyHeaderViewModel)
     }
     
     var historyRows: [Row] {

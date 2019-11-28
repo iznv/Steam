@@ -31,9 +31,7 @@ class StatHistoryViewModel {
     var graphViewModel: GraphCellViewModel {
         return GraphCellViewModel(statItems: items ?? [])
     }
-    
-    let historyHeaderViewModel = TextCellViewModel(text: R.string.localizable.history())
-    
+
     var historyViewModels: [StatCellViewModel] {
         return items?.map { item in
             StatCellViewModel(name: .empty,

@@ -9,6 +9,8 @@
 "You" = "You";
 "History" = "History";
 "Login" = "Log in";
+"Yes" = "Yes";
+"No" = "No";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -19,20 +21,20 @@
 "ActivityTabTitle" = "Activity";
 
 "ProfileNotAuthorized" = "Log in to see your profile";
-"ProfileCreatedDate" = "Created %@";
 
 "ProfileLevelValue" = "Level %@";
-"ProfileLevelXPTotal" = "%@ XP";
-"ProfileLevelXPLeft" = "%@ XP to reach next level";
+"ProfileLevelXPProgress" = "%@ / %@";
 
 "ProfileOnlineStatusOffline" = "Offline";
 "ProfileOnlineStatusOnline" = "Online";
 "ProfileOnlineStatusBusy" = "Busy";
 "ProfileOnlineStatusAway" = "Away";
 "ProfileOnlineStatusSnooze" = "Snooze";
-"ProfileOnlineStatusLookingToTrade" = "Looking to trade";
-"ProfileOnlineStatusLookingToPlay" = "Looking to play";
+"ProfileOnlineStatusLookingToTrade" = "To trade";
+"ProfileOnlineStatusLookingToPlay" = "To play";
 
+"ProfileStatus" = "Status";
+"ProfileCreated" = "Created";
 "ProfileBadges" = "Badges";
 "ProfileGroups" = "Groups";
 
@@ -43,11 +45,11 @@
 "ActivityMinutesOnRecordFormat" = "%@ minutes on record";
 "ActivityNeverPlayed" = "Never played";
 
+"GamePrice" = "Price";
 "GameMetacritic" = "Metacritic";
 "GamePlayersOnline" = "Players online";
 "GameReleaseDate" = "Release date";
 "GamePublisher" = "Publisher";
-"GameStatisticsAchievementProgress" = "Achievement Progress";
 "GameStatisticsAchievementProgressFormat" = "%@ of %@";
 "GameStatisticsStats" = "Stats";
 

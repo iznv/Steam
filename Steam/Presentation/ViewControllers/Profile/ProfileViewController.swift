@@ -52,6 +52,8 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.title = R.string.localizable.profileTabTitle()
         
         bind()
@@ -70,12 +72,21 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         tableDirector.replace(with: [
             userPicSection,
             userInfoSection,
-            levelSection,
             countersSection,
             itemsSection
-        ])
+        ].compactMap { $0 })
     }
 
+}
+
+// MARK: - Themeable
+
+extension ProfileViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+    }
+    
 }
 
 // MARK: - DefaultStatesDelegate
@@ -95,8 +106,10 @@ private extension ProfileViewController {
     func bind() {
         viewModel.didGetProfile = { [weak self] in
             DispatchQueue.main.async {
-                self?.stateMachine.transition(to: .none) {
-                    self?.reload()
+                guard let self = self else { return }
+                self.navigationItem.title = self.viewModel.userName
+                self.stateMachine.transition(to: .none) {
+                    self.reload()
                 }
             }
         }
@@ -122,58 +135,53 @@ private extension ProfileViewController {
     
     var userPicSection: TableSection {
         return TableSection(onlyRows: [
+            EmptyRow(height: CGFloat.sectionsSpacing),
             userPicRow
         ].compactMap { $0 })
     }
     
     var userInfoSection: TableSection {
         return TableSection(onlyRows: [
+            EmptyRow(height: CGFloat.sectionsSpacing),
             realNameRow,
-            userNameRow,
+            EmptyRow(height: 4),
             countryRow,
-            userStatusRow,
-            createdDateRow
+            EmptyRow(height: CGFloat.sectionsSpacing),
+            levelRow,
+            EmptyRow(height: CGFloat.sectionsSpacing),
+            statusAndCreatedRow
         ].compactMap { $0 })
     }
     
-    var levelSection: TableSection {
+    var countersSection: TableSection? {
+        guard let countersRow = countersRow else { return nil }
+        
         return TableSection(onlyRows: [
-            levelRow
-        ].compactMap { $0 })
-    }
-    
-    var countersSection: TableSection {
-        return TableSection(onlyRows: [
+            EmptyRow(height: CGFloat.sectionsSpacing),
             countersRow
-        ].compactMap { $0 })
+        ])
     }
     
     var itemsSection: TableSection {
         return TableSection(onlyRows:
-            itemsRows
+            [EmptyRow(height: CGFloat.sectionsSpacing)] +
+            itemsRows +
+            [EmptyRow(height: CGFloat.sectionsSpacing)]
         )
     }
     
     // MARK: - Rows
     
-    var userStatusRow: Row? {
-        return viewModel.userStatusViewModel.map { TableRow<TextCell>(item: $0) }
-    }
-    
     var realNameRow: Row? {
         return viewModel.realNameViewModel.map { TableRow<TextCell>(item: $0) }
     }
     
-    var userNameRow: Row? {
-        return viewModel.userNameViewModel.map { TableRow<TextCell>(item: $0) }
-    }
-    
-    var createdDateRow: Row? {
-        return viewModel.createdDateViewModel.map { TableRow<TextCell>(item: $0) }
-    }
-    
     var countryRow: Row? {
         return viewModel.countryViewModel.map { TableRow<CountryCell>(item: $0) }
+    }
+    
+    var statusAndCreatedRow: Row? {
+        return viewModel.statusAndCreatedViewModel.map { TableRow<TitleValueCollectionCell>(item: $0) }
     }
     
     var countersRow: Row? {
@@ -198,7 +206,12 @@ private extension ProfileViewController {
     }
     
     var userPicRow: Row? {
-        return viewModel.userPicViewModel.map { TableRow<UserPicCell>(item: $0) }
+        return viewModel.userPicViewModel.map {
+            TableRow<UserPicCell>(item: $0)
+                .on(.click) { _ in
+                    ThemeManager.toggleTheme()
+                }
+        }
     }
     
     var levelRow: Row? {

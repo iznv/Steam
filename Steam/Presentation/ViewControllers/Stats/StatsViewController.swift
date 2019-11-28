@@ -20,6 +20,8 @@ class StatsViewController: BaseTableViewController<StatsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
                                                             style: .plain,
                                                             target: self,
@@ -38,6 +40,16 @@ class StatsViewController: BaseTableViewController<StatsViewModel> {
         ])
     }
 
+}
+
+// MARK: - Themeable
+
+extension StatsViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+    }
+    
 }
 
 // MARK: - Table

@@ -14,7 +14,21 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        enableTheme(for: tabBar, shouldUpdateLayout: true)
+        
         configureTabs()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension TabBarController: Themeable {
+    
+    func apply(theme: Theme) {
+        tabBar.barTintColor = theme.primaryBackgroundColor
+        tabBar.tintColor = theme.primaryTextColor
     }
     
 }

@@ -21,12 +21,14 @@ class CompareHeaderView: BaseView {
     private let value1Label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = .bold17()
         return label
     }()
     
     private let value2Label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = .bold17()
         return label
     }()
 
@@ -44,6 +46,14 @@ class CompareHeaderView: BaseView {
         }
     }
     
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: self)
+    }
+    
     // MARK: - Subviews
     
     override func addViews() {
@@ -57,10 +67,16 @@ class CompareHeaderView: BaseView {
         configureValuesStackViewConstraints()
     }
     
-    // MARK: - Appearance
+}
+
+// MARK: - Themeable
+
+extension CompareHeaderView: Themeable {
     
-    override func configureAppearance() {
-        backgroundColor = .white
+    func apply(theme: Theme) {
+        value1Label.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+        value2Label.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+        backgroundColor = theme.primaryBackgroundColor
     }
     
 }

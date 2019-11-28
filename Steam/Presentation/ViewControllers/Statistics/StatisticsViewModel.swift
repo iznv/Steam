@@ -35,11 +35,6 @@ class StatisticsViewModel: BaseControllerViewModel {
         return GameProgressCellViewModel(achieved: achieved, total: total)
     }
     
-    var achievementsViewModel: TitleDisclosureCellViewModel? {
-        guard schema?.achievements != nil else { return nil }
-        return TitleDisclosureCellViewModel(title: R.string.localizable.achievements())
-    }
-    
     var statsViewModel: TitleDisclosureCellViewModel? {
         guard schema?.stats != nil else { return nil }
         return TitleDisclosureCellViewModel(title: R.string.localizable.gameStatisticsStats())

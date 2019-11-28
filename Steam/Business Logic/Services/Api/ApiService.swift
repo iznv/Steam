@@ -32,7 +32,7 @@ class ApiService {
         
         static let myId = "76561199004225368"
         
-        static let somePersonId = "76561197967599040"
+        static let somePersonId = "76561198204287436"
         
     }
     

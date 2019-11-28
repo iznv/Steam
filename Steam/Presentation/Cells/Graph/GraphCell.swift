@@ -8,7 +8,7 @@ class GraphCell: BaseTableViewCell {
     
     private enum Constants {
         
-        static let dataPointSpacing: CGFloat = 50
+        static let dataPointSpacing: CGFloat = 54
         
         static let barLineWidth: CGFloat = 0
         
@@ -18,30 +18,47 @@ class GraphCell: BaseTableViewCell {
     
     // MARK: - Views
     
-    private lazy var graphView: ScrollableGraphView = {
-        let graphView = ScrollableGraphView()
-        graphView.shouldRangeAlwaysStartAtZero = true
-        graphView.shouldAdaptRange = true
-        graphView.direction = .rightToLeft
-        graphView.dataPointSpacing = Constants.dataPointSpacing
-        
+    private let plot: BarPlot = {
         let plot = BarPlot(identifier: .empty)
         plot.shouldRoundBarCorners = true
         plot.barLineWidth = Constants.barLineWidth
         plot.barWidth = Constants.barWidth
-        graphView.addPlot(plot: plot)
-        
+        return plot
+    }()
+    
+    private let referenceLines: ReferenceLines = {
         let referenceLines = ReferenceLines()
+        referenceLines.dataPointLabelFont = .medium12()
+        referenceLines.referenceLineLabelFont = UIFont.medium12() ?? .systemFont(ofSize: 12, weight: .medium)
         referenceLines.referenceLineColor = .clear
+        return referenceLines
+    }()
+    
+    private lazy var graphView: ScrollableGraphView = {
+        let graphView = ScrollableGraphView()
+        graphView.rightmostPointPadding = CGFloat.horizontalMargin
+        graphView.shouldRangeAlwaysStartAtZero = true
+        graphView.shouldAdaptRange = true
+        graphView.direction = .rightToLeft
+        graphView.dataPointSpacing = Constants.dataPointSpacing
+        graphView.addPlot(plot: plot)
         graphView.addReferenceLines(referenceLines: referenceLines)
-        
         graphView.dataSource = self
+        graphView.showsHorizontalScrollIndicator = false
         return graphView
     }()
 
     // MARK: - Properties
 
     private var viewModel: GraphCellViewModel?
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: self)
+    }
     
     // MARK: - Views
     
@@ -53,6 +70,19 @@ class GraphCell: BaseTableViewCell {
     
     override func configureConstraints() {
         configureGraphViewConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension GraphCell: Themeable {
+    
+    func apply(theme: Theme) {
+        graphView.backgroundFillColor = theme.primaryBackgroundColor
+        plot.barColor = theme.accentColor
+        referenceLines.dataPointLabelColor = theme.primaryTextColor
+        referenceLines.referenceLineLabelColor = theme.primaryTextColor
     }
     
 }
@@ -93,7 +123,8 @@ private extension GraphCell {
     
     func configureGraphViewConstraints() {
         graphView.snp.remakeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
         }
     }
     

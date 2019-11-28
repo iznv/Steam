@@ -17,5 +17,12 @@ extension NumberFormatter {
         formatter.maximumFractionDigits = 1
         return formatter
     }()
+    
+    static let common: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = .enUS
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
 
 }

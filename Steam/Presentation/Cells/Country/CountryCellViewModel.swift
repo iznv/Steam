@@ -12,7 +12,7 @@ struct CountryCellViewModel {
     
     init(countryCode: String) {
         flagImage = Flag(countryCode: countryCode)?.image(style: .roundedRect)
-        title = Locale.current.localizedString(forRegionCode: countryCode)
+        title = Locale.enUS.localizedString(forRegionCode: countryCode)
     }
     
 }

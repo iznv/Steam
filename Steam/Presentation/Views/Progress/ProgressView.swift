@@ -6,7 +6,7 @@ class ProgressView: BaseView {
 
     private struct Constants {
     
-
+        static let cornerRadius: CGFloat = 4
     
     }
     
@@ -14,7 +14,7 @@ class ProgressView: BaseView {
     
     private let progressView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
+        view.layer.cornerRadius = Constants.cornerRadius
         return view
     }()
     
@@ -22,6 +22,14 @@ class ProgressView: BaseView {
 
     var progress: CGFloat = 0 {
         didSet {
+            if progress < 0 {
+                progress = 0
+            }
+            
+            if progress > 1 {
+                progress = 1
+            }
+            
             updateProgress()
         }
     }
@@ -31,13 +39,19 @@ class ProgressView: BaseView {
     override func commonInit() {
         super.commonInit()
         
-        backgroundColor = .darkGray
+        enableTheme(for: self)
     }
     
     // MARK: - Subviews
     
     override func addViews() {
         addSubview(progressView)
+    }
+    
+    // MARK: - Appearance
+    
+    override func configureAppearance() {
+        layer.cornerRadius = Constants.cornerRadius
     }
     
     // MARK: - Overrides
@@ -48,6 +62,17 @@ class ProgressView: BaseView {
         updateProgress()
     }
 
+}
+
+// MARK: - Themeable
+
+extension ProgressView: Themeable {
+    
+    func apply(theme: Theme) {
+        progressView.backgroundColor = theme.accentColor
+        backgroundColor = theme.primaryTextColor.withAlphaComponent(0.2)
+    }
+    
 }
 
 // MARK: - Private

@@ -7,11 +7,15 @@ class AchievementCell: BaseTableViewCell {
     
     private enum Constants {
         
+        static let titleLabelTop: CGFloat = -3
+        
         static let picCornerRadius: CGFloat = 4
         
         static let gamePicImageViewSize: CGFloat = 32
         
-        static let titleLabelLeading: CGFloat = -10
+        static let titleLabelLeading: CGFloat = -16
+        
+        static let verticalMargin: CGFloat = 20
         
     }
     
@@ -28,14 +32,24 @@ class AchievementCell: BaseTableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = .bold16()
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = .medium14()
         return label
     }()
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: contentView)
+    }
     
     // MARK: - Views
     
@@ -53,6 +67,18 @@ class AchievementCell: BaseTableViewCell {
         configurePicImageViewConstraints()
         configureTitleLabelConstraints()
         configureDescriptionLabelConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension AchievementCell: Themeable {
+    
+    func apply(theme: Theme) {
+        titleLabel.textColor = theme.primaryTextColor
+        descriptionLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+        picImageView.backgroundColor = theme.accentColor
     }
     
 }
@@ -77,7 +103,7 @@ private extension AchievementCell {
     
     func configurePicImageViewConstraints() {
         picImageView.snp.remakeConstraints { make in
-            make.top.equalToSuperview().inset(CGFloat.verticalMargin)
+            make.top.equalToSuperview().inset(Constants.verticalMargin)
             make.leading.equalToSuperview().inset(CGFloat.horizontalMargin)
             make.size.equalTo(Constants.gamePicImageViewSize)
         }
@@ -85,7 +111,7 @@ private extension AchievementCell {
     
     func configureTitleLabelConstraints() {
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalTo(picImageView.snp.top)
+            make.top.equalTo(picImageView.snp.top).inset(Constants.titleLabelTop)
             make.leading.equalTo(picImageView.snp.trailing).inset(Constants.titleLabelLeading)
             make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
         }
@@ -96,7 +122,7 @@ private extension AchievementCell {
             make.top.equalTo(titleLabel.snp.bottom)
             make.leading.equalTo(titleLabel.snp.leading)
             make.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
-            make.bottom.equalToSuperview().inset(CGFloat.verticalMargin)
+            make.bottom.equalToSuperview().inset(Constants.verticalMargin)
         }
     }
     

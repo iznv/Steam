@@ -23,9 +23,17 @@ class CountryCell: BaseTableViewCell {
     
     private let countryNameLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .medium12()
         return label
     }()
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: contentView)
+    }
 
     // MARK: - Views
     
@@ -41,6 +49,16 @@ class CountryCell: BaseTableViewCell {
     override func configureConstraints() {
         configureFlagImageViewConstraints()
         configureCountryNameLabelConstraints()
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension CountryCell: Themeable {
+    
+    func apply(theme: Theme) {
+        countryNameLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
     }
     
 }

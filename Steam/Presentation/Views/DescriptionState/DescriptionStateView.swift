@@ -16,6 +16,7 @@ class DescriptionStateView: BaseView {
         let label = UILabel()
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.font = .medium16()
         return label
     }()
     
@@ -25,6 +26,14 @@ class DescriptionStateView: BaseView {
         didSet {
             descriptionLabel.text = stateDescription
         }
+    }
+    
+    // MARK: - Init
+    
+    override func commonInit() {
+        super.commonInit()
+        
+        enableTheme(for: self)
     }
     
     // MARK: - Subviews
@@ -43,6 +52,17 @@ class DescriptionStateView: BaseView {
     
     override func configureAppearance() {
         backgroundColor = .white
+    }
+    
+}
+
+// MARK: - Themeable
+
+extension DescriptionStateView: Themeable {
+    
+    func apply(theme: Theme) {
+        backgroundColor = theme.primaryBackgroundColor
+        descriptionLabel.textColor = theme.primaryTextColor
     }
     
 }
