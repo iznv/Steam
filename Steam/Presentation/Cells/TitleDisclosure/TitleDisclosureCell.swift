@@ -64,7 +64,7 @@ extension TitleDisclosureCell: Themeable {
 
 extension TitleDisclosureCell: ConfigurableCell {
     
-    static let defaultHeight: CGFloat? = 54
+    static let defaultHeight: CGFloat? = 50
     
     func configure(with viewModel: TitleDisclosureCellViewModel) {
         titleLabel.text = viewModel.title

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Ivan Zinovev. All rights reserved.
 //
 
+import ApiKit
+
 class BaseControllerViewModel {
     
     // MARK: - Properties

@@ -1,3 +1,5 @@
+import ApiKit
+
 class AchievementsViewModel {
     
     // MARK: - Constants

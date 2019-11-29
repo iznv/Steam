@@ -1,3 +1,6 @@
+import ApiKit
+import SteamKit
+
 class AchievementCompareViewModel: BaseControllerViewModel {
     
     // MARK: - Constants

@@ -1,4 +1,5 @@
-import Foundation
+import ApiKit
+import SteamKit
 
 class GameViewModel: BaseControllerViewModel {
     
