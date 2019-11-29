@@ -29,3 +29,13 @@ private extension SchemaStat {
     }
     
 }
+
+extension SchemaStat {
+    
+    var title: String {
+        return (displayName.isEmpty ? name : displayName)
+            .replacingOccurrences(of: String.underscore, with: String.whitespace)
+            .capitalized
+    }
+    
+}

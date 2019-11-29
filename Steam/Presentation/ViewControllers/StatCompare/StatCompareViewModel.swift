@@ -34,8 +34,7 @@ class StatCompareViewModel: BaseControllerViewModel {
         return schemaStats.compactMap { schemaStat in
             let value1 = Int(stats.first(where: { $0.name == schemaStat.name })?.value ?? 0)
             let value2 = Int(myStats.first(where: { $0.name == schemaStat.name })?.value ?? 0)
-            let title = schemaStat.displayName.isEmpty ? schemaStat.name : schemaStat.displayName
-            return StatCompareCellViewModel(title: title,
+            return StatCompareCellViewModel(title: schemaStat.title,
                                             value1: NumberFormatter.common.string(from: NSNumber(value: value1)),
                                             value2: NumberFormatter.common.string(from: NSNumber(value: value2)),
                                             whoWin: Win.compare(value1: value1, value2: value2))

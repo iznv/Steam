@@ -12,6 +12,6 @@ target 'Steam' do
   pod 'StatefulViewController'
   pod 'TableKit'
   
-  pod 'Utils', '0.0.10', :source => 'https://github.com/iznv/Podspecs.git'
+  pod 'Utils', '0.0.11', :source => 'https://github.com/iznv/Podspecs.git'
 
 end

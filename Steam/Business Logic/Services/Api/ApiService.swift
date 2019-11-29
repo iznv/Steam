@@ -6,7 +6,7 @@
 //  Copyright © 2019 Ivan Zinovev. All rights reserved.
 //
 
-import Foundation
+import Utils
 
 // MARK: - Constants
 

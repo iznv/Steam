@@ -14,14 +14,18 @@ extension ViewStateMachine {
                                          animated: Bool = true,
                                          completion: (() -> Void)? = nil) where T.RawValue == String {
 
-        transitionToState(.view(state.rawValue), animated: animated, completion: completion)
+        transitionToState(.view(ViewState.transition.rawValue)) { [weak self] in
+            self?.transitionToState(.view(state.rawValue), animated: animated, completion: completion)
+        }
     }
 
     func transition(to state: ViewStateMachineState,
                     animated: Bool = true,
                     completion: (() -> Void)? = nil) {
 
-        transitionToState(state, animated: animated, completion: completion)
+        transitionToState(.view(ViewState.transition.rawValue)) { [weak self] in
+            self?.transitionToState(state, animated: animated, completion: completion)
+        }
     }
 
 }

@@ -9,14 +9,21 @@ class UserPicCell: BaseTableViewCell {
         
         static let userPicImageSize: CGFloat = 100
         
+        static let imageViewInset: CGFloat = -3
+        
     }
     
     // MARK: - Views
     
+    private let userPicImageViewContainer: UIView = {
+        let view = UIView()
+        view.clipsToBounds = true
+        view.layer.cornerRadius = Constants.userPicImageSize / 2
+        return view
+    }()
+    
     private let userPicImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = Constants.userPicImageSize / 2
         return imageView
     }()
     
@@ -31,13 +38,15 @@ class UserPicCell: BaseTableViewCell {
     // MARK: - Views
     
     override func addViews() {
-        contentView.addSubview(userPicImageView)
+        userPicImageViewContainer.addSubview(userPicImageView)
+        contentView.addSubview(userPicImageViewContainer)
     }
     
     // MARK: - Constraints
     
     override func configureConstraints() {
         configureImageViewConstraints()
+        configureImageViewContainerConstraints()
     }
     
 }
@@ -70,6 +79,12 @@ private extension UserPicCell {
     
     func configureImageViewConstraints() {
         userPicImageView.snp.remakeConstraints { make in
+            make.edges.equalToSuperview().inset(Constants.imageViewInset)
+        }
+    }
+    
+    func configureImageViewContainerConstraints() {
+        userPicImageViewContainer.snp.remakeConstraints { make in
             make.top.equalToSuperview().inset(CGFloat.verticalMargin)
             make.bottom.equalToSuperview().inset(CGFloat.verticalMargin).priority(.low)
             make.leading.equalToSuperview().inset(CGFloat.horizontalMargin)

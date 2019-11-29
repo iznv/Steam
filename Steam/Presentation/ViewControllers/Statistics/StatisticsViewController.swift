@@ -142,6 +142,7 @@ private extension StatisticsViewController {
         guard let schemaAchievements = viewModel.schema?.achievements else { return }
         
         let achievementsViewController = AchievementsViewController(viewModel: .init(appId: viewModel.appId,
+                                                                                     steamId: viewModel.steamId,
                                                                                      schemaAchievements: schemaAchievements,
                                                                                      achievements: viewModel.stats?.achievements ?? []))
         navigationController?.pushViewController(achievementsViewController, animated: true)
@@ -151,6 +152,7 @@ private extension StatisticsViewController {
         guard let schemaStats = viewModel.schema?.stats else { return }
         
         let achievementsViewController = StatsViewController(viewModel: .init(appId: viewModel.appId,
+                                                                              steamId: viewModel.steamId,
                                                                               schemaStats: schemaStats,
                                                                               stats: viewModel.stats?.stats ?? []))
         navigationController?.pushViewController(achievementsViewController, animated: true)

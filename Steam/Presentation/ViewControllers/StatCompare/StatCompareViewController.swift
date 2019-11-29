@@ -16,7 +16,7 @@ class StatCompareViewController: BaseTableViewController<StatCompareViewModel> {
     
     private let headerView: CompareHeaderView = {
         let headerView = CompareHeaderView()
-        headerView.value1 = R.string.localizable.user()
+        headerView.value1 = R.string.localizable.player()
         headerView.value2 = R.string.localizable.you()
         return headerView
     }()

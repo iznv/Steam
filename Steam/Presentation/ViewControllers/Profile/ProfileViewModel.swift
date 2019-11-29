@@ -19,6 +19,8 @@ class ProfileViewModel: BaseControllerViewModel {
     // MARK: - Properties
     
     var steamId: String?
+    
+    let isUserProfile: Bool
 
     private var player: Player?
     
@@ -138,9 +140,9 @@ class ProfileViewModel: BaseControllerViewModel {
     // MARK: - Init
 
     init(steamId: String? = nil) {
-        super.init()
+        isUserProfile = steamId == nil
         
-        let isUserProfile = steamId == nil
+        super.init()
         
         self.steamId = isUserProfile ? authService.steamId : steamId
         

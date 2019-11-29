@@ -19,6 +19,8 @@ enum ViewState: String, CaseIterable {
     case noConnection
     
     case empty
+    
+    case transition
 
 }
 
@@ -34,6 +36,8 @@ extension ViewState {
             return makeNoConnectionView(delegate: delegate)
         case .empty:
             return makeEmptyView()
+        case .transition:
+            return makeTransitionView()
         }
     }
 
@@ -71,6 +75,10 @@ private extension ViewState {
         let view = DescriptionStateView()
         view.stateDescription = R.string.localizable.stateEmptyDescription()
         return view
+    }
+    
+    func makeTransitionView() -> UIView {
+        return TransitionStateView()
     }
 
 }

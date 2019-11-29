@@ -35,6 +35,7 @@ class CustomStateView: BaseView {
         button.layer.cornerRadius = Constants.buttonHeight / 2
         button.contentEdgeInsets = Constants.buttonInsets
         button.titleLabel?.font = .bold17()
+        button.setTitleColor(.white, for: .normal)
         return button
     }()
     
@@ -99,7 +100,6 @@ extension CustomStateView: Themeable {
         backgroundColor = theme.primaryBackgroundColor
         descriptionLabel.textColor = theme.primaryTextColor
         button.backgroundColor = theme.accentColor
-        button.setTitleColor(theme.primaryTextColor, for: .normal)
     }
     
 }

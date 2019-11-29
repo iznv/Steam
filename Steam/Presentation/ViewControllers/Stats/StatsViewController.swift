@@ -22,10 +22,12 @@ class StatsViewController: BaseTableViewController<StatsViewModel> {
         
         enableTheme(for: view)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(openStatCompare))
+        if viewModel.canCompare {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(openStatCompare))
+        }
 
         navigationItem.title = R.string.localizable.stats()
         

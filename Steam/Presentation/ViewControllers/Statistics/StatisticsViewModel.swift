@@ -18,7 +18,7 @@ class StatisticsViewModel: BaseControllerViewModel {
 
     let appId: Int
     
-    private let steamId: String
+    let steamId: String
     
     // MARK: - Events
     

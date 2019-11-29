@@ -28,7 +28,7 @@ struct AppDetails: Codable {
     
     let genres: [Genre]?
     
-    let screenshots: [Screenshot]
+    let screenshots: [Screenshot]?
         
     let recommendations: Recommendations?
     

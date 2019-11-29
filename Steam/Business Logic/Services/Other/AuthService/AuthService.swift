@@ -38,6 +38,7 @@ extension AuthService {
     func logout() {
         userDefaults.steamId = nil
         NotificationCenter.default.post(name: .didChangeAuthState, object: nil)
+        CoreDataService.shared.clear()
     }
     
 }

@@ -22,11 +22,13 @@ class AchievementsViewController: BaseTableViewController<AchievementsViewModel>
         
         enableTheme(for: view)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(openAchievementCompare))
-
+        if viewModel.canCompare {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(openAchievementCompare))
+        }
+        
         navigationItem.title = R.string.localizable.achievements()
         
         configureTableView()

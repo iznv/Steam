@@ -19,6 +19,14 @@ class AchievementsViewModel {
     private let achivedAchievements: [SchemaAchievement]
     
     private let notAchivedAchievements: [SchemaAchievement]
+    
+    private let steamId: String
+    
+    // MARK: - Computed Properties
+    
+    var canCompare: Bool {
+        return authService.steamId != steamId
+    }
 
     // MARK: - Cells View Models
     
@@ -37,14 +45,20 @@ class AchievementsViewModel {
     var notAchievedViewModels: [AchievementCellViewModel] {
         return notAchivedAchievements.compactMap { makeCellViewModel(achievement: $0) }
     }
+    
+    // MARK: - Services
+    
+    private let authService = AuthService()
 
     // MARK: - Init
 
     init(appId: Int,
+         steamId: String,
          schemaAchievements: [SchemaAchievement],
          achievements: [Achievement]) {
         
         self.appId = appId
+        self.steamId = steamId
         self.schemaAchievements = schemaAchievements
         self.achievements = achievements
         

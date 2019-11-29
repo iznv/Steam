@@ -54,12 +54,15 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         
         enableTheme(for: view)
         
-        navigationItem.title = R.string.localizable.profileTabTitle()
+        navigationItem.title = viewModel.isUserProfile ? R.string.localizable.profileTabTitle() : .empty
         
         bind()
         
-        if viewModel.isLoggenIn {
+        if viewModel.isUserProfile {
             showLogoutButton()
+        }
+        
+        if viewModel.isLoggenIn {
             loadProfile()
         } else {
             stateMachine.transition(to: ProfileViewState.notAuthorized, animated: false)

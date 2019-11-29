@@ -7,7 +7,7 @@ PODS:
   - SnapKit (5.0.1)
   - StatefulViewController (3.0)
   - TableKit (2.10.0)
-  - Utils (0.0.10)
+  - Utils (0.0.11)
 
 DEPENDENCIES:
   - FlagKit
@@ -16,7 +16,7 @@ DEPENDENCIES:
   - SnapKit
   - StatefulViewController
   - TableKit
-  - Utils (= 0.0.10)
+  - Utils (= 0.0.11)
 
 SPEC REPOS:
   https://github.com/iznv/Podspecs:
@@ -38,8 +38,8 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
   TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
-  Utils: 26785b5241476a3bf7cb653e14fd5ba58bbf76b3
+  Utils: d4bb55f5772ab2e0b19b4e7e64f9d3a1e2b8fc9c
 
-PODFILE CHECKSUM: dcfc33f495e440ca4bd9598ef6db2e9bd9e84c08
+PODFILE CHECKSUM: 25c4d7bceaa765ba12763bd17ecf11a97fcf5a6b
 
 COCOAPODS: 1.8.4

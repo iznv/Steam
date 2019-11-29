@@ -53,6 +53,10 @@ class GameHeaderCell: BaseTableViewCell {
         )
     }
     
+    // MARK: - Properties
+    
+    var viewModel: GameHeaderCellViewModel?
+    
     // MARK: - Constraints
     
     override func configureConstraints() {
@@ -79,9 +83,11 @@ extension GameHeaderCell: ConfigurableCell {
     static let defaultHeight: CGFloat? = 180
     
     func configure(with viewModel: GameHeaderCellViewModel) {
-        picImageView.loadImage(url: viewModel.picUrl)
+        guard self.viewModel == nil else { return }
+        self.viewModel = viewModel
         
-        platformsStackView.clear()
+        picImageView.loadImage(url: viewModel.picUrl)
+
         viewModel.platforms.forEach { platform in
             let imageView = UIImageView(image: platform)
             imageView.snp.remakeConstraints { make in
