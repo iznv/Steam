@@ -44,6 +44,8 @@
 		2C41F7282389572B006EC815 /* CGFloat+GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F7272389572B006EC815 /* CGFloat+GlobalConstants.swift */; };
 		2C41F72A23895ECD006EC815 /* TitleValueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F72923895ECD006EC815 /* TitleValueItem.swift */; };
 		2C41F734238972BE006EC815 /* DateFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F733238972BE006EC815 /* DateFormatter+Formatters.swift */; };
+		2C4D41A82392F65C00501382 /* SteamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41A72392F65C00501382 /* SteamTests.swift */; };
+		2C4D41B02392FAC500501382 /* StatTitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41AF2392FAC500501382 /* StatTitleTests.swift */; };
 		2C56509D238DBE9C0072640A /* NSNotification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56509C238DBE9C0072640A /* NSNotification+Name.swift */; };
 		2C5650A0238DBEBE0072640A /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56509F238DBEBE0072640A /* UserDefaults+Keys.swift */; };
 		2C5650A3238DCEC40072640A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5650A2238DCEC40072640A /* ThemeManager.swift */; };
@@ -197,6 +199,7 @@
 		D783982B33AE286FC8E6DE8E /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4C6ABB7026379CAC9AFCB /* CountryCellViewModel.swift */; };
 		DBBE73BB5D5E9109E1042509 /* StatCompareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF0754AE073C8BE50922E2 /* StatCompareCellViewModel.swift */; };
 		DE03FC10FC16CB5D5EC8E7B0 /* StatHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB86B5AE7B2903A335BFD6 /* StatHistoryViewController.swift */; };
+		DE5C7DC0AD2181169BD5FC5A /* Pods_SteamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6894E76966BAD672DEDA614A /* Pods_SteamTests.framework */; };
 		E0C668586902C24D91835AF8 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF80812CA1B43E974301365C /* StatisticsViewModel.swift */; };
 		E1631AA19BDE6EE59B707122 /* GameHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6648D282A9DFC39F7E57 /* GameHeaderCellViewModel.swift */; };
 		E48476F54E9E0676E531389F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C967F56D4CF48331E9A10 /* FriendsViewController.swift */; };
@@ -210,6 +213,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2C1C2AC42391DF8100F5EA98;
 			remoteInfo = SteamKit;
+		};
+		2C4D41AA2392F65C00501382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C04E5B3238464D00058CC18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C04E5BA238464D00058CC18;
+			remoteInfo = Steam;
 		};
 		2CA4F5C72391D019009FA6E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -249,6 +259,7 @@
 		02E4C6ABB7026379CAC9AFCB /* CountryCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
 		077594191B9C555EC0DFF512 /* ActivityViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		12153A6A31E9D69B3827B8F9 /* FriendCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		137849D19E3D09151673DEA1 /* Pods-Steam-SteamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam-SteamTests.release.xcconfig"; path = "Target Support Files/Pods-Steam-SteamTests/Pods-Steam-SteamTests.release.xcconfig"; sourceTree = "<group>"; };
 		14A3D1D73D8377547BDF8633 /* StatCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatCellViewModel.swift; sourceTree = "<group>"; };
 		1FBA925A21356406106517D3 /* Pods_Steam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		265D8FF2C314AE18E58F2AC2 /* Pods-SteamKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKit.debug.xcconfig"; path = "Target Support Files/Pods-SteamKit/Pods-SteamKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -307,6 +318,10 @@
 		2C41F7272389572B006EC815 /* CGFloat+GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+GlobalConstants.swift"; sourceTree = "<group>"; };
 		2C41F72923895ECD006EC815 /* TitleValueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueItem.swift; sourceTree = "<group>"; };
 		2C41F733238972BE006EC815 /* DateFormatter+Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Formatters.swift"; sourceTree = "<group>"; };
+		2C4D41A52392F65C00501382 /* SteamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4D41A72392F65C00501382 /* SteamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamTests.swift; sourceTree = "<group>"; };
+		2C4D41A92392F65C00501382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C4D41AF2392FAC500501382 /* StatTitleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTitleTests.swift; sourceTree = "<group>"; };
 		2C549A8D2391A33E002E451B /* StatEntityClearRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatEntityClearRequest.swift; sourceTree = "<group>"; };
 		2C56509C238DBE9C0072640A /* NSNotification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Name.swift"; sourceTree = "<group>"; };
 		2C56509F238DBEBE0072640A /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
@@ -387,6 +402,7 @@
 		2CCF10A1238C4CAC009CC7EF /* DeleteTodayStatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodayStatsRequest.swift; sourceTree = "<group>"; };
 		2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePlayed.swift; sourceTree = "<group>"; };
 		2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesType.swift; sourceTree = "<group>"; };
+		2D5C5CB6E8C9694FDD1292C5 /* Pods-SteamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamTests.release.xcconfig"; path = "Target Support Files/Pods-SteamTests/Pods-SteamTests.release.xcconfig"; sourceTree = "<group>"; };
 		2DCF70EE67E158FD23BD7C05 /* GraphCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		31DFEB68CDB72324BB70F87E /* CustomStateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomStateView.swift; sourceTree = "<group>"; };
 		35BE83F5B1F8AF7CCEADAFD6 /* PlayerGameCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerGameCell.swift; sourceTree = "<group>"; };
@@ -400,6 +416,7 @@
 		612D46207EF5EE968F8A8AAA /* StatisticsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		644B012D0C68E7339E912566 /* Pods-Steam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam.debug.xcconfig"; path = "Target Support Files/Pods-Steam/Pods-Steam.debug.xcconfig"; sourceTree = "<group>"; };
 		6810F51B0EBDA18EAA96B148 /* CompareHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CompareHeaderView.swift; sourceTree = "<group>"; };
+		6894E76966BAD672DEDA614A /* Pods_SteamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SteamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A010E4DC0E6E4302D95EB9D /* StatCompareViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatCompareViewController.swift; sourceTree = "<group>"; };
 		6B433929F2082428338FAEF4 /* AchievementsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		6FB00AFA30A1F59433756F8A /* Pods-ApiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiKit.release.xcconfig"; path = "Target Support Files/Pods-ApiKit/Pods-ApiKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -437,7 +454,9 @@
 		D33AA220615AE23CDE414E88 /* AchievementCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		D5CDBAD0287688016429DDC0 /* TextCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextCellViewModel.swift; sourceTree = "<group>"; };
 		D6B41DED2C4E2748330CBBD7 /* UserPicCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserPicCell.swift; sourceTree = "<group>"; };
+		DB1A4BF514D42DD04A422449 /* Pods-Steam-SteamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steam-SteamTests.debug.xcconfig"; path = "Target Support Files/Pods-Steam-SteamTests/Pods-Steam-SteamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD7AF4F1A18A28DAEE97121C /* FriendCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendCellViewModel.swift; sourceTree = "<group>"; };
+		E65E146CDC1A1F6A5E31A145 /* Pods-SteamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamTests.debug.xcconfig"; path = "Target Support Files/Pods-SteamTests/Pods-SteamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC31F01A775066A7F480A8A1 /* StatHistoryViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatHistoryViewModel.swift; sourceTree = "<group>"; };
 		EE7A6CDE8363DDC0321F0874 /* Pods_DataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF80812CA1B43E974301365C /* StatisticsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
@@ -467,6 +486,14 @@
 			files = (
 				2C1C2ADB2391E4A400F5EA98 /* ApiKit.framework in Frameworks */,
 				7A1C2380EB1B45355EA768AE /* Pods_SteamKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4D41A22392F65C00501382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5C7DC0AD2181169BD5FC5A /* Pods_SteamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +558,7 @@
 				2CA4F5C32391D019009FA6E5 /* ApiKit */,
 				2CA4F5D52391D035009FA6E5 /* DataKit */,
 				2C1C2AC62391DF8100F5EA98 /* SteamKit */,
+				2C4D41A62392F65C00501382 /* SteamTests */,
 				2C04E5BC238464D00058CC18 /* Products */,
 				A0995BFBB94BA03A3198FD9C /* Pods */,
 				C9322ECB3B7C48BB80333DAC /* Frameworks */,
@@ -544,6 +572,7 @@
 				2CA4F5C22391D019009FA6E5 /* ApiKit.framework */,
 				2CA4F5D42391D035009FA6E5 /* DataKit.framework */,
 				2C1C2AC52391DF8100F5EA98 /* SteamKit.framework */,
+				2C4D41A52392F65C00501382 /* SteamTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -962,6 +991,16 @@
 				2C41F733238972BE006EC815 /* DateFormatter+Formatters.swift */,
 			);
 			path = DateFormatter;
+			sourceTree = "<group>";
+		};
+		2C4D41A62392F65C00501382 /* SteamTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C4D41A92392F65C00501382 /* Info.plist */,
+				2C4D41AF2392FAC500501382 /* StatTitleTests.swift */,
+				2C4D41A72392F65C00501382 /* SteamTests.swift */,
+			);
+			path = SteamTests;
 			sourceTree = "<group>";
 		};
 		2C56509A238DBE7F0072640A /* Foundation */ = {
@@ -1409,6 +1448,10 @@
 				AC230CC7B3D67145132BCC93 /* Pods-Steam.release.xcconfig */,
 				265D8FF2C314AE18E58F2AC2 /* Pods-SteamKit.debug.xcconfig */,
 				F47C251AF58E2E54D404124A /* Pods-SteamKit.release.xcconfig */,
+				E65E146CDC1A1F6A5E31A145 /* Pods-SteamTests.debug.xcconfig */,
+				2D5C5CB6E8C9694FDD1292C5 /* Pods-SteamTests.release.xcconfig */,
+				DB1A4BF514D42DD04A422449 /* Pods-Steam-SteamTests.debug.xcconfig */,
+				137849D19E3D09151673DEA1 /* Pods-Steam-SteamTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1464,6 +1507,7 @@
 				EE7A6CDE8363DDC0321F0874 /* Pods_DataKit.framework */,
 				1FBA925A21356406106517D3 /* Pods_Steam.framework */,
 				A071573EDA6CE904FE07243A /* Pods_SteamKit.framework */,
+				6894E76966BAD672DEDA614A /* Pods_SteamTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1611,6 +1655,25 @@
 			productReference = 2C1C2AC52391DF8100F5EA98 /* SteamKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2C4D41A42392F65C00501382 /* SteamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C4D41AE2392F65C00501382 /* Build configuration list for PBXNativeTarget "SteamTests" */;
+			buildPhases = (
+				28E970AFACA38C21A29FF031 /* [CP] Check Pods Manifest.lock */,
+				2C4D41A12392F65C00501382 /* Sources */,
+				2C4D41A22392F65C00501382 /* Frameworks */,
+				2C4D41A32392F65C00501382 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C4D41AB2392F65C00501382 /* PBXTargetDependency */,
+			);
+			name = SteamTests;
+			productName = SteamTests;
+			productReference = 2C4D41A52392F65C00501382 /* SteamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2CA4F5C12391D019009FA6E5 /* ApiKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CA4F5CE2391D019009FA6E5 /* Build configuration list for PBXNativeTarget "ApiKit" */;
@@ -1665,6 +1728,10 @@
 					2C1C2AC42391DF8100F5EA98 = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					2C4D41A42392F65C00501382 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 2C04E5BA238464D00058CC18;
+					};
 					2CA4F5C12391D019009FA6E5 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -1689,6 +1756,7 @@
 				2CA4F5C12391D019009FA6E5 /* ApiKit */,
 				2CA4F5D32391D035009FA6E5 /* DataKit */,
 				2C1C2AC42391DF8100F5EA98 /* SteamKit */,
+				2C4D41A42392F65C00501382 /* SteamTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1709,6 +1777,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C1C2AC32391DF8100F5EA98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4D41A32392F65C00501382 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1748,6 +1823,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DataKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28E970AFACA38C21A29FF031 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SteamTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1982,6 +2079,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C4D41A12392F65C00501382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4D41B02392FAC500501382 /* StatTitleTests.swift in Sources */,
+				2C4D41A82392F65C00501382 /* SteamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CA4F5BE2391D019009FA6E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2068,6 +2174,11 @@
 			isa = PBXTargetDependency;
 			target = 2C1C2AC42391DF8100F5EA98 /* SteamKit */;
 			targetProxy = 2C1C2ACA2391DF8100F5EA98 /* PBXContainerItemProxy */;
+		};
+		2C4D41AB2392F65C00501382 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C04E5BA238464D00058CC18 /* Steam */;
+			targetProxy = 2C4D41AA2392F65C00501382 /* PBXContainerItemProxy */;
 		};
 		2CA4F5C82391D019009FA6E5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2311,6 +2422,50 @@
 			};
 			name = Release;
 		};
+		2C4D41AC2392F65C00501382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E65E146CDC1A1F6A5E31A145 /* Pods-SteamTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QBTL3QKA3B;
+				INFOPLIST_FILE = SteamTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zinovev.SteamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steam.app/Steam";
+			};
+			name = Debug;
+		};
+		2C4D41AD2392F65C00501382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D5C5CB6E8C9694FDD1292C5 /* Pods-SteamTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QBTL3QKA3B;
+				INFOPLIST_FILE = SteamTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zinovev.SteamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steam.app/Steam";
+			};
+			name = Release;
+		};
 		2CA4F5CC2391D019009FA6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC38FD5529AA617A1B88860E /* Pods-ApiKit.debug.xcconfig */;
@@ -2457,6 +2612,15 @@
 			buildConfigurations = (
 				2C1C2ACE2391DF8100F5EA98 /* Debug */,
 				2C1C2ACF2391DF8100F5EA98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C4D41AE2392F65C00501382 /* Build configuration list for PBXNativeTarget "SteamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4D41AC2392F65C00501382 /* Debug */,
+				2C4D41AD2392F65C00501382 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
