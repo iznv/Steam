@@ -35,6 +35,10 @@ class ProfileViewModel: BaseControllerViewModel {
         return authService.isLoggenIn
     }
     
+    var isPublic: Bool {
+        return player?.communityVisibilityState == .public
+    }
+    
     // MARK: - Events
     
     var didGetProfile: (() -> Void)?

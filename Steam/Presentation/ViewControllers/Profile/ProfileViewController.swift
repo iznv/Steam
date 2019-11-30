@@ -43,10 +43,6 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         return stateMachine
     }()
 
-    // MARK: - Computed Properties
-
-
-
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -72,12 +68,19 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
     // MARK: - Table
     
     override func configureTableView() {
-        tableDirector.replace(with: [
-            userPicSection,
-            userInfoSection,
-            countersSection,
-            itemsSection
-        ].compactMap { $0 })
+        var sections: [TableSection?] = [userPicSection]
+        
+        if viewModel.isPublic {
+            sections.append(contentsOf: [
+                userInfoSection,
+                countersSection,
+                itemsSection
+            ])
+        } else {
+            sections.append(privateSection)
+        }
+
+        tableDirector.replace(with: sections.compactMap { $0 })
     }
 
 }
@@ -173,6 +176,10 @@ private extension ProfileViewController {
         )
     }
     
+    var privateSection: TableSection {
+        return TableSection(onlyRows: [privateRow])
+    }
+    
     // MARK: - Rows
     
     var realNameRow: Row? {
@@ -219,6 +226,10 @@ private extension ProfileViewController {
     
     var levelRow: Row? {
         return viewModel.levelViewModel.map { TableRow<LevelCell>(item: $0) }
+    }
+    
+    var privateRow: Row {
+        return TableRow<PrivateProfileCell>(item: ())
     }
     
 }

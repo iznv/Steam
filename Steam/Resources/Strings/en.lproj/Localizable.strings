@@ -21,6 +21,7 @@
 "ActivityTabTitle" = "Activity";
 
 "ProfileNotAuthorized" = "Log in to see your profile";
+"ProfilePrivateProfile" = "This profile is private";
 
 "ProfileLevelValue" = "Level %@";
 "ProfileLevelXPProgress" = "%@ / %@";

@@ -181,6 +181,7 @@
 		8DBEF02CAB50B87E7174678A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077594191B9C555EC0DFF512 /* ActivityViewModel.swift */; };
 		9940E8040DBE75664630990A /* FriendCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AF4F1A18A28DAEE97121C /* FriendCellViewModel.swift */; };
 		997EF6C4F787BA7467C7F982 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761453E92DA2E9822DA8BB84 /* FriendsViewModel.swift */; };
+		9D542C4145F8A9A0DEFA8ACA /* PrivateProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1348B007BFE7E49A34BDEA5 /* PrivateProfileCell.swift */; };
 		A293257DCCC3B580FA9AD68B /* StatCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A010E4DC0E6E4302D95EB9D /* StatCompareViewController.swift */; };
 		A2A7B9AF54B33A2E3A7071A7 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9137EDBB3EF480CCCA8147D5 /* StatCell.swift */; };
 		A5B3F1239DCB1D744F88ABCA /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334BF6EDB19F456DAE3AD8B /* StatsViewModel.swift */; };
@@ -444,6 +445,7 @@
 		B356A2769A6212B78C5641C5 /* GameViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B4DFE2692B1ADF8EEC67270F /* LevelCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelCellViewModel.swift; sourceTree = "<group>"; };
 		BA59C204C335270E4BE3F887 /* LoginViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C1348B007BFE7E49A34BDEA5 /* PrivateProfileCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrivateProfileCell.swift; sourceTree = "<group>"; };
 		C4CC7A5176461DE60370991F /* ActivityViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		C64EF5DAC47EF25F787A4C1B /* StatCompareViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatCompareViewModel.swift; sourceTree = "<group>"; };
 		C97E0F9CA708B5B54FDA258B /* Pods-DataKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataKit.debug.xcconfig"; path = "Target Support Files/Pods-DataKit/Pods-DataKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 				DBE51CECE5E6F445A6744404 /* Graph */,
 				6F03DC408341175B4868F813 /* Level */,
 				A16580AEEF1137C1C71666FF /* PlayerGame */,
+				C7C95EBE5EBE79B116236EE2 /* PrivateProfile */,
 				05E6A8F679D0D9D5440E8D70 /* Stat */,
 				9F2D2C23588CF2439AA94985 /* StatCompare */,
 				F35CC655A92410DE8C40C463 /* Text */,
@@ -1500,6 +1503,14 @@
 			path = CustomState;
 			sourceTree = "<group>";
 		};
+		C7C95EBE5EBE79B116236EE2 /* PrivateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C1348B007BFE7E49A34BDEA5 /* PrivateProfileCell.swift */,
+			);
+			path = PrivateProfile;
+			sourceTree = "<group>";
+		};
 		C9322ECB3B7C48BB80333DAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2062,6 +2073,7 @@
 				B23BFD82A7D0BA66155FA7C8 /* LoginViewController.swift in Sources */,
 				B8BF0DE8500FBCFF17C77DCE /* LoginViewModel.swift in Sources */,
 				5394D8410D14C888C85DA07F /* TransitionStateView.swift in Sources */,
+				9D542C4145F8A9A0DEFA8ACA /* PrivateProfileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
