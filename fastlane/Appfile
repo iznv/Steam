@@ -1,0 +1,8 @@
+app_identifier("com.zinovev.Steam") # The bundle identifier of your app
+apple_id("zinovyev.ivan@gmail.com") # Your Apple email address
+
+itc_team_id("119076957") # App Store Connect Team ID
+team_id("QBTL3QKA3B") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
