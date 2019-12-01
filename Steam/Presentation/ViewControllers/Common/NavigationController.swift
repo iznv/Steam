@@ -9,29 +9,16 @@
 import UIKit
 
 class NavigationController: UINavigationController {
-    
-    // MARK: - Initialization
 
-    override init(rootViewController: UIViewController) {
-        super.init(rootViewController: rootViewController)
-        
-        configureAppearance()
-        bind()
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         enableTheme(for: navigationBar, shouldUpdateLayout: true)
+        bind()
+
+        configureAppearance()
     }
     
     // MARK: - Overrides

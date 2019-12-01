@@ -16,8 +16,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         enableTheme(for: tabBar, shouldUpdateLayout: true)
-        
-        configureTabs()
     }
     
 }
@@ -29,33 +27,6 @@ extension TabBarController: Themeable {
     func apply(theme: Theme) {
         tabBar.barTintColor = theme.primaryBackgroundColor
         tabBar.tintColor = theme.primaryTextColor
-    }
-    
-}
-
-// MARK: - Configure Tabs
-
-private extension TabBarController {
-    
-    func configureTabs() {
-        viewControllers = [
-            profile,
-            activity
-        ].map { $0.controller }
-    }
-    
-    // MARK: - Tabs
-    
-    var activity: Tab {
-        return Tab(controller: ActivityViewController(viewModel: .init(gamesType: .recent)).embeddedInNavigation,
-                   title: R.string.localizable.activityTabTitle(),
-                   image: R.image.activityTabIcon())
-    }
-    
-    var profile: Tab {
-        return Tab(controller: ProfileViewController(viewModel: .init()).embeddedInNavigation,
-                   title: R.string.localizable.profileTabTitle(),
-                   image: R.image.profileTabIcon())
     }
     
 }

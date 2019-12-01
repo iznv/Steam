@@ -11,20 +11,12 @@ class StatsViewModel {
     }
     
     // MARK: - Properties
-    
-    let appId: Int
 
     let schemaStats: [SchemaStat]
     
     let stats: [Stat]
     
     private let steamId: String
-    
-    // MARK: - Computed Properties
-    
-    var canCompare: Bool {
-        return authService.steamId != steamId
-    }
 
     // MARK: - Cells View Models
 
@@ -36,19 +28,13 @@ class StatsViewModel {
                                      value: Int(value ?? 0))
         }
     }
-    
-    // MARK: - Services
-    
-    private let authService = AuthService()
 
     // MARK: - Init
 
-    init(appId: Int,
-         steamId: String,
+    init(steamId: String,
          schemaStats: [SchemaStat],
          stats: [Stat]) {
-        
-        self.appId = appId
+
         self.steamId = steamId
         self.schemaStats = schemaStats
         self.stats = stats

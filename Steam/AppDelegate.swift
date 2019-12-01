@@ -18,6 +18,8 @@ class AppDelegate: UIResponder {
     // MARK: - Services
 
     private let statHistoryService = StatHistoryService()
+    
+    private lazy var appCoordinator = AppCoordinator(window: window)
 
 }
 
@@ -30,8 +32,7 @@ extension AppDelegate: UIApplicationDelegate {
         
         configureAppearance()
         
-        window?.rootViewController = TabBarController()
-        window?.makeKeyAndVisible()
+        appCoordinator.start()
         
         statHistoryService.updateHistory()
         

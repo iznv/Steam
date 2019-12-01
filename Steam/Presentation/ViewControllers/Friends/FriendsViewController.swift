@@ -9,6 +9,10 @@ class FriendsViewController: BaseTableViewController<FriendsViewModel> {
     private lazy var tableDirector = TableDirector(tableView: tableView)
 
     private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
+    
+    // MARK: - Output
+    
+    var didSelectFriend: ((String) -> Void)?
 
     // MARK: - Life Cycle
     
@@ -94,8 +98,7 @@ private extension FriendsViewController {
         return friendViewModels.map { friend in
             TableRow<FriendCell>(item: friend)
                 .on(.click) { [weak self] _ in
-                    let profileViewController = ProfileViewController(viewModel: .init(steamId: friend.steamId))
-                    self?.navigationController?.pushViewController(profileViewController, animated: true)
+                    self?.didSelectFriend?(friend.steamId)
                 }
         }
     }

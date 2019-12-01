@@ -14,8 +14,12 @@ extension ViewStateMachine {
                                          animated: Bool = true,
                                          completion: (() -> Void)? = nil) where T.RawValue == String {
 
-        transitionToState(.view(ViewState.transition.rawValue)) { [weak self] in
-            self?.transitionToState(.view(state.rawValue), animated: animated, completion: completion)
+        if animated {
+            transitionToState(.view(ViewState.transition.rawValue)) { [weak self] in
+                self?.transitionToState(.view(state.rawValue), animated: animated, completion: completion)
+            }
+        } else {
+            transitionToState(.view(state.rawValue), animated: animated, completion: completion)
         }
     }
 
@@ -23,8 +27,12 @@ extension ViewStateMachine {
                     animated: Bool = true,
                     completion: (() -> Void)? = nil) {
 
-        transitionToState(.view(ViewState.transition.rawValue)) { [weak self] in
-            self?.transitionToState(state, animated: animated, completion: completion)
+        if animated {
+            transitionToState(.view(ViewState.transition.rawValue)) { [weak self] in
+                self?.transitionToState(state, animated: animated, completion: completion)
+            }
+        } else {
+            transitionToState(state, animated: animated, completion: completion)
         }
     }
 

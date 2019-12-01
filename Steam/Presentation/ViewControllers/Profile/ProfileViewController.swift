@@ -27,7 +27,7 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         view.buttonTitle = R.string.localizable.login()
         
         view.didTapButton = { [weak self] in
-            self?.login()
+            self?.didTapLogin?()
         }
         
         return view
@@ -42,7 +42,17 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         stateMachine[ProfileViewState.notAuthorized] = notAuthorizedView
         return stateMachine
     }()
+    
+    // MARK: - Output
+    
+    var didTapActivity: ((String?) -> Void)?
+    
+    var didTapGames: ((String?) -> Void)?
+    
+    var didTapFriends: ((String?) -> Void)?
 
+    var didTapLogin: (() -> Void)?
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -202,15 +212,15 @@ private extension ProfileViewController {
         return [
             TableRow<TitleDisclosureCell>(item: viewModel.activityViewModel)
                 .on(.click) { [weak self] _ in
-                    self?.openGames(gamesType: .recent)
+                    self?.didTapActivity?(self?.viewModel.steamId)
                 },
             TableRow<TitleDisclosureCell>(item: viewModel.gamesViewModel)
                 .on(.click) { [weak self] _ in
-                    self?.openGames(gamesType: .owned)
+                    self?.didTapGames?(self?.viewModel.steamId)
                 },
             TableRow<TitleDisclosureCell>(item: viewModel.friendsViewModel)
                 .on(.click) { [weak self] _ in
-                    self?.openFriends()
+                    self?.didTapFriends?(self?.viewModel.steamId)
                 }
         ]
     }
@@ -234,18 +244,6 @@ private extension ProfileViewController {
     
 }
 
-// MARK: - Actions
-
-private extension ProfileViewController {
-
-    func login() {
-        let loginViewController = LoginViewController(viewModel: .init()).embeddedInNavigation
-        loginViewController.modalPresentationStyle = .fullScreen
-        present(loginViewController, animated: true, completion: nil)
-    }
-
-}
-
 // MARK: - Private
 
 private extension ProfileViewController {
@@ -256,19 +254,7 @@ private extension ProfileViewController {
         }
     }
     
-    func openGames(gamesType: GamesType) {
-        guard let steamId = viewModel.steamId else { return }
-        let friendsViewController = ActivityViewController(viewModel: .init(gamesType: gamesType, steamId: steamId))
-        navigationController?.pushViewController(friendsViewController, animated: true)
-    }
-    
-    func openFriends() {
-        guard let steamId = viewModel.steamId else { return }
-        let friendsViewController = FriendsViewController(viewModel: .init(steamId: steamId))
-        navigationController?.pushViewController(friendsViewController, animated: true)
-    }
-    
-    @objc func logout() {
+    func logout() {
         viewModel.logout()
     }
     
@@ -283,7 +269,10 @@ private extension ProfileViewController {
     }
     
     func showLogoutButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.logoutBarButton(), style: .plain, target: self, action: #selector(self.logout))
+        navigationItem.rightBarButtonItem = BarButtonItem(image: R.image.logoutBarButton(),
+                                                          style: .plain) { [weak self] in
+            self?.logout()
+        }
     }
 
 }

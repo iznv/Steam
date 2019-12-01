@@ -1,3 +1,4 @@
+import ApiKit
 import StatefulViewController
 import TableKit
 import Utils
@@ -17,6 +18,12 @@ class StatisticsViewController: BaseTableViewController<StatisticsViewModel> {
     private lazy var tableDirector = TableDirector(tableView: tableView)
 
     private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
+    
+    // MARK: - Output
+    
+    var didTapAchievements: (([SchemaAchievement], [Achievement]) -> Void)?
+    
+    var didTapStats: (([SchemaStat], [Stat]) -> Void)?
 
     // MARK: - Life Cycle
     
@@ -139,23 +146,13 @@ private extension StatisticsViewController {
     }
     
     func openAchievements() {
-        guard let schemaAchievements = viewModel.schema?.achievements else { return }
-        
-        let achievementsViewController = AchievementsViewController(viewModel: .init(appId: viewModel.appId,
-                                                                                     steamId: viewModel.steamId,
-                                                                                     schemaAchievements: schemaAchievements,
-                                                                                     achievements: viewModel.stats?.achievements ?? []))
-        navigationController?.pushViewController(achievementsViewController, animated: true)
+        didTapAchievements?(viewModel.schema?.achievements ?? [],
+                            viewModel.stats?.achievements ?? [])
     }
     
     func openStats() {
-        guard let schemaStats = viewModel.schema?.stats else { return }
-        
-        let achievementsViewController = StatsViewController(viewModel: .init(appId: viewModel.appId,
-                                                                              steamId: viewModel.steamId,
-                                                                              schemaStats: schemaStats,
-                                                                              stats: viewModel.stats?.stats ?? []))
-        navigationController?.pushViewController(achievementsViewController, animated: true)
+        didTapStats?(viewModel.schema?.stats ?? [],
+                     viewModel.stats?.stats ?? [])
     }
 
 }

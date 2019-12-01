@@ -12,8 +12,6 @@ class AchievementsViewModel {
     
     // MARK: - Properties
     
-    let appId: Int
-    
     let schemaAchievements: [SchemaAchievement]
     
     let achievements: [Achievement]
@@ -54,12 +52,10 @@ class AchievementsViewModel {
 
     // MARK: - Init
 
-    init(appId: Int,
-         steamId: String,
+    init(steamId: String,
          schemaAchievements: [SchemaAchievement],
          achievements: [Achievement]) {
-        
-        self.appId = appId
+
         self.steamId = steamId
         self.schemaAchievements = schemaAchievements
         self.achievements = achievements

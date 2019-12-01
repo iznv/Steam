@@ -14,6 +14,10 @@ class StatsViewController: BaseTableViewController<StatsViewModel> {
     // MARK: - Properties
     
     private lazy var tableDirector = TableDirector(tableView: tableView)
+    
+    // MARK: - Output
+    
+    var didSelectStat: ((String) -> Void)?
 
     // MARK: - Life Cycle
     
@@ -21,13 +25,6 @@ class StatsViewController: BaseTableViewController<StatsViewModel> {
         super.viewDidLoad()
         
         enableTheme(for: view)
-        
-        if viewModel.canCompare {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.compareBarButton(),
-                                                                style: .plain,
-                                                                target: self,
-                                                                action: #selector(openStatCompare))
-        }
 
         navigationItem.title = R.string.localizable.stats()
         
@@ -70,28 +67,9 @@ private extension StatsViewController {
         return viewModel.statsViewModels.map {
             TableRow<StatCell>(item: $0)
                 .on(.click) { [weak self] options in
-                    self?.openStatHistory(name: options.item.name)
+                    self?.didSelectStat?(options.item.name)
                 }
         }
-    }
-    
-}
-
-// MARK: - Private
-
-private extension StatsViewController {
-    
-    @objc func openStatCompare() {
-        let statCompareViewController = StatCompareViewController(viewModel: .init(appId: viewModel.appId,
-                                                                                   schemaStats: viewModel.schemaStats,
-                                                                                   stats: viewModel.stats))
-        navigationController?.pushViewController(statCompareViewController, animated: true)
-    }
-    
-    func openStatHistory(name: String) {
-        let statHistoryViewController = StatHistoryViewController(viewModel: .init(appId: viewModel.appId,
-                                                                                   statName: name))
-        navigationController?.pushViewController(statHistoryViewController, animated: true)
     }
     
 }

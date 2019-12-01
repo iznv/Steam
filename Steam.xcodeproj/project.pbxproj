@@ -46,6 +46,13 @@
 		2C41F734238972BE006EC815 /* DateFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F733238972BE006EC815 /* DateFormatter+Formatters.swift */; };
 		2C4D41A82392F65C00501382 /* SteamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41A72392F65C00501382 /* SteamTests.swift */; };
 		2C4D41B02392FAC500501382 /* StatTitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41AF2392FAC500501382 /* StatTitleTests.swift */; };
+		2C4D41B3239304AE00501382 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41B2239304AE00501382 /* AppCoordinator.swift */; };
+		2C4D41B5239305D500501382 /* ActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41B4239305D500501382 /* ActivityCoordinator.swift */; };
+		2C4D41B923930A2500501382 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41B823930A2500501382 /* TabCoordinator.swift */; };
+		2C4D41BB23930C7400501382 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41BA23930C7400501382 /* Coordinator.swift */; };
+		2C4D41BD2393111500501382 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41BC2393111500501382 /* ProfileCoordinator.swift */; };
+		2C4D41BF2393161A00501382 /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41BE2393161A00501382 /* StatisticsCoordinator.swift */; };
+		2C4D41C123932F0800501382 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D41C023932F0800501382 /* BarButtonItem.swift */; };
 		2C56509D238DBE9C0072640A /* NSNotification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56509C238DBE9C0072640A /* NSNotification+Name.swift */; };
 		2C5650A0238DBEBE0072640A /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56509F238DBEBE0072640A /* UserDefaults+Keys.swift */; };
 		2C5650A3238DCEC40072640A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5650A2238DCEC40072640A /* ThemeManager.swift */; };
@@ -149,6 +156,8 @@
 		2CACCE162389A8D60025FE1B /* BaseTableViewController+Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE152389A8D60025FE1B /* BaseTableViewController+Reload.swift */; };
 		2CACCE182389BE690025FE1B /* BaseControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE172389BE690025FE1B /* BaseControllerViewModel.swift */; };
 		2CACCE1A2389BFC90025FE1B /* UIViewController+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCE192389BFC90025FE1B /* UIViewController+States.swift */; };
+		2CDADAEC2393327D00154A8C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDADAEB2393327D00154A8C /* LoginCoordinator.swift */; };
+		2CDADAEE23933C5100154A8C /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDADAED23933C5100154A8C /* GameCoordinator.swift */; };
 		2CDE0CA6238AE150009DC0F0 /* TimePlayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */; };
 		2CDE0CA8238AE35E009DC0F0 /* GamesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */; };
 		2F307474ABF9AF203EA31A3B /* StatCompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64EF5DAC47EF25F787A4C1B /* StatCompareViewModel.swift */; };
@@ -323,6 +332,13 @@
 		2C4D41A72392F65C00501382 /* SteamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamTests.swift; sourceTree = "<group>"; };
 		2C4D41A92392F65C00501382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4D41AF2392FAC500501382 /* StatTitleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTitleTests.swift; sourceTree = "<group>"; };
+		2C4D41B2239304AE00501382 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2C4D41B4239305D500501382 /* ActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
+		2C4D41B823930A2500501382 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		2C4D41BA23930C7400501382 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2C4D41BC2393111500501382 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		2C4D41BE2393161A00501382 /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
+		2C4D41C023932F0800501382 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		2C549A8D2391A33E002E451B /* StatEntityClearRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatEntityClearRequest.swift; sourceTree = "<group>"; };
 		2C56509C238DBE9C0072640A /* NSNotification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Name.swift"; sourceTree = "<group>"; };
 		2C56509F238DBEBE0072640A /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
@@ -401,6 +417,8 @@
 		2CCF1095238C41A9009CC7EF /* AddStatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatsRequest.swift; sourceTree = "<group>"; };
 		2CCF109F238C4627009CC7EF /* GetStatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatsRequest.swift; sourceTree = "<group>"; };
 		2CCF10A1238C4CAC009CC7EF /* DeleteTodayStatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodayStatsRequest.swift; sourceTree = "<group>"; };
+		2CDADAEB2393327D00154A8C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		2CDADAED23933C5100154A8C /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 		2CDE0CA5238AE150009DC0F0 /* TimePlayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePlayed.swift; sourceTree = "<group>"; };
 		2CDE0CA7238AE35E009DC0F0 /* GamesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesType.swift; sourceTree = "<group>"; };
 		2D5C5CB6E8C9694FDD1292C5 /* Pods-SteamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamTests.release.xcconfig"; path = "Target Support Files/Pods-SteamTests/Pods-SteamTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -617,6 +635,7 @@
 			isa = PBXGroup;
 			children = (
 				2C04E5D72384664D0058CC18 /* Cells */,
+				2C4D41B12393049B00501382 /* Coordinators */,
 				2C35AD9E2385BF2C003161F0 /* Models */,
 				2C9B221423907EDF00F21811 /* Other */,
 				2C04E5D5238466420058CC18 /* ViewControllers */,
@@ -901,6 +920,7 @@
 			children = (
 				2C35AD9F2385BF36003161F0 /* Tab.swift */,
 				2C41F72923895ECD006EC815 /* TitleValueItem.swift */,
+				2C4D41C023932F0800501382 /* BarButtonItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1004,6 +1024,21 @@
 				2C4D41A72392F65C00501382 /* SteamTests.swift */,
 			);
 			path = SteamTests;
+			sourceTree = "<group>";
+		};
+		2C4D41B12393049B00501382 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2C4D41B4239305D500501382 /* ActivityCoordinator.swift */,
+				2C4D41B2239304AE00501382 /* AppCoordinator.swift */,
+				2C4D41BA23930C7400501382 /* Coordinator.swift */,
+				2CDADAED23933C5100154A8C /* GameCoordinator.swift */,
+				2CDADAEB2393327D00154A8C /* LoginCoordinator.swift */,
+				2C4D41BC2393111500501382 /* ProfileCoordinator.swift */,
+				2C4D41BE2393161A00501382 /* StatisticsCoordinator.swift */,
+				2C4D41B823930A2500501382 /* TabCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		2C56509A238DBE7F0072640A /* Foundation */ = {
@@ -1972,6 +2007,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4D41BB23930C7400501382 /* Coordinator.swift in Sources */,
 				2C41F7282389572B006EC815 /* CGFloat+GlobalConstants.swift in Sources */,
 				2C5650AC238DCFC90072640A /* LightTheme.swift in Sources */,
 				2C04E5BF238464D00058CC18 /* AppDelegate.swift in Sources */,
@@ -1980,12 +2016,15 @@
 				2C5650A5238DCEDE0072640A /* Theme.swift in Sources */,
 				2CACCE0D2389A6570025FE1B /* DefaultStatesDelegate.swift in Sources */,
 				2C35AD902385BDFA003161F0 /* TabBarController.swift in Sources */,
+				2C4D41BF2393161A00501382 /* StatisticsCoordinator.swift in Sources */,
 				2C6016ED238A8545007D94F9 /* FormattingService.swift in Sources */,
 				2CACCE1A2389BFC90025FE1B /* UIViewController+States.swift in Sources */,
 				2C35AD9A2385BEBB003161F0 /* NavigationController.swift in Sources */,
 				2C9B221923907F8600F21811 /* UITabBar+Decorations.swift in Sources */,
+				2C4D41C123932F0800501382 /* BarButtonItem.swift in Sources */,
 				2C25E5BF238D973000D1DCC9 /* StatItem.swift in Sources */,
 				2C9B221B23907FD100F21811 /* UITabBarItem+Decorations.swift in Sources */,
+				2C4D41BD2393111500501382 /* ProfileCoordinator.swift in Sources */,
 				2C5650A3238DCEC40072640A /* ThemeManager.swift in Sources */,
 				2C91B308238EFFAF0087A127 /* EmptyRow.swift in Sources */,
 				2C04E5E3238467DF0058CC18 /* R.generated.swift in Sources */,
@@ -1999,10 +2038,12 @@
 				2C56509D238DBE9C0072640A /* NSNotification+Name.swift in Sources */,
 				2C35AD822385B1CC003161F0 /* TableDirector+Replace.swift in Sources */,
 				2C41F72A23895ECD006EC815 /* TitleValueItem.swift in Sources */,
+				2C4D41B923930A2500501382 /* TabCoordinator.swift in Sources */,
 				2CACCE0B2389A6410025FE1B /* ViewState.swift in Sources */,
 				2CACCE162389A8D60025FE1B /* BaseTableViewController+Reload.swift in Sources */,
 				2A275F1D74FC4FD55AC7060E /* ProfileViewController.swift in Sources */,
 				2C41F734238972BE006EC815 /* DateFormatter+Formatters.swift in Sources */,
+				2CDADAEE23933C5100154A8C /* GameCoordinator.swift in Sources */,
 				2C35ADA02385BF36003161F0 /* Tab.swift in Sources */,
 				2CACCE0F2389A6820025FE1B /* ViewStateMachine+Init.swift in Sources */,
 				2C9B220F23907E7D00F21811 /* Decorator.swift in Sources */,
@@ -2036,6 +2077,7 @@
 				36AD263C300FF15A249F2108 /* DescriptionStateView.swift in Sources */,
 				2F8EE121604FF4B76EF39804 /* PlayerGameCell.swift in Sources */,
 				A6CF795138555ADC77AF5AF4 /* PlayerGameCellViewModel.swift in Sources */,
+				2C4D41B3239304AE00501382 /* AppCoordinator.swift in Sources */,
 				03E73273D831BC74FE6BE2CB /* GameHeaderCell.swift in Sources */,
 				E1631AA19BDE6EE59B707122 /* GameHeaderCellViewModel.swift in Sources */,
 				B97E7DA319321A16A7D11E4D /* GameViewController.swift in Sources */,
@@ -2056,7 +2098,9 @@
 				A5B3F1239DCB1D744F88ABCA /* StatsViewModel.swift in Sources */,
 				A2A7B9AF54B33A2E3A7071A7 /* StatCell.swift in Sources */,
 				D6503B3030D4B37FEF28706E /* StatCellViewModel.swift in Sources */,
+				2C4D41B5239305D500501382 /* ActivityCoordinator.swift in Sources */,
 				2C91B303238EFA920087A127 /* CustomFont.swift in Sources */,
+				2CDADAEC2393327D00154A8C /* LoginCoordinator.swift in Sources */,
 				2C25E5C2238D97AA00D1DCC9 /* StatHistoryService.swift in Sources */,
 				A293257DCCC3B580FA9AD68B /* StatCompareViewController.swift in Sources */,
 				2F307474ABF9AF203EA31A3B /* StatCompareViewModel.swift in Sources */,

@@ -14,6 +14,10 @@ class LoginViewController: BaseViewController<LoginViewModel> {
     // MARK: - Properties
     
     private let redirectUrl = LoginViewModel.Constants.redirectUrl.lowercased()
+    
+    // MARK: - Output
+    
+    var didLogin: (() -> Void)?
 
     // MARK: - Life Cycle
     
@@ -21,11 +25,6 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         super.viewDidLoad()
         
         navigationItem.title = R.string.localizable.login()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.closeBarButton(),
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(close))
 
         if let request = viewModel.loginRequest {
             webView.load(request)
@@ -84,10 +83,6 @@ private extension LoginViewController {
 // MARK: - Private
 
 private extension LoginViewController {
-
-    @objc func close() {
-        dismiss(animated: true, completion: nil)
-    }
     
     func handleLoginRedirect(url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
@@ -101,7 +96,7 @@ private extension LoginViewController {
         
         viewModel.onLoginSuccess(steamId: steamId)
         
-        close()
+        didLogin?()
     }
 
 }

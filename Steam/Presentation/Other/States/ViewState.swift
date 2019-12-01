@@ -55,8 +55,9 @@ private extension ViewState {
         let view = CustomStateView()
         view.stateDescription = R.string.localizable.stateSomethingWrongDescription()
         view.buttonTitle = R.string.localizable.stateRetry()
-        view.didTapButton = {
-            delegate?.didTapRetry(view: view)
+        view.didTapButton = { [weak delegate] in
+            guard let delegate = delegate else { return }
+            delegate.didTapRetry(view: view)
         }
         return view
     }
@@ -65,8 +66,9 @@ private extension ViewState {
         let view = CustomStateView()
         view.stateDescription = R.string.localizable.stateNoConnectionDescription()
         view.buttonTitle = R.string.localizable.stateRetry()
-        view.didTapButton = {
-            delegate?.didTapRetry(view: view)
+        view.didTapButton = { [weak delegate] in
+            guard let delegate = delegate else { return }
+            delegate.didTapRetry(view: view)
         }
         return view
     }

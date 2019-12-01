@@ -27,7 +27,7 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         view.buttonTitle = R.string.localizable.login()
         
         view.didTapButton = { [weak self] in
-            self?.login()
+            self?.didTapLogin?()
         }
         
         return view
@@ -42,6 +42,12 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         stateMachine[ActivityViewState.notAuthorized] = notAuthorizedView
         return stateMachine
     }()
+    
+    // MARK: - Output
+    
+    var didSelectGame: ((Int, String?) -> Void)?
+    
+    var didTapLogin: (() -> Void)?
 
     // MARK: - Life Cycle
     
@@ -49,7 +55,7 @@ class ActivityViewController: BaseTableViewController<ActivityViewModel> {
         super.viewDidLoad()
         
         enableTheme(for: view)
-        
+
         navigationItem.title = viewModel.title
 
         bind()
@@ -144,29 +150,12 @@ private extension ActivityViewController {
         return gamesViewModels.map { game in
             TableRow<PlayerGameCell>(item: game)
                 .on(.click) { [weak self] _ in
-                    guard let self = self else { return }
-                    guard let steamId = self.viewModel.steamId else { return }
-                    let gameViewController = GameViewController(viewModel: .init(appId: game.appId,
-                                                                                 steamId: steamId))
-                    self.navigationController?.pushViewController(gameViewController, animated: true)
+                    self?.didSelectGame?(game.appId, self?.viewModel.steamId)
                 }
         }
     }
     
 }
-
-// MARK: - Actions
-
-private extension ActivityViewController {
-
-    func login() {
-        let loginViewController = LoginViewController(viewModel: .init()).embeddedInNavigation
-        loginViewController.modalPresentationStyle = .fullScreen
-        present(loginViewController, animated: true, completion: nil)
-    }
-
-}
-
 
 // MARK: - Private
 

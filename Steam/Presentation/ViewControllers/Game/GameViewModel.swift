@@ -23,8 +23,6 @@ class GameViewModel: BaseControllerViewModel {
 
     let appId: Int
     
-    let steamId: String
-    
     private var details: AppDetails?
     
     private var playersOnline: Int?
@@ -121,11 +119,8 @@ class GameViewModel: BaseControllerViewModel {
     
     // MARK: - Init
 
-    init(appId: Int,
-         steamId: String) {
-        
+    init(appId: Int) {
         self.appId = appId
-        self.steamId = steamId
     }
 
 }
