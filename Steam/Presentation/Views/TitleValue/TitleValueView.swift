@@ -38,6 +38,12 @@ class TitleValueView: BaseView {
         }
     }
     
+    var valueFont: UIFont? {
+        didSet {
+            valueLabel.font = valueFont
+        }
+    }
+    
     // MARK: - Init
     
     override func commonInit() {

@@ -27,6 +27,8 @@ class StatisticsCoordinator {
     
     private var stats: [Stat]?
     
+    private var statisticsProvider: CustomStatisticsProvider?
+    
     var didFinish: (() -> Void)?
     
     // MARK: - Computed Properties
@@ -86,8 +88,7 @@ private extension StatisticsCoordinator {
             guard let self = self else { return }
             self.schemaStats = schemaStats
             self.stats = stats
-            self.showStatsScreen(schemaStats: schemaStats,
-                                 stats: stats)
+            self.showStatsScreen()
         }
         
         statisticsViewController.navigationItem.leftBarButtonItem = makeBackButtonItem(shouldFinishOnTap: true)
@@ -114,19 +115,44 @@ private extension StatisticsCoordinator {
         navigationController.pushViewController(achievementsViewController, animated: true)
     }
     
-    func showStatsScreen(schemaStats: [SchemaStat],
-                         stats: [Stat]) {
+    func showStatsScreen() {
+        if let provider = customStatisticsProvider {
+            showCustomStatisticsScreen(provider: provider)
+        } else {
+            showGeneralStatisticsScreen()
+        }
+    }
+    
+    func showCustomStatisticsScreen(provider: CustomStatisticsProvider) {
+        let customStatsViewController = CustomStatsViewController(viewModel: .init(stats: provider.statistics))
+        
+        customStatsViewController.didSelectAll = { [weak self] in
+            self?.showGeneralStatisticsScreen()
+        }
+        
+        if canCompare {
+            customStatsViewController.navigationItem.rightBarButtonItem
+                = BarButtonItem(image: R.image.compareBarButton(),
+                                  style: .plain) { [weak self] in
+                self?.showStatsCompareScreen()
+            }
+        }
+        
+        customStatsViewController.navigationItem.leftBarButtonItem = makeBackButtonItem(shouldFinishOnTap: false)
+        
+        navigationController.pushViewController(customStatsViewController, animated: true)
+    }
+    
+    func showGeneralStatisticsScreen() {
+        guard let schemaStats = schemaStats else { return }
+        guard let stats = stats else { return }
         
         let statsViewController = StatsViewController(viewModel: .init(steamId: steamId,
                                                                        schemaStats: schemaStats,
                                                                        stats: stats))
         
         statsViewController.didSelectStat = { [weak self] statName in
-            guard let self = self else { return }
-            
-            if self.authService.steamId == self.steamId {
-                self.showStatHistoryScreen(statName: statName)
-            }
+            self?.onStatSelect(name: statName)
         }
 
         if canCompare {
@@ -179,4 +205,30 @@ private extension StatisticsCoordinator {
         navigationController.pushViewController(statHistoryViewController, animated: true)
     }
     
+}
+
+// MARK: - Utils
+
+private extension StatisticsCoordinator {
+    
+    func onStatSelect(name: String) {
+        if authService.steamId == steamId {
+            showStatHistoryScreen(statName: name)
+        }
+    }
+    
+    var customStatisticsProvider: CustomStatisticsProvider? {
+        guard let stats = stats else { return nil }
+        
+        switch appId {
+        case 578080:
+            statisticsProvider = PubgStatisticsProvider(stats: stats) { [weak self] in
+                self?.onStatSelect(name: $0)
+            }
+            return statisticsProvider
+        default:
+            return nil
+        }
+    }
+
 }

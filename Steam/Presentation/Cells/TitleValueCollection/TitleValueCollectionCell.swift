@@ -45,6 +45,8 @@ extension TitleValueCollectionCell: ConfigurableCell {
             let titleValueView = TitleValueView()
             titleValueView.title = item.title
             titleValueView.value = item.value
+            titleValueView.valueFont = viewModel.valueFont
+            titleValueView.onTap { item.action?() }
             stackView.addArrangedSubview(titleValueView)
         }
     }

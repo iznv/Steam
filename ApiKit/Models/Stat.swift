@@ -13,3 +13,11 @@ public struct Stat: Codable {
     public let value: Double
     
 }
+
+public extension Array where Element == Stat {
+    
+    func value(for name: String) -> Double? {
+        return first { $0.name == name }?.value
+    }
+    
+}

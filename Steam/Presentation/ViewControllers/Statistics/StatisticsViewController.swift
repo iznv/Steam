@@ -44,7 +44,7 @@ class StatisticsViewController: BaseTableViewController<StatisticsViewModel> {
         tableDirector.replace(with: [
             progressSection,
             itemsSection
-        ])
+        ].compactMap { $0 })
     }
 
 }
@@ -99,7 +99,9 @@ private extension StatisticsViewController {
     
     // MARK: - Sections
     
-    var progressSection: TableSection {
+    var progressSection: TableSection? {
+        guard let achievementProgressRow = achievementProgressRow else { return nil }
+        
         return TableSection(onlyRows: [
             EmptyRow(height: CGFloat.sectionsSpacing),
             achievementProgressRow,

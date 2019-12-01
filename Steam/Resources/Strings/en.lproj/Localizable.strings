@@ -11,6 +11,7 @@
 "Login" = "Log in";
 "Yes" = "Yes";
 "No" = "No";
+"All" = "All";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -57,3 +58,27 @@
 "AchievementsAchieved" = "Achieved";
 "AchievementsNotAchieved" = "Not achieved";
 
+"StatPubgNovice" = "Novice";
+"StatPubgExpert" = "Expert";
+"StatPubgMaster" = "Master";
+
+"StatPubgChickenDinner" = "Chicken Dinner";
+"StatPubgChickenDinnerSolo" = "Solo";
+"StatPubgChickenDinnerDuo" = "Duo";
+"StatPubgChickenDinnerSquad" = "Squad";
+
+"StatPubgTopTen" = "Top Ten";
+"StatPubgTopTenTenTimes" = "Ten times";
+"StatPubgTopTenWithoutKilling" = "Without killing";
+
+"StatPubgCloseQuartersBattle" = "Close Quarters Battle";
+
+"StatPubgMarksman" = "Marksman";
+
+"StatPubgNadeKing" = "Nade King";
+
+"StatPubgAnyMeans" = "Kill By Any Means";
+"StatPubgAnyMeansOne" = "One";
+"StatPubgAnyMeansTen" = "Ten";
+"StatPubgAnyMeansHundred" = "Hundred";
+"StatPubgAnyMeansThousand" = "Thousand";
