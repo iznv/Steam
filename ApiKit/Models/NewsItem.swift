@@ -22,7 +22,7 @@ public struct NewsItem: Codable {
     
     public let feedLabel: String
     
-    public let date: Int
+    public let date: Date
     
     public let feedName: String
     

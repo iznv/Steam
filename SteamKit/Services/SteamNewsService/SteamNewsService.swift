@@ -18,7 +18,7 @@ public extension SteamNewsService {
     
     func getNewsForApp(appId: Int,
                        endDate: Int? = nil,
-                       count: Int = 20,
+                       count: Int = 50,
                        completion: @escaping (Result<[NewsItem], ApiService.Error>) -> Void) {
         
         ApiService.shared.getNewsForApp(appId: appId,

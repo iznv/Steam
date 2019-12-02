@@ -5,7 +5,7 @@ class CustomStatsViewController: BaseTableViewController<CustomStatsViewModel> {
 
     // MARK: - Properties
     
-    lazy var tableDirector = TableDirector(tableView: tableView)
+    private lazy var tableDirector = TableDirector(tableView: tableView)
     
     // MARK: - Output
     
@@ -64,16 +64,21 @@ private extension CustomStatsViewController {
     
     func section(stat: CustomStatistics) -> TableSection {
         return TableSection(onlyRows: [
+            separatorRow,
             headerRow(stat: stat),
             valuesRow(stat: stat)
         ])
     }
     
     var separatorSection: TableSection {
-        return TableSection(onlyRows: [EmptyRow(height: CGFloat.sectionsSpacing)])
+        return TableSection(onlyRows: [separatorRow])
     }
     
     // MARK: - Rows
+    
+    var separatorRow: Row {
+        return EmptyRow(height: CGFloat.sectionsSpacing)
+    }
     
     func headerRow(stat: CustomStatistics) -> Row {
         return TableRow<CustomStatHeaderCell>(item:

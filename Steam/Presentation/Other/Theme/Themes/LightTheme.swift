@@ -10,7 +10,7 @@ import UIKit
 
 class LightTheme: Theme {
     
-    let primaryTextColor = UIColor.black
+    let primaryTextColor = UIColor(hex: 0x000000)
     
     let primaryBackgroundColor = UIColor(hex: 0xF4F4F4)
     

@@ -58,6 +58,10 @@ private extension GameCoordinator {
     func showGameScreen() {
         let gameViewController = GameViewController(viewModel: .init(appId: appId))
         
+        gameViewController.didTapNews = { [weak self] in
+            self?.showNewsFeedScreen()
+        }
+        
         gameViewController.navigationItem.rightBarButtonItem = BarButtonItem(image: R.image.statisticsBarButton(),
                                                                              style: .plain) { [weak self] in
             self?.showStatisticsScreen()
@@ -78,6 +82,29 @@ private extension GameCoordinator {
         }
         
         statisticsCoordinator?.start()
+    }
+    
+    func showNewsFeedScreen() {
+        let gameNewsViewController = GameNewsViewController(viewModel: .init(appId: appId))
+        
+        gameNewsViewController.didTapArticle = { [weak self] title, htmlContents in
+            self?.showNewsFullScreen(title: title, htmlContents: htmlContents)
+        }
+        
+        gameNewsViewController.navigationItem.leftBarButtonItem = makeBackButtonItem(shouldFinishOnTap: false)
+        
+        navigationController.pushViewController(gameNewsViewController, animated: true)
+    }
+    
+    func showNewsFullScreen(title: String,
+                            htmlContents: String) {
+        
+        let articleViewController = WebViewViewController(viewModel: .init(title: title,
+                                                                           contents: htmlContents))
+        
+        articleViewController.navigationItem.leftBarButtonItem = makeBackButtonItem(shouldFinishOnTap: false)
+        
+        navigationController.pushViewController(articleViewController, animated: true)
     }
     
 }

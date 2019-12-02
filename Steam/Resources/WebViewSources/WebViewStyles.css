@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "Quicksand Regular";
+    src: url("Quicksand-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Quicksand Bold";
+    src: url("Quicksand-Bold.ttf");
+}
+
+* {
+    font-family: "Quicksand Regular";
+    font-size: 16px;
+    line-height: 22px;
+    color: #TEXT_COLOR#;
+    word-wrap: break-word;
+}
+
+a {
+    color: #LINK_COLOR#;
+}
+
+p {
+    margin-top: #VERTICAL_SPACING#px;
+    margin-bottom: #VERTICAL_SPACING#px;
+}
+
+strong {
+    font-family: "Quicksand Bold";
+}
+
+body {
+    padding-top: #VERTICAL_SPACING#px;
+    padding-bottom: #VERTICAL_SPACING#px;
+    padding-right: #HORIZONTAL_MARGIN#px;
+    padding-left: #HORIZONTAL_MARGIN#px;
+    background-color: #BACKGROUND_COLOR#;
+}
+
+img {
+    width: 100%;
+    border-radius: 34px;
+    pointer-events: none;
+    padding-top: #VERTICAL_SPACING#px;
+    padding-bottom: #VERTICAL_SPACING#px;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+    padding-top: #VERTICAL_SPACING#px;
+    padding-bottom: #VERTICAL_SPACING#px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #TEXT_COLOR#;
+}
+
+th, td {
+    padding: 10px;
+}

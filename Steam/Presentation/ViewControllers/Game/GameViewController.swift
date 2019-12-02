@@ -17,6 +17,10 @@ class GameViewController: BaseTableViewController<GameViewModel> {
     private lazy var tableDirector = TableDirector(tableView: tableView)
 
     private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: self)
+    
+    // MARK: - Output
+    
+    var didTapNews: (() -> Void)?
 
     // MARK: - Life Cycle
     
@@ -97,6 +101,10 @@ private extension GameViewController {
             titleRow,
             genresRow,
             EmptyRow(height: CGFloat.sectionsSpacing),
+            newsRow,
+            EmptyRow(height: CGFloat.sectionsSpacing),
+            infoHeaderRow,
+            EmptyRow(height: CGFloat.sectionsSpacing),
             priceMetacriticRow,
             EmptyRow(height: CGFloat.sectionsSpacing)
         ] + (playersRows ?? []) + [
@@ -112,6 +120,10 @@ private extension GameViewController {
     }
     
     // MARK: - Rows
+    
+    var infoHeaderRow: Row {
+        return TableRow<TextCell>(item: viewModel.infoHeaderViewModel)
+    }
     
     var headerRow: Row? {
         return viewModel.headerViewModel.map { TableRow<GameHeaderCell>(item: $0) }
@@ -148,6 +160,13 @@ private extension GameViewController {
     
     var descriptionRow: Row? {
         return viewModel.descriptionViewModel.map { TableRow<TextCell>(item: $0) }
+    }
+    
+    var newsRow: Row? {
+        return TableRow<TitleDisclosureCell>(item: viewModel.newsViewModel)
+            .on(.click) { [weak self] _ in
+                self?.didTapNews?()
+            }
     }
     
 }

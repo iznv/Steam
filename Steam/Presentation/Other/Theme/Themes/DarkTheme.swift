@@ -10,7 +10,7 @@ import UIKit
 
 class DarkTheme: Theme {
     
-    let primaryTextColor = UIColor.white
+    let primaryTextColor = UIColor(hex: 0xFFFFFF)
     
     let primaryBackgroundColor = UIColor(hex: 0x161B1E)
     

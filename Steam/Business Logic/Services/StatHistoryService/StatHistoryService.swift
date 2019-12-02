@@ -56,7 +56,7 @@ extension StatHistoryService {
             
             for i in 0..<(stats.count - 1) {
                 let item = StatItem(dateHistoryString: DateFormatter.common.string(for: stats[i].date) ?? .empty,
-                                    dateGraphString: DateFormatter.statItemDate.string(for: stats[i].date) ?? .empty,
+                                    dateGraphString: DateFormatter.dayMonth.string(for: stats[i].date) ?? .empty,
                                     value: stats[i].value - stats[i + 1].value)
                 items.append(item)
             }

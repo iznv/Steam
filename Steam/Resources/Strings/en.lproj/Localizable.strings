@@ -12,6 +12,8 @@
 "Yes" = "Yes";
 "No" = "No";
 "All" = "All";
+"RecentNews" = "Recent news";
+"Summary" = "Summary";
 
 "StateSomethingWrongDescription" = "Something is wrong";
 "StateNoConnectionDescription" = "No connection";
@@ -82,3 +84,5 @@
 "StatPubgAnyMeansTen" = "Ten";
 "StatPubgAnyMeansHundred" = "Hundred";
 "StatPubgAnyMeansThousand" = "Thousand";
+
+"WebViewCantLoad" = "This article can't be displayed";

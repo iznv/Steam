@@ -111,6 +111,14 @@ class GameViewModel: BaseControllerViewModel {
         return items.isEmpty ? nil : TitleValueCollectionCellViewModel(items: items)
     }
     
+    var newsViewModel: TitleDisclosureCellViewModel {
+        return TitleDisclosureCellViewModel(title: R.string.localizable.recentNews())
+    }
+    
+    let infoHeaderViewModel = TextCellViewModel(text: R.string.localizable.summary().uppercased(),
+                                                font: .bold17(),
+                                                color: { $0.primaryTextColor.withAlphaComponent(0.3) })
+    
     // MARK: - Services
     
     private let steamStoreService = SteamStoreService()

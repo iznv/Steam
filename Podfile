@@ -22,6 +22,7 @@ target 'Steam' do
   pod 'SnapKit'
   pod 'StatefulViewController'
   pod 'TableKit'
+  pod 'WEBBCode'
   
   target 'SteamTests' do
     inherit! :search_paths

@@ -9,7 +9,7 @@ class GameHeaderCell: BaseTableViewCell {
         
         static let picImageViewTrailing: CGFloat = 60
         
-        static let cornerRadius: CGFloat = 12
+        static let cornerRadius: CGFloat = 24
         
         static let platformsStackViewTrailing: CGFloat = 20
         
