@@ -50,3 +50,11 @@ target 'SteamKit' do
   common_pods
 
 end
+
+target 'Level Widget' do
+
+  common_pods
+
+  pod 'SnapKit'
+
+end

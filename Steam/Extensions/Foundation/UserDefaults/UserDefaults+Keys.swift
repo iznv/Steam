@@ -22,6 +22,16 @@ extension UserDefaults {
 
 }
 
+// MARK: - App Group UserDefaults
+
+extension UserDefaults {
+    
+    static var group: UserDefaults? {
+        return UserDefaults(suiteName: "group.com.zinovev.steam")
+    }
+    
+}
+
 // MARK: - Values
 
 extension UserDefaults {

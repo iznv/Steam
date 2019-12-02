@@ -34,12 +34,10 @@ class ProgressView: BaseView {
         }
     }
     
-    // MARK: - Init
-    
-    override func commonInit() {
-        super.commonInit()
-        
-        enableTheme(for: self)
+    var foregroundColor: UIColor? {
+        didSet {
+            progressView.backgroundColor = foregroundColor
+        }
     }
     
     // MARK: - Subviews
@@ -62,17 +60,6 @@ class ProgressView: BaseView {
         updateProgress()
     }
 
-}
-
-// MARK: - Themeable
-
-extension ProgressView: Themeable {
-    
-    func apply(theme: Theme) {
-        progressView.backgroundColor = theme.accentColor
-        backgroundColor = theme.primaryTextColor.withAlphaComponent(0.2)
-    }
-    
 }
 
 // MARK: - Private

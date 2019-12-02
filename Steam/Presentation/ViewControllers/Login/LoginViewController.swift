@@ -1,3 +1,4 @@
+import StatefulViewController
 import Utils
 import WebKit
 
@@ -7,11 +8,14 @@ class LoginViewController: BaseViewController<LoginViewModel> {
 
     private lazy var webView: WKWebView = {
         let webView = WKWebView()
+        webView.isOpaque = false
         webView.navigationDelegate = self
         return webView
     }()
     
     // MARK: - Properties
+    
+    private lazy var stateMachine = ViewStateMachine(view: view, defaultStatesDelegate: nil)
     
     private let redirectUrl = LoginViewModel.Constants.redirectUrl.lowercased()
     
@@ -24,11 +28,11 @@ class LoginViewController: BaseViewController<LoginViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enableTheme(for: view)
+        
         navigationItem.title = R.string.localizable.login()
 
-        if let request = viewModel.loginRequest {
-            webView.load(request)
-        }
+        load()
     }
     
     // MARK: - Subviews
@@ -43,6 +47,18 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         configureWebViewConstraints()
     }
 
+}
+
+// MARK: - Themeable
+
+extension LoginViewController: Themeable {
+    
+    func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
+        webView.backgroundColor = theme.primaryBackgroundColor
+        webView.scrollView.backgroundColor = theme.primaryBackgroundColor
+    }
+    
 }
 
 // MARK: - WKNavigationDelegate
@@ -66,6 +82,12 @@ extension LoginViewController: WKNavigationDelegate {
         }
     }
     
+    func webView(_ webView: WKWebView,
+                 didFinish navigation: WKNavigation) {
+        
+        stateMachine.transition(to: .none)
+    }
+    
 }
 
 // MARK: - Constraints
@@ -83,6 +105,15 @@ private extension LoginViewController {
 // MARK: - Private
 
 private extension LoginViewController {
+    
+    func load() {
+        stateMachine.transition(to: ViewState.loading) { [weak self] in
+            guard let self = self else { return }
+            if let request = self.viewModel.loginRequest {
+                self.webView.load(request)
+            }
+        }
+    }
     
     func handleLoginRedirect(url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }

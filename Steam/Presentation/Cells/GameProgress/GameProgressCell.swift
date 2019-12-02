@@ -69,6 +69,9 @@ extension GameProgressCell: Themeable {
     func apply(theme: Theme) {
         titleLabel.textColor = theme.primaryTextColor
         progressLabel.textColor = theme.primaryTextColor.withAlphaComponent(0.5)
+
+        progressView.foregroundColor = theme.accentColor
+        progressView.backgroundColor = theme.primaryTextColor.withAlphaComponent(0.2)
     }
     
 }

@@ -13,7 +13,7 @@ class AuthService {
     
     // MARK: - Services
     
-    private let userDefaults = UserDefaults.standard
+    private let userDefaults = UserDefaults.group
     
     // MARK: Properties
     
@@ -22,7 +22,7 @@ class AuthService {
     }
     
     var steamId: String? {
-        return ApiService.Mocks.somePersonId // userDefaults.steamId
+        return userDefaults?.steamId
     }
     
 }
@@ -32,12 +32,12 @@ class AuthService {
 extension AuthService {
     
     func login(steamId: String) {
-        userDefaults.steamId = steamId
+        userDefaults?.steamId = steamId
         NotificationCenter.default.post(name: .didChangeAuthState, object: nil)
     }
     
     func logout() {
-        userDefaults.steamId = nil
+        userDefaults?.steamId = nil
         NotificationCenter.default.post(name: .didChangeAuthState, object: nil)
         CoreDataService.shared.clear()
     }
