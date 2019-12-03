@@ -64,6 +64,8 @@
 		2C5650AA238DCF680072640A /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5650A9238DCF680072640A /* DarkTheme.swift */; };
 		2C5650AC238DCFC90072640A /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5650AB238DCFC90072640A /* LightTheme.swift */; };
 		2C6016ED238A8545007D94F9 /* FormattingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6016EC238A8545007D94F9 /* FormattingService.swift */; };
+		2C76A6172395D9AF00E4E80F /* ApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA4F5C22391D019009FA6E5 /* ApiKit.framework */; };
+		2C76A6182395D9AF00E4E80F /* SteamKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1C2AC52391DF8100F5EA98 /* SteamKit.framework */; };
 		2C8D3D4A2395A4B1000D965B /* SteamBBCodeHtmlTagTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D3D492395A4B1000D965B /* SteamBBCodeHtmlTagTransformer.swift */; };
 		2C8D3D4D2395A64A000D965B /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D3D4C2395A64A000D965B /* NewsService.swift */; };
 		2C8D3D4F2395A684000D965B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D3D4E2395A684000D965B /* Article.swift */; };
@@ -632,6 +634,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C76A6172395D9AF00E4E80F /* ApiKit.framework in Frameworks */,
+				2C76A6182395D9AF00E4E80F /* SteamKit.framework in Frameworks */,
 				2CF13AB42395B08400BF97EA /* NotificationCenter.framework in Frameworks */,
 				688509AD6CB27ECEFFF0710C /* Pods_Level_Widget.framework in Frameworks */,
 			);
