@@ -22,4 +22,6 @@ protocol Theme {
     
     var activityIndicatorStyle: UIActivityIndicatorView.Style { get }
     
+    var keyboardAppearance: UIKeyboardAppearance { get }
+    
 }

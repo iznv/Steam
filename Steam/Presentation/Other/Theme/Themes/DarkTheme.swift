@@ -22,4 +22,6 @@ class DarkTheme: Theme {
     
     let activityIndicatorStyle = UIActivityIndicatorView.Style.white
     
+    let keyboardAppearance = UIKeyboardAppearance.dark
+    
 }

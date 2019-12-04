@@ -22,6 +22,7 @@ target 'Steam' do
   pod 'SnapKit'
   pod 'StatefulViewController'
   pod 'TableKit'
+  pod 'UIScrollView-InfiniteScroll'
   pod 'WEBBCode'
   
   target 'SteamTests' do

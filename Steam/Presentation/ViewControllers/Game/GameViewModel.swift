@@ -104,7 +104,7 @@ class GameViewModel: BaseControllerViewModel {
     var publisherViewModel: TitleValueCollectionCellViewModel? {
         var items = [TitleValueItem]()
         
-        if let publisher = details?.publishers.first {
+        if let publisher = details?.publishers.first, !publisher.isEmpty {
             items.append(TitleValueItem(title: R.string.localizable.gamePublisher(), value: publisher))
         }
         

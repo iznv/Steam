@@ -25,6 +25,7 @@ class TabBarController: UITabBarController {
 extension TabBarController: Themeable {
     
     func apply(theme: Theme) {
+        view.backgroundColor = theme.primaryBackgroundColor
         tabBar.barTintColor = theme.primaryBackgroundColor
         tabBar.tintColor = theme.primaryTextColor
     }

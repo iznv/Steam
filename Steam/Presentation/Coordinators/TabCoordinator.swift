@@ -22,6 +22,10 @@ class TabCoordinator {
     
     // MARK: - Tabs
     
+    private let gamesTabItem = UITabBarItem(title: R.string.localizable.gamesTabTitle(),
+                                            image: R.image.gamesTabIcon(),
+                                            selectedImage: nil)
+    
     private let activityTabItem = UITabBarItem(title: R.string.localizable.activityTabTitle(),
                                                image: R.image.activityTabIcon(),
                                                selectedImage: nil)
@@ -34,8 +38,9 @@ class TabCoordinator {
     
     init() {
         tabCoordinators = [
-            TabCoordinator.makeProfileCoordinator(tabItem: profileTabItem),
-            TabCoordinator.makeActivityCoordinator(tabItem: activityTabItem)
+            TabCoordinator.makeGamesCoordinator(tabItem: gamesTabItem),
+            TabCoordinator.makeActivityCoordinator(tabItem: activityTabItem),
+            TabCoordinator.makeProfileCoordinator(tabItem: profileTabItem)
         ]
 
         tabBarController.viewControllers = tabCoordinators.map { $0.root }
@@ -60,6 +65,12 @@ extension TabCoordinator: Coordinator {
 // MARK: - Private
 
 private extension TabCoordinator {
+    
+    static func makeGamesCoordinator(tabItem: UITabBarItem) -> Coordinator {
+        let gamesCoordinator = GamesCoordinator(navigationController: NavigationController())
+        gamesCoordinator.root.tabBarItem = tabItem
+        return gamesCoordinator
+    }
     
     static func makeActivityCoordinator(tabItem: UITabBarItem) -> Coordinator {
         let activityCoordinator = ActivityCoordinator(navigationController: NavigationController(),

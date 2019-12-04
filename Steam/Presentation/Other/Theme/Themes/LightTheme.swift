@@ -22,4 +22,6 @@ class LightTheme: Theme {
     
     let activityIndicatorStyle = UIActivityIndicatorView.Style.gray
     
+    let keyboardAppearance = UIKeyboardAppearance.light
+    
 }

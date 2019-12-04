@@ -13,7 +13,7 @@ class AppDelegate: UIResponder {
     
     // MARK: - Properties
 
-    lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    lazy var window: UIWindow? = Window(frame: UIScreen.main.bounds)
     
     // MARK: - Services
 

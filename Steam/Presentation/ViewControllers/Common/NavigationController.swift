@@ -36,6 +36,8 @@ extension NavigationController: Themeable {
     func apply(theme: Theme) {
         setNeedsStatusBarAppearanceUpdate()
         
+        view.backgroundColor = theme.primaryBackgroundColor
+        
         navigationBar.barTintColor = theme.primaryBackgroundColor
         navigationBar.tintColor = theme.primaryTextColor
         
@@ -51,12 +53,26 @@ extension NavigationController: Themeable {
 
 extension NavigationController: UIGestureRecognizerDelegate { }
 
+// MARK: - UINavigationControllerDelegate
+
+extension NavigationController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              didShow viewController: UIViewController,
+                              animated: Bool) {
+        
+        interactivePopGestureRecognizer?.isEnabled = viewControllers.count > 1
+    }
+    
+}
+
 // MARK: - Private
 
 private extension NavigationController {
     
     func bind() {
         interactivePopGestureRecognizer?.delegate = self
+        delegate = self
     }
     
     func configureAppearance() {

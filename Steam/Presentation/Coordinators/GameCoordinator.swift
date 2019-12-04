@@ -20,7 +20,7 @@ class GameCoordinator {
     
     private let appId: Int
     
-    private let steamId: String
+    private let steamId: String?
     
     var didFinish: (() -> Void)?
     
@@ -28,7 +28,7 @@ class GameCoordinator {
     
     init(navigationController: UINavigationController,
          appId: Int,
-         steamId: String) {
+         steamId: String?) {
         
         self.navigationController = navigationController
         self.appId = appId
@@ -62,9 +62,12 @@ private extension GameCoordinator {
             self?.showNewsFeedScreen()
         }
         
-        gameViewController.navigationItem.rightBarButtonItem = BarButtonItem(image: R.image.statisticsBarButton(),
-                                                                             style: .plain) { [weak self] in
-            self?.showStatisticsScreen()
+        if steamId != nil {
+            gameViewController.navigationItem.rightBarButtonItem = BarButtonItem(
+                image: R.image.statisticsBarButton(),
+                style: .plain) { [weak self] in
+                    self?.showStatisticsScreen()
+                }
         }
         
         gameViewController.navigationItem.leftBarButtonItem = makeBackButtonItem(shouldFinishOnTap: true)
@@ -73,6 +76,8 @@ private extension GameCoordinator {
     }
     
     func showStatisticsScreen() {
+        guard let steamId = steamId else { return }
+        
         statisticsCoordinator = StatisticsCoordinator(navigationController: navigationController,
                                                       appId: appId,
                                                       steamId: steamId)

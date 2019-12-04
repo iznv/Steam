@@ -92,7 +92,7 @@ private extension NewsCell {
     func configureDateLabelConstraints() {
         dateLabel.snp.remakeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).inset(Constants.dateLabelTop)
-            make.bottom.equalToSuperview().inset(Constants.verticalMargin)
+            make.bottom.equalToSuperview().inset(Constants.verticalMargin).priority(.low)
             make.leading.trailing.equalToSuperview().inset(CGFloat.horizontalMargin)
         }
     }
