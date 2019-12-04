@@ -15,11 +15,37 @@ private enum Constants {
 }
 
 extension WKWebView {
+    
+    static func themeable() -> WKWebView {
+        guard let script = script else { return WKWebView() }
+
+        let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+
+        let userContentController = WKUserContentController()
+        userContentController.addUserScript(userScript)
+
+        let configuration = WKWebViewConfiguration()
+        configuration.userContentController = userContentController
+
+        let webView = WKWebView(frame: .zero, configuration: configuration)
+        return webView
+    }
 
     func evaluateAppearanceScript() {
+        guard let script = WKWebView.script else { return }
+        evaluateJavaScript(script, completionHandler: nil)
+    }
+
+}
+
+// MARK: - Private
+
+private extension WKWebView {
+    
+    static var script: String? {
         guard var css = "WebViewStyles.css".content,
-              var javaScript = "WebViewSetupScript.js".content else {
-            return
+              let javaScript = "WebViewSetupScript.js".content else {
+            return nil
         }
 
         let theme = ThemeManager.theme
@@ -31,15 +57,11 @@ extension WKWebView {
             .replacingOccurrences(of: "#HORIZONTAL_MARGIN#", with: String(Int(CGFloat.horizontalMargin)))
             .replacingOccurrences(of: "#VERTICAL_SPACING#", with: Constants.verticalSpacing)
         
-        javaScript = javaScript
+        return javaScript
             .replacingOccurrences(of: "#CSS#", with: css)
-
-        evaluateJavaScript(javaScript, completionHandler: nil)
     }
-
+    
 }
-
-// MARK: - Private
 
 private extension String {
 

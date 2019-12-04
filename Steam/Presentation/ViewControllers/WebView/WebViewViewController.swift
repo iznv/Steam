@@ -7,7 +7,7 @@ class WebViewViewController: BaseViewController<WebViewViewModel> {
     // MARK: - Views
 
     private lazy var webView: WKWebView = {
-        let webView = WKWebView()
+        let webView = WKWebView.themeable()
         webView.isOpaque = false
         webView.scrollView.delegate = self
         webView.navigationDelegate = self
