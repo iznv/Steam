@@ -31,22 +31,11 @@ class GraphCell: BaseTableViewCell {
         referenceLines.dataPointLabelFont = .medium12()
         referenceLines.referenceLineLabelFont = UIFont.medium12() ?? .systemFont(ofSize: 12, weight: .medium)
         referenceLines.referenceLineColor = .clear
+        referenceLines.relativePositions = [0, 0.5, 1]
         return referenceLines
     }()
     
-    private lazy var graphView: ScrollableGraphView = {
-        let graphView = ScrollableGraphView()
-        graphView.rightmostPointPadding = CGFloat.horizontalMargin
-        graphView.shouldRangeAlwaysStartAtZero = true
-        graphView.shouldAdaptRange = true
-        graphView.direction = .rightToLeft
-        graphView.dataPointSpacing = Constants.dataPointSpacing
-        graphView.addPlot(plot: plot)
-        graphView.addReferenceLines(referenceLines: referenceLines)
-        graphView.dataSource = self
-        graphView.showsHorizontalScrollIndicator = false
-        return graphView
-    }()
+    private lazy var graphView = makeGraphView()
 
     // MARK: - Properties
 
@@ -79,6 +68,12 @@ class GraphCell: BaseTableViewCell {
 extension GraphCell: Themeable {
     
     func apply(theme: Theme) {
+        graphView.snp.removeConstraints()
+        graphView.removeFromSuperview()
+        graphView = makeGraphView()
+        addViews()
+        configureConstraints()
+        
         graphView.backgroundFillColor = theme.primaryBackgroundColor
         plot.barColor = theme.accentColor
         referenceLines.dataPointLabelColor = theme.primaryTextColor
@@ -139,6 +134,20 @@ private extension GraphCell {
         let items = viewModel.statItems
         
         return items[items.count - pointIndex - 1]
+    }
+    
+    func makeGraphView() -> ScrollableGraphView {
+        let graphView = ScrollableGraphView()
+        graphView.rightmostPointPadding = CGFloat.horizontalMargin
+        graphView.shouldRangeAlwaysStartAtZero = true
+        graphView.shouldAdaptRange = true
+        graphView.direction = .rightToLeft
+        graphView.dataPointSpacing = Constants.dataPointSpacing
+        graphView.addPlot(plot: plot)
+        graphView.addReferenceLines(referenceLines: referenceLines)
+        graphView.dataSource = self
+        graphView.showsHorizontalScrollIndicator = false
+        return graphView
     }
     
 }
