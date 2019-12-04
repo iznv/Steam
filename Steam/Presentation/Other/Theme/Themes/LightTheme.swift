@@ -14,7 +14,7 @@ class LightTheme: Theme {
     
     let primaryBackgroundColor = UIColor(hex: 0xF4F4F4)
     
-    let secondaryBackgroundColor = UIColor(hex: 0xF4F4F4)
+    let secondaryBackgroundColor = UIColor(hex: 0x000000).withAlphaComponent(0.1)
     
     let accentColor = UIColor(hex: 0xFFB700)
     

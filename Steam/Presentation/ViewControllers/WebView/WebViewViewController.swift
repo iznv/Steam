@@ -7,7 +7,7 @@ class WebViewViewController: BaseViewController<WebViewViewModel> {
     // MARK: - Views
 
     private lazy var webView: WKWebView = {
-        let webView = WKWebView.themeable()
+        let webView = WKWebView()
         webView.isOpaque = false
         webView.scrollView.delegate = self
         webView.navigationDelegate = self
@@ -62,6 +62,7 @@ extension WebViewViewController: Themeable {
         view.backgroundColor = theme.primaryBackgroundColor
         webView.backgroundColor = theme.primaryBackgroundColor
         webView.scrollView.backgroundColor = theme.primaryBackgroundColor
+        webView.evaluateAppearanceScript()
     }
     
 }
@@ -110,6 +111,7 @@ extension WebViewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView,
                  didFinish navigation: WKNavigation) {
         
+        webView.evaluateAppearanceScript()
         stateMachine.transition(to: .none)
     }
 

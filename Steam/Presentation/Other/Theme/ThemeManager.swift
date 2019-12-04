@@ -6,21 +6,38 @@
 //  Copyright © 2019 Ivan Zinovev. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum ThemeManager {
     
     // MARK: - Properties
     
-    private static let defaultTheme: Theme = darkTheme
+    private static var defaultTheme: Theme {
+        if #available(iOS 13.0, *),
+            let traitCollection = UIApplication.shared.delegate?.window??.traitCollection {
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                return darkTheme
+            case .light:
+                return lightTheme
+            default:
+                return darkTheme
+            }
+        } else {
+            return darkTheme
+        }
+    }
     
     private static let darkTheme = DarkTheme()
     
     private static let lightTheme = LightTheme()
     
+    private static let xmasTheme = XmasTheme()
+    
     private static let themes: [Theme] = [
         darkTheme,
-        lightTheme
+        lightTheme,
+        xmasTheme
     ]
     
     private static let userDefaults = UserDefaults.standard
@@ -32,7 +49,7 @@ enum ThemeManager {
 extension ThemeManager {
     
     static var theme: Theme {
-        get {
+        get {            
             return themes.first { String(describing: $0) == userDefaults.theme } ?? defaultTheme
         }
         set {
@@ -50,11 +67,23 @@ extension ThemeManager {
         NotificationCenter.default.post(name: .didChangeTheme, object: nil)
     }
     
+    static func applyDark() {
+        theme = darkTheme
+        apply(theme: theme)
+    }
+    
+    static func applyLight() {
+        theme = lightTheme
+        apply(theme: theme)
+    }
+    
     static func toggleTheme() {
         switch theme {
         case is LightTheme:
             theme = darkTheme
         case is DarkTheme:
+            theme = xmasTheme
+        case is XmasTheme:
             theme = lightTheme
         default:
             theme = defaultTheme

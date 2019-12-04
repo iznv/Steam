@@ -9,12 +9,23 @@
 import UIKit
 
 extension UISearchBar {
-
-    func setSearchField(textColor: UIColor) {
+    
+    func setSearchField(textColor: UIColor,
+                        backgroundColor: UIColor,
+                        glassColor: UIColor,
+                        clearButtonMode: UITextField.ViewMode = .never) {
         
         if let textField = self.value(forKey: "searchField") as? UITextField {
             textField.textColor = textColor
+            textField.backgroundColor = backgroundColor
+            
+            if let glassIconView = textField.leftView as? UIImageView {
+                glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
+                glassIconView.tintColor = glassColor
+            }
+            
+            textField.clearButtonMode = clearButtonMode
         }
     }
-
+    
 }

@@ -38,8 +38,9 @@ body {
 }
 
 img {
-    width: 100%;
-    border-radius: 34px;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 32px;
     pointer-events: none;
     padding-top: #VERTICAL_SPACING#px;
     padding-bottom: #VERTICAL_SPACING#px;

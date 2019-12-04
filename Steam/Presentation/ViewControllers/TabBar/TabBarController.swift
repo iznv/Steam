@@ -28,6 +28,7 @@ extension TabBarController: Themeable {
         view.backgroundColor = theme.primaryBackgroundColor
         tabBar.barTintColor = theme.primaryBackgroundColor
         tabBar.tintColor = theme.primaryTextColor
+        tabBar.unselectedItemTintColor = theme.primaryTextColor.withAlphaComponent(0.4)
     }
     
 }

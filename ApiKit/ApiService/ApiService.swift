@@ -103,8 +103,6 @@ extension ApiService {
                 let response = try decoder.decode(T.self, from: data)
                 completion(.success(response))
             } catch {
-                print(error as Any)
-                fatalError("Decoding Error")
                 completion(.failure(.decodingError))
             }
         }

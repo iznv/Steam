@@ -96,7 +96,9 @@ extension GamesViewController: Themeable {
         tableView.backgroundColor = theme.primaryBackgroundColor
         view.backgroundColor = theme.primaryBackgroundColor
         searchBar.tintColor = theme.accentColor
-        searchBar.setSearchField(textColor: theme.primaryTextColor)
+        searchBar.setSearchField(textColor: theme.primaryTextColor,
+                                 backgroundColor: theme.secondaryBackgroundColor,
+                                 glassColor: theme.primaryTextColor.withAlphaComponent(0.5))
         searchBar.keyboardAppearance = theme.keyboardAppearance
     }
     
@@ -132,8 +134,7 @@ private extension GamesViewController {
             DispatchQueue.main.async {
                 self?.stateMachine.transition(to: .none, animated: false)
                 self?.configureTableView(rows: gamesRows)
-                self?.tableView.layoutIfNeeded()
-                self?.tableView.contentOffset = .zero
+                self?.tableView.scrollToTopImmediately()
             }
         }
         

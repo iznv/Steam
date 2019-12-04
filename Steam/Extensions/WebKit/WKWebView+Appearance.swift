@@ -16,10 +16,10 @@ private enum Constants {
 
 extension WKWebView {
 
-    static func themeable() -> WKWebView {
+    func evaluateAppearanceScript() {
         guard var css = "WebViewStyles.css".content,
               var javaScript = "WebViewSetupScript.js".content else {
-            return WKWebView()
+            return
         }
 
         let theme = ThemeManager.theme
@@ -34,16 +34,7 @@ extension WKWebView {
         javaScript = javaScript
             .replacingOccurrences(of: "#CSS#", with: css)
 
-        let userScript = WKUserScript(source: javaScript, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-
-        let userContentController = WKUserContentController()
-        userContentController.addUserScript(userScript)
-
-        let configuration = WKWebViewConfiguration()
-        configuration.userContentController = userContentController
-
-        let webView = WKWebView(frame: .zero, configuration: configuration)
-        return webView
+        evaluateJavaScript(javaScript, completionHandler: nil)
     }
 
 }

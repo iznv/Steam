@@ -13,7 +13,7 @@ class FriendCell: BaseTableViewCell {
         
         static let userNameLabelLeading: CGFloat = -16
         
-        static let picCornerRadius: CGFloat = 4
+        static let picCornerRadius: CGFloat = 12
         
     }
     

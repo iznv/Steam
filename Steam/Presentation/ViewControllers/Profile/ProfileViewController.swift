@@ -64,7 +64,7 @@ class ProfileViewController: BaseTableViewController<ProfileViewModel> {
         
         bind()
         
-        if viewModel.isUserProfile {
+        if viewModel.isLoggenIn, viewModel.isUserProfile {
             showLogoutButton()
         }
         
@@ -126,6 +126,7 @@ private extension ProfileViewController {
                 self.navigationItem.title = self.viewModel.userName
                 self.stateMachine.transition(to: .none) {
                     self.reload()
+                    self.tableView.scrollToTopImmediately()
                 }
             }
         }
