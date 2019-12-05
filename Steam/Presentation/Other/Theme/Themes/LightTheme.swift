@@ -18,7 +18,13 @@ class LightTheme: Theme {
     
     let accentColor = UIColor(hex: 0xFFB700)
     
-    let statusBarStyle = UIStatusBarStyle.default
+    let statusBarStyle: UIStatusBarStyle = {
+        if #available(iOS 13.0, *) {
+            return UIStatusBarStyle.darkContent
+        } else {
+            return UIStatusBarStyle.default
+        }
+    }()
     
     let activityIndicatorStyle = UIActivityIndicatorView.Style.gray
     
