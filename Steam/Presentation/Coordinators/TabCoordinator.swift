@@ -23,15 +23,15 @@ class TabCoordinator {
     // MARK: - Tabs
     
     private let gamesTabItem = UITabBarItem(title: R.string.localizable.gamesTabTitle(),
-                                            image: R.image.gamesTabIcon(),
+                                            image: R.image.tabIconGames(),
                                             selectedImage: nil)
     
     private let activityTabItem = UITabBarItem(title: R.string.localizable.activityTabTitle(),
-                                               image: R.image.activityTabIcon(),
+                                               image: R.image.tabIconActivity(),
                                                selectedImage: nil)
     
     private let profileTabItem = UITabBarItem(title: R.string.localizable.profileTabTitle(),
-                                              image: R.image.profileTabIcon(),
+                                              image: R.image.tabIconProfile(),
                                               selectedImage: nil)
     
     // MARK: - Init
