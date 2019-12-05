@@ -8,7 +8,7 @@ PODS:
   - StatefulViewController (3.0)
   - TableKit (2.10.0)
   - UIScrollView-InfiniteScroll (1.1.0)
-  - Utils (0.0.11)
+  - Utils (0.0.12)
   - WEBBCode (0.2.0):
     - WEBBCode/Core (= 0.2.0)
     - WEBBCode/HTML (= 0.2.0)
@@ -24,7 +24,7 @@ DEPENDENCIES:
   - StatefulViewController
   - TableKit
   - UIScrollView-InfiniteScroll
-  - Utils (= 0.0.11)
+  - Utils (= 0.0.12)
   - WEBBCode
 
 SPEC REPOS:
@@ -50,9 +50,9 @@ SPEC CHECKSUMS:
   StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
   TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
   UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
-  Utils: d4bb55f5772ab2e0b19b4e7e64f9d3a1e2b8fc9c
+  Utils: 1462ba0ae584ee0f981c5adae3cd63cfae6a5b39
   WEBBCode: 502f8ab7253386e94c3b521eedf5382b9a5c2b2b
 
-PODFILE CHECKSUM: ee94d25a6c81666c75ba900bcdad5afc41120850
+PODFILE CHECKSUM: 9756d46969b781e4c89967e6ab4902d9561b8a7d
 
 COCOAPODS: 1.8.4

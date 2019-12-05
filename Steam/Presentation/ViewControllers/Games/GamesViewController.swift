@@ -134,7 +134,7 @@ private extension GamesViewController {
             DispatchQueue.main.async {
                 self?.stateMachine.transition(to: .none, animated: false)
                 self?.configureTableView(rows: gamesRows)
-                self?.tableView.scrollToTopImmediately()
+                self?.tableView.scrollToTop(animated: false)
             }
         }
         

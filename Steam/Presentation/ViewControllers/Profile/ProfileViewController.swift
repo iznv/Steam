@@ -126,7 +126,7 @@ private extension ProfileViewController {
                 self.navigationItem.title = self.viewModel.userName
                 self.stateMachine.transition(to: .none) {
                     self.reload()
-                    self.tableView.scrollToTopImmediately()
+                    self.tableView.scrollToTop(animated: false)
                 }
             }
         }

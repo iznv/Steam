@@ -7,7 +7,7 @@ use_frameworks!
 
 def common_pods
   
-  pod 'Utils', '0.0.11', :source => 'https://github.com/iznv/Podspecs.git'
+  pod 'Utils', '0.0.12', :source => 'https://github.com/iznv/Podspecs.git'
   
 end
 

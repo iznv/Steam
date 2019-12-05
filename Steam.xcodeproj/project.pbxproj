@@ -184,7 +184,6 @@
 		2CE0E6C82398459E0011EE81 /* UISearchBar+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E6C72398459E0011EE81 /* UISearchBar+TextColor.swift */; };
 		2CE0E6CB239845D90011EE81 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E6CA239845D90011EE81 /* Debouncer.swift */; };
 		2CE0E6CE23984BF10011EE81 /* CustomLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E6CD23984BF10011EE81 /* CustomLoadingIndicator.swift */; };
-		2CE0E6D123984F930011EE81 /* UITableView+ScrollToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E6D023984F930011EE81 /* UITableView+ScrollToTop.swift */; };
 		2CE0E6D3239854E70011EE81 /* XmasTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E6D2239854E70011EE81 /* XmasTheme.swift */; };
 		2CF13AB42395B08400BF97EA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF13AB32395B08400BF97EA /* NotificationCenter.framework */; };
 		2CF13ABF2395B08400BF97EA /* Level Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2CF13AB22395B08400BF97EA /* Level Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -522,7 +521,6 @@
 		2CE0E6C72398459E0011EE81 /* UISearchBar+TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+TextColor.swift"; sourceTree = "<group>"; };
 		2CE0E6CA239845D90011EE81 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		2CE0E6CD23984BF10011EE81 /* CustomLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingIndicator.swift; sourceTree = "<group>"; };
-		2CE0E6D023984F930011EE81 /* UITableView+ScrollToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToTop.swift"; sourceTree = "<group>"; };
 		2CE0E6D2239854E70011EE81 /* XmasTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmasTheme.swift; sourceTree = "<group>"; };
 		2CF13AB22395B08400BF97EA /* Level Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Level Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF13AB32395B08400BF97EA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -1048,7 +1046,6 @@
 				2CA0D12E2389F08200ADBBA6 /* NumberFormatter */,
 				2CA5BBAF23944F2F00FDC6C5 /* UIColor */,
 				2CE0E6C6239845900011EE81 /* UISearchBar */,
-				2CE0E6CF23984F800011EE81 /* UITableView */,
 				2CA0F7DB2393EECE001F3FB4 /* UITapGestureRecognizer */,
 				2C35AD922385BE46003161F0 /* UIViewController */,
 			);
@@ -1640,14 +1637,6 @@
 				2CE0E6CD23984BF10011EE81 /* CustomLoadingIndicator.swift */,
 			);
 			path = CustomLoadingIndicator;
-			sourceTree = "<group>";
-		};
-		2CE0E6CF23984F800011EE81 /* UITableView */ = {
-			isa = PBXGroup;
-			children = (
-				2CE0E6D023984F930011EE81 /* UITableView+ScrollToTop.swift */,
-			);
-			path = UITableView;
 			sourceTree = "<group>";
 		};
 		2CF13AB52395B08400BF97EA /* Level Widget */ = {
@@ -2532,7 +2521,6 @@
 				2CDE0CA6238AE150009DC0F0 /* TimePlayed.swift in Sources */,
 				2C9B221323907EBF00F21811 /* DecoratorCompatible.swift in Sources */,
 				2CACCE052389A5E20025FE1B /* ViewStateMachine+Subscript.swift in Sources */,
-				2CE0E6D123984F930011EE81 /* UITableView+ScrollToTop.swift in Sources */,
 				2C56509D238DBE9C0072640A /* NSNotification+Name.swift in Sources */,
 				2C35AD822385B1CC003161F0 /* TableDirector+Replace.swift in Sources */,
 				2C41F72A23895ECD006EC815 /* TitleValueItem.swift in Sources */,
