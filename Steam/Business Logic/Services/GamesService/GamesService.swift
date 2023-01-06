@@ -19,6 +19,7 @@ class GamesService {
                 GameDataModel(appId: Int64($0.appid),
                               name: $0.name.trimmingCharacters(in: .whitespacesAndNewlines))
             }
+            .filter { !$0.name.isEmpty }
         
         CoreDataService.shared.save(games: gamesDataModels,
                                     completion: completion)

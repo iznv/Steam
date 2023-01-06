@@ -28,7 +28,7 @@ DEPENDENCIES:
   - WEBBCode
 
 SPEC REPOS:
-  https://github.com/iznv/Podspecs:
+  https://github.com/iznv/Podspecs.git:
     - Utils
   trunk:
     - FlagKit
@@ -55,4 +55,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9756d46969b781e4c89967e6ab4902d9561b8a7d
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3

@@ -61,11 +61,11 @@ private extension Array where Element == Game {
     func convertingToPlayerGames() -> [PlayerGame] {
         return compactMap { game in
             guard let name = game.name else { return nil }
-            guard let imgLogoURL = game.imgLogoURL else { return nil }
+            guard let imgIconURL = game.imgIconURL else { return nil }
             
             let iconUrl = String(format: Constants.imageUrlFormat,
                                  String(game.appId),
-                                 imgLogoURL)
+                                 imgIconURL)
             
             return PlayerGame(appId: game.appId,
                               iconUrl: iconUrl,
